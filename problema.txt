@@ -1,0 +1,1 @@
+TCP problema: Objeto não fica null quando é destruído.
