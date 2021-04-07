@@ -3,22 +3,23 @@ using UnityEngine;
 
 public class Inimigo : MonoBehaviour
 {
-    [SerializeField] private Sprite[] sprites;
-    public int spriteId { get; set; }
-    public float velocidade { get; set; }
+    [SerializeField] private Material material;
+    private float velocidade { get; set; }
     private float posYMax;
     private float posYMin;
     public bool encostouNoChao { get; set; }
+    public bool podeSerAcertado { get; private set; }
 
     void Start()
-    {       
-        GetComponent<SpriteRenderer>().sprite = sprites[spriteId];
+    {
+        podeSerAcertado = true;
+
         posYMin = transform.position.y;
-        posYMax = posYMin + 1.7f;
+        posYMax = posYMin + 2f;
 
         if (velocidade <= 0)
         {
-            velocidade = 1.5f;
+            velocidade = 3f;
         }
     }
 
@@ -32,7 +33,8 @@ public class Inimigo : MonoBehaviour
         if (transform.position.y >= posYMax)
         {
             velocidade *= -1;
-        } else if(transform.position.y < posYMin)
+        }
+        else if(transform.position.y < posYMin)
         {
             velocidade = 0;
             encostouNoChao = true;
@@ -43,15 +45,25 @@ public class Inimigo : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GetComponent<SpriteRenderer>().sprite = sprites[spriteId + 1];
+        if (podeSerAcertado) AcertarInimigo();
+    }
+
+    private void AcertarInimigo()
+    {
+        GetComponent<Renderer>().material.color = new Color(0.9f, 0.1f, 0.1f);
+
         if (velocidade > 0)
         {
             velocidade *= -2;
+        } else
+        {
+            velocidade *= 2;
         }
+        podeSerAcertado = false;
     }
 
     private void OnMouseUp()
     {
-        GetComponent<SpriteRenderer>().sprite = sprites[spriteId];
+        GetComponent<Renderer>().material = material;
     }
 }

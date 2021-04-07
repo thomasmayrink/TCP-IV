@@ -2,38 +2,37 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fase01 : MonoBehaviour
 {
-    private const int MAX_INIMIGOS = 3;
-    private const int MAX_BURACOS = 9;
+    [SerializeField] private Text vidas;
+    [SerializeField] private Text pontos;
 
-    [SerializeField] private GameObject fundo;
+    private static Vector3 DISTANCIA = new Vector3(4f, 2f, 5f);
+
+    private const int MAX_INIMIGOS_AO_MESMO_TEMPO = 3;
+    private const int MAX_BURACOS = 9;
     
     [SerializeField] private GameObject inimigoPrefab;
-    private int inimigoId;
     private GameObject inimigo;
-
-    [SerializeField] private GameObject mascara;
-    private GameObject mascaraInstancia;
-
-    [SerializeField] private GameObject buraco;    
+    private Inimigo inimigoScript;
 
     public Vector3[] posIniciais { get; private set; }
+
     private int posId;
 
     void Start()
     {
         DefinirPosicoesIniciais();
-        InstanciarCenario();
         CriarInimigo();
     }
 
     void Update()
     {
-        if (inimigo.GetComponent<Inimigo>().encostouNoChao)
+        if (inimigoScript.encostouNoChao)
         {
-            Debug.Log("foi");
+            //if (inimigo.GetComponent<Inimigo>().)
             CriarInimigo();
         }
     }
@@ -42,26 +41,15 @@ public class Fase01 : MonoBehaviour
     {
         posIniciais = new Vector3[MAX_BURACOS];
 
-        posIniciais[0] = new Vector3(1.8f, 0f, 0f);
-        posIniciais[1] = new Vector3(0f, 0f, 0f);
-        posIniciais[2] = new Vector3(-1.8f, 0f, 0f);
-        posIniciais[3] = new Vector3(1.8f, -2.2f, 0f);
-        posIniciais[4] = new Vector3(0f, -2.2f, 0f);
-        posIniciais[5] = new Vector3(-1.8f, -2.2f, 0f);
-        posIniciais[6] = new Vector3(1.8f, -4.4f, 0f);
-        posIniciais[7] = new Vector3(0f, -4.4f, 0f);
-        posIniciais[8] = new Vector3(-1.8f, -4.4f, 0f);
-    }
-
-    void InstanciarCenario()
-    {
-        Instantiate(fundo, Vector3.zero, Quaternion.identity);
-
-
-        for (int i = 0; i < MAX_BURACOS; i++)
-        {
-            Instantiate(buraco, posIniciais[i], Quaternion.identity);
-        }
+        posIniciais[0] = new Vector3(-DISTANCIA.x, DISTANCIA.y, DISTANCIA.z);
+        posIniciais[1] = new Vector3(0, DISTANCIA.y, DISTANCIA.z);
+        posIniciais[2] = DISTANCIA;
+        posIniciais[3] = new Vector3(-DISTANCIA.x, 0, 0);
+        posIniciais[4] = Vector3.zero;
+        posIniciais[5] = new Vector3(DISTANCIA.x, 0, 0);
+        posIniciais[6] = -DISTANCIA;
+        posIniciais[7] = new Vector3(0, -DISTANCIA.y, -DISTANCIA.z);
+        posIniciais[8] = new Vector3(DISTANCIA.x, -DISTANCIA.y, -DISTANCIA.z);
     }
 
     void CriarInimigo()
@@ -70,18 +58,14 @@ public class Fase01 : MonoBehaviour
         {
             inimigo.GetComponent<Inimigo>().encostouNoChao = false;
             Destroy(inimigo);
-            Destroy(mascaraInstancia);
-        } catch (Exception e)
-        {
-            Debug.Log("Exception: " + e);
-        }
+        } 
+        catch {}
 
-        inimigoId = UnityEngine.Random.Range(0, MAX_INIMIGOS) * 2;
         posId = UnityEngine.Random.Range(0, MAX_BURACOS);
         
         inimigo = Instantiate(inimigoPrefab, Vector3.down * 0.1f + posIniciais[posId], Quaternion.identity);
-        inimigo.GetComponent<Inimigo>().spriteId = inimigoId;
-        
-        mascaraInstancia = Instantiate(mascara, posIniciais[posId], Quaternion.identity);
+        inimigoScript = inimigo.GetComponent<Inimigo>();
+
+        Debug.Log("PosicaoId: " + posId + " || Posicao: " + posIniciais[posId]);
     }
 }
