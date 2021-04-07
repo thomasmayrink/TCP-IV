@@ -9,17 +9,18 @@ public class Inimigo : MonoBehaviour
     private float posYMin;
     public bool encostouNoChao { get; set; }
     public bool podeSerAcertado { get; private set; }
+    public bool acertou { get; private set; }
 
     void Start()
     {
         podeSerAcertado = true;
 
         posYMin = transform.position.y;
-        posYMax = posYMin + 2f;
+        posYMax = posYMin + 3.6f;
 
         if (velocidade <= 0)
         {
-            velocidade = 3f;
+            velocidade = 5f;
         }
     }
 
@@ -32,11 +33,12 @@ public class Inimigo : MonoBehaviour
     {
         if (transform.position.y >= posYMax)
         {
+            transform.position = new Vector3(transform.position.x, posYMax, transform.position.z);
+
             velocidade *= -1;
         }
         else if(transform.position.y < posYMin)
         {
-            velocidade = 0;
             encostouNoChao = true;
         }
 
@@ -45,7 +47,11 @@ public class Inimigo : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (podeSerAcertado) AcertarInimigo();
+        if (podeSerAcertado)
+        {
+            AcertarInimigo();
+           // acertou = false;
+        }
     }
 
     private void AcertarInimigo()
@@ -60,6 +66,7 @@ public class Inimigo : MonoBehaviour
             velocidade *= 2;
         }
         podeSerAcertado = false;
+        acertou = true;
     }
 
     private void OnMouseUp()
