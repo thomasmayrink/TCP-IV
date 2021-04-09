@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
                 {
                     MoleBehavior mole = hit.collider.gameObject.GetComponent<MoleBehavior>();
                     mole.NewEvent(0);
+                    mole.anim.SetTrigger("hit");
 
                      Debug.Log(hit.collider.gameObject + " got hit");
                    

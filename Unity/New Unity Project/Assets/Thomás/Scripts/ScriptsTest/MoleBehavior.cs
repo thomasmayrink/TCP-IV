@@ -5,6 +5,11 @@ using UnityEngine;
 public class MoleBehavior : MonoBehaviour
 {
     Collider col;
+    public int hitPoints = 1;
+    public int score = 1;
+    [HideInInspector]public GameObject myParent;
+
+    [HideInInspector]public Animator anim;
 
     void Start()
     {
@@ -13,6 +18,7 @@ public class MoleBehavior : MonoBehaviour
     }
     public void DestroyObj()
     {
+        myParent.GetComponent<HoleBehavior>().hasMole = false;
         Destroy(gameObject);
     }
 
@@ -31,6 +37,27 @@ public class MoleBehavior : MonoBehaviour
         //    col.enabled = true;
        // }
     }
+
+    public void GotHit()   //For points later on
+    {
+        hitPoints--;
+
+        if(hitPoints > 0)
+        {
+            col.enabled = true;
+        }
+        else
+        {
+
+             myParent.GetComponent<HoleBehavior>().hasMole = false;
+             ScoreManager.AddScore(score);
+            //Put in points here
+             Destroy(gameObject); 
+
+        }
+        
+    }
+
 
 
 
