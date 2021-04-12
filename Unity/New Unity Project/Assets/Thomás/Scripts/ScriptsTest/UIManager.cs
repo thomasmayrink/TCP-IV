@@ -8,15 +8,23 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
+    public Text scoreText;
+    public Text timeText;
+
     void Awake()
     {
-        instance = this;
+        instance = this;        
+        UpdateTime(1,0);
     }
-    public Text scoreText;
-
-    public void UpdateUI()
+    
+    public void UpdateTime(int mins, int secs)
     {
-        scoreText.text = "Score: " + ScoreManager.ReadScore(); 
+        timeText.text = mins.ToString("D2") + ":" + secs.ToString("D2");
+    }
+
+    public void UpdateUI(int score, int scoreToReach)
+    {
+        scoreText.text = "Score: " + score + "/" + scoreToReach; 
 
     }
 

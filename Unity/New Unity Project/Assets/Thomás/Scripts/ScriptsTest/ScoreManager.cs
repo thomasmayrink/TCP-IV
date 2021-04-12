@@ -5,12 +5,14 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     static int score;
+    public static int scoreToReach;
+    
 
     public static void AddScore(int amount)
     {
         score += amount;
         Debug.Log("Current Score: " + score);
-        UIManager.instance.UpdateUI();
+        UIManager.instance.UpdateUI(score, scoreToReach);
     }
 
     public static int ReadScore()

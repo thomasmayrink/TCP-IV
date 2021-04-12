@@ -11,6 +11,8 @@ public class MoleBehavior : MonoBehaviour
 
     [HideInInspector]public Animator anim;
 
+    public GameObject popupText;
+
     void Start()
     {
         col = GetComponent<Collider>();
@@ -51,6 +53,17 @@ public class MoleBehavior : MonoBehaviour
 
              myParent.GetComponent<HoleBehavior>().hasMole = false;
              ScoreManager.AddScore(score);
+
+             GameObject pop = Instantiate(popupText) as GameObject;
+
+             pop.transform.SetParent(UIManager.instance.transform, false);
+             pop.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+
+             PopupText popText = pop.GetComponent<PopupText>();
+             popText.Showtext(score);
+
+
+
             //Put in points here
              Destroy(gameObject); 
 

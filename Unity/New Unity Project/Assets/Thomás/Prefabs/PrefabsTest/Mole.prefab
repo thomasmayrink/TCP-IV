@@ -471,6 +471,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a6a31ba46a4344eb60cc358855cb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPoints: 1
+  score: 1
+  myParent: {fileID: 0}
+  anim: {fileID: 0}
+  popupText: {fileID: 6761222323356381024, guid: 9ef2d7baf3176dc4c92835efcc48d025, type: 3}
 --- !u!136 &562535784
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -551,7 +556,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7108631595466352291, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
+  - {fileID: 2100000, guid: 400a3dc24ee148241a407427a05c32ba, type: 2}
   - {fileID: 6032018737518785298, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
   - {fileID: -1580535799172915004, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
   m_StaticBatchInfo:
