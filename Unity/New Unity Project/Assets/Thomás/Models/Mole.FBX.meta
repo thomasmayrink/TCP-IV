@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6db311e536c5c464e887a1706f0e02a6
+guid: ec0872d25856c2244a6cc85c0b9bc5fc
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -7,7 +7,7 @@ ModelImporter:
       74: 1827226128182048838
     second: ComeUp
   - first:
-      74: -1949743873822866935
+      74: -998496362607748373
     second: LookAround
   - first:
       74: 7055355079433224739
@@ -65,8 +65,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.4305835
-        functionName: NewEvent
+      - time: 0.43478262
+        functionName: SwitchCollider
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

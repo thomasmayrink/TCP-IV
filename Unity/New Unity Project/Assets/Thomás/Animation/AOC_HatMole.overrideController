@@ -7,13 +7,5 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: AOC_HatMole
-  m_Controller: {fileID: 9100000, guid: ef65f2363f47b174ba2842ca0a400bb5, type: 2}
-  m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: a32026f9f2d753e43b6454c94e3cfe14, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: a32026f9f2d753e43b6454c94e3cfe14, type: 2}
-  - m_OriginalClip: {fileID: 1827226128182048838, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
-    m_OverrideClip: {fileID: 1827226128182048838, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
-  - m_OriginalClip: {fileID: 7055355079433224739, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
-    m_OverrideClip: {fileID: 7055355079433224739, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
-  - m_OriginalClip: {fileID: -1949743873822866935, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
-    m_OverrideClip: {fileID: -1949743873822866935, guid: 6db311e536c5c464e887a1706f0e02a6, type: 3}
+  m_Controller: {fileID: 9100000, guid: 97cfbe5f9616fbb4a83c234818e8e607, type: 2}
+  m_Clips: []

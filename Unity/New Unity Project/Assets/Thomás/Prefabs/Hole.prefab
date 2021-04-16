@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4907648216091742032
+--- !u!1 &3155576541155012392
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5715253333892666858}
-  - component: {fileID: 8718814075720899151}
-  - component: {fileID: 6853216929509142149}
-  - component: {fileID: 1339629130}
-  - component: {fileID: 1339629129}
+  - component: {fileID: 2342167066840790418}
+  - component: {fileID: 1670509031114340919}
+  - component: {fileID: 3515658009025318653}
+  - component: {fileID: 5605668293214169015}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -20,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5715253333892666858
+--- !u!4 &2342167066840790418
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4907648216091742032}
+  m_GameObject: {fileID: 3155576541155012392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.006420368, y: 0, z: 0.0018813233}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,21 +33,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8718814075720899151
+--- !u!33 &1670509031114340919
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4907648216091742032}
-  m_Mesh: {fileID: 5864311242745975977, guid: 81a9e952bc46e4546b32dffe64df0317, type: 3}
---- !u!23 &6853216929509142149
+  m_GameObject: {fileID: 3155576541155012392}
+  m_Mesh: {fileID: 5864311242745975977, guid: f8a59cad9da887243aa558d20cb99780, type: 3}
+--- !u!23 &3515658009025318653
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4907648216091742032}
+  m_GameObject: {fileID: 3155576541155012392}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6032018737518785298, guid: 81a9e952bc46e4546b32dffe64df0317, type: 3}
+  - {fileID: 6032018737518785298, guid: f8a59cad9da887243aa558d20cb99780, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,41 +82,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &1339629130
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4907648216091742032}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1339629129
+--- !u!114 &5605668293214169015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4907648216091742032}
+  m_GameObject: {fileID: 3155576541155012392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e215b6dbe775c2c45848737c1be6fb31, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e36add2711378848b554b3fcc6f155d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moles:
-  - {fileID: 3528754269432347226, guid: 4f19b90c9db88cf43a7f701a6a002f9f, type: 3}
-  - {fileID: 1489695660639417635, guid: febbd781a246a074c97fcb6b65484761, type: 3}
-  - {fileID: 4981003408462236749, guid: 3da9cee51a248fe4fa74cfc3161336a6, type: 3}
-  - {fileID: 6554591984151791791, guid: 78d02e5d935458642b2987285dfc4b1b, type: 3}
-  - {fileID: 6331096993586593456, guid: f3149f89cea579b4e9148d8eb4d32aa8, type: 3}
-  hasMole: 0
+  - {fileID: 2010799711934526386, guid: 9ef0836477163f848bdc083b75b123fd, type: 3}
+  - {fileID: 5542219404424247727, guid: f0790e598c0c5384d9be844e70e8cb1e, type: 3}
