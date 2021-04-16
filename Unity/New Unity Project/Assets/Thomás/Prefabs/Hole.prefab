@@ -97,3 +97,7 @@ MonoBehaviour:
   moles:
   - {fileID: 2010799711934526386, guid: 9ef0836477163f848bdc083b75b123fd, type: 3}
   - {fileID: 5542219404424247727, guid: f0790e598c0c5384d9be844e70e8cb1e, type: 3}
+  - {fileID: 4372251350818123830, guid: 4a20b489f78dd3944b1bbd8f927a545d, type: 3}
+  - {fileID: 916067390272773838, guid: 891499fcb29f8fb49b21c01a4a5eeb5e, type: 3}
+  - {fileID: 4053729902466048731, guid: 971a2f2be79b07b4ca44e91d880e1492, type: 3}
+  hasMole: 0
