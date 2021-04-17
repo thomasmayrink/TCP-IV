@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     {   
         scoreToReach = curLevel * (baseScore * curLevel);
         ScoreManager.scoreToReach = scoreToReach;
-        UIManager.instance.UpdateUI(0, scoreToReach);
+        UIManager.instance.UpdateUI(ScoreManager.ReadScore(), scoreToReach);
         StartCoroutine("PlayTimer");
     }
 
