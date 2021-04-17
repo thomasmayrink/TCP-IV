@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public GameObject fx_Punch;
    
     void Update()
     {
@@ -16,6 +17,8 @@ public class InputManager : MonoBehaviour
             {
                 if(hit.collider.tag == "Mole")
                 {
+                    Instantiate(fx_Punch, hit.point, Quaternion.identity);
+                    
                     MoleBehavior mole = hit.collider.gameObject.GetComponent<MoleBehavior>();
                     mole.SwitchCollider(0);
                     mole.anim.SetTrigger("hit");

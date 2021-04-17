@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-{
+{   public static GameManager instance;
     int playtime = 60;  
     int seconds, minutes;
 
@@ -13,8 +13,24 @@ public class GameManager : MonoBehaviour
     public static int curLevel = 1;
     int baseScore = 50;
     int scoreToReach;
+
+    bool hasLost;
+
+    [HideInInspector]public bool countDownDone;
+
+    void Awake()
+    {
+        instance = this;
+    }
+   
     void Start()
     {   
+        if(hasLost)
+        {
+            hasLost = false;
+            ScoreManager.ResetScore();
+            curLevel = 1;
+        }   
         scoreToReach = curLevel * (baseScore * curLevel);
         ScoreManager.scoreToReach = scoreToReach;
         UIManager.instance.UpdateUI(ScoreManager.ReadScore(), scoreToReach);
@@ -46,7 +62,11 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            Debug.Log("Game Over");
+            hasLost = true;
+            ScoreHolder.score = ScoreManager.ReadScore();
+            ScoreHolder.level = curLevel;
+            SceneManager.LoadScene("GameOver");
+           // Debug.Log("Game Over");
         }
 
     }
