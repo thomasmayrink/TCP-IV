@@ -25,11 +25,16 @@ public class Fase01 : MonoBehaviour
 
     void Start()
     {
-        pontos = 0;
-        txtPontos.text = "Acertos: " + pontos;
 
+        pontos = 0;
         vidas = 10;
-        txtVidas.text = "Vidas: " + vidas;
+
+        try 
+        {
+            txtPontos.text = "Acertos: " + pontos;
+            txtVidas.text = "Vidas: " + vidas;
+        }
+        catch { }
 
         inimigos = new GameObject[MAX_INIMIGOS_AO_MESMO_TEMPO];
         inimigosEmCena = 0;
@@ -39,6 +44,7 @@ public class Fase01 : MonoBehaviour
 
     void Update()
     {
+        /*
         if (vidas > 0)
         {
             foreach (GameObject go in inimigos)
@@ -48,7 +54,11 @@ public class Fase01 : MonoBehaviour
                     if (go.GetComponent<Inimigo>().acertou)
                     {
                         pontos++;
-                        txtPontos.text = "Acertos: " + pontos / 10;
+                        try
+                        {
+                            txtPontos.text = "Acertos: " + pontos / 10;
+                        }
+                        catch { }
                     }
 
                     if (go.GetComponent<Inimigo>().encostouNoChao)
@@ -56,7 +66,11 @@ public class Fase01 : MonoBehaviour
                         if (go.GetComponent<Inimigo>().podeSerAcertado)
                         {
                             vidas--;
-                            txtVidas.text = "Vidas: " + vidas;
+                            try
+                            {
+                                txtVidas.text = "Vidas: " + vidas;
+                            }
+                            catch { }
                         }
 
                         Destroy(go);
@@ -77,6 +91,7 @@ public class Fase01 : MonoBehaviour
                 } catch { }
             }
         }
+        */
     }
 
     void DefinirPosicoesIniciais()
