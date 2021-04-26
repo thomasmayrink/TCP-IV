@@ -38,14 +38,13 @@ public class Toupeira : MonoBehaviour
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
         {
             podeSerAcertado = true;
-            dancaId = Random.Range(1, 3);
+           // dancaId = Random.Range(1, 3);
         }
-
+/*
         if (dancaId == 3)
         {
 
         }
-        /*
         timer += Time.deltaTime;
         if (!acertou && !podeSerAcertado && timer >= 0.5f)
         {
