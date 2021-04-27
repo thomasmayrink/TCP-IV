@@ -25,16 +25,11 @@ public class Fase01 : MonoBehaviour
 
     void Start()
     {
-
         pontos = 0;
         vidas = 10;
-
-        try 
-        {
-            txtPontos.text = "Acertos: " + pontos;
-            txtVidas.text = "Vidas: " + vidas;
-        }
-        catch { }
+        
+        txtPontos.text = "Acertos: " + pontos;
+        txtVidas.text = "Vidas: " + vidas;
 
         inimigos = new GameObject[MAX_INIMIGOS_AO_MESMO_TEMPO];
         inimigosEmCena = 0;
@@ -44,33 +39,24 @@ public class Fase01 : MonoBehaviour
 
     void Update()
     {
-        /*
         if (vidas > 0)
         {
             foreach (GameObject go in inimigos)
             {
                 if (go != null)
                 {
-                    if (go.GetComponent<Inimigo>().acertou)
+                    if (go.GetComponent<Toupeira>().acertou)
                     {
-                        pontos++;
-                        try
-                        {
-                            txtPontos.text = "Acertos: " + pontos / 10;
-                        }
-                        catch { }
+                        pontos += (int)Time.deltaTime;
+                        txtPontos.text = "Acertos: " + pontos / 10; 
                     }
 
-                    if (go.GetComponent<Inimigo>().encostouNoChao)
+                    if (go.GetComponent<Toupeira>().encostouNoChao)
                     {
-                        if (go.GetComponent<Inimigo>().podeSerAcertado)
+                        if (go.GetComponent<Toupeira>().podeSerAcertado)
                         {
                             vidas--;
-                            try
-                            {
-                                txtVidas.text = "Vidas: " + vidas;
-                            }
-                            catch { }
+                            txtVidas.text = "Vidas: " + vidas;
                         }
 
                         Destroy(go);
@@ -80,7 +66,7 @@ public class Fase01 : MonoBehaviour
                 }
             }
             if (podeCriarInimigo) CriarInimigo();
-        } 
+        }
         else
         {
             foreach (GameObject go in inimigos)
@@ -91,7 +77,6 @@ public class Fase01 : MonoBehaviour
                 } catch { }
             }
         }
-        */
     }
 
     void DefinirPosicoesIniciais()
@@ -111,8 +96,6 @@ public class Fase01 : MonoBehaviour
 
     void CriarInimigo()
     {
-        //Debug.Log("Inimigos em cena: " + inimigosEmCena);
-
         int max = MAX_INIMIGOS_AO_MESMO_TEMPO - inimigosEmCena;
         
         int qtd = Random.Range(1, max);
@@ -123,20 +106,6 @@ public class Fase01 : MonoBehaviour
             inimigosEmCena++;
         }
 
-        /*
-        for (int i = 0; i < qtd; i++)
-        {
-            for (int j = 0; j < inimigos.Length; j++)
-            {
-                if (inimigos[j] == null) break;
-            }
-        }
-
-        int id = Random.Range(0, MAX_INIMIGOS_AO_MESMO_TEMPO);
-
-        
-        inimigo[0] = Instantiate(inimigoPrefab, Vector3.down * 0.1f + posIniciais[posId], Quaternion.identity);
-        */
         podeCriarInimigo = false;
     }
 
@@ -155,23 +124,6 @@ public class Fase01 : MonoBehaviour
                 }
             }
         }
-
-        /*
-        for (int i = 0; i < posIniciais.Length; i++)
-        {
-            if (i == posId)
-            {
-                //checar se tem alguém lá
-                for (int j = 0; j < inimigos.Length; j++)
-                {
-                    if (inimigos[j] != null)
-                    {
-                        while (inimigos[j].transform.position.x == posIniciais[posId].x)
-                    }
-                }
-            }
-        }
-        */
 
         return posIniciais[posId];
     }

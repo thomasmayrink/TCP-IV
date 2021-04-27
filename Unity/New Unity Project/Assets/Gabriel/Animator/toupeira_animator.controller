@@ -233,7 +233,6 @@ AnimatorState:
   m_Transitions:
   - {fileID: 5006051436300975820}
   - {fileID: 256332821136170515}
-  - {fileID: 2877880537170031209}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -519,13 +518,13 @@ AnimatorController:
   - m_Name: DancaId
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 3
+    m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: Danca3Id
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 5
+    m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
@@ -874,25 +873,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -5329944960644176769}
-    m_Position: {x: 300, y: 200, z: 0}
+    m_Position: {x: 300, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7756437418674843105}
-    m_Position: {x: 450, y: 280, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1424808920520846764}
-    m_Position: {x: 550, y: 430, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -213343840210459468}
-    m_Position: {x: 420, y: 490, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 8063384047303453188}
-    m_Position: {x: 300, y: 540, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -6203914820376666940}
-    m_Position: {x: 180, y: 490, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 4459132753050321121}
-    m_Position: {x: 60, y: 430, z: 0}
+    m_Position: {x: 300, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6581158591486123055}
     m_Position: {x: 700, y: 280, z: 0}
@@ -902,9 +886,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 6941934654498056121}
     m_Position: {x: 40, y: 280, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -6273224595368357676}
-    m_Position: {x: 300, y: 360, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -1027,7 +1008,6 @@ AnimatorState:
   m_Transitions:
   - {fileID: -5260403695211408391}
   - {fileID: 4123628139824189533}
-  - {fileID: 6221605636832033605}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -1084,7 +1064,6 @@ AnimatorState:
   m_Transitions:
   - {fileID: -1481582356129712445}
   - {fileID: 7785600639628745070}
-  - {fileID: -7824188874798156498}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0

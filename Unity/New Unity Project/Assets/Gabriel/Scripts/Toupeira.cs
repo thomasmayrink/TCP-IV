@@ -6,11 +6,9 @@ public class Toupeira : MonoBehaviour
 {
     private Animator animator;
     private float velocidade { get; set; }
-    private float posYMin;
     public bool encostouNoChao { get; set; }
     public bool podeSerAcertado { get; private set; }
     public bool acertou { get; private set; }
-    private float timer;
 
     private int dancaId;
 
@@ -19,65 +17,51 @@ public class Toupeira : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         podeSerAcertado = false;
         acertou = false;
-
-        posYMin = transform.position.y;
-
-        timer = 0;
+        encostouNoChao = false;
 
         if (velocidade <= 0)
         {
-            velocidade = 5f;
+            velocidade = 2f;
         }
     }
 
     void Update()
     {
-        if (!acertou && 
+        if (!acertou &&
             !podeSerAcertado &&
-            animator.GetCurrentAnimatorStateInfo(0).IsName("Subindo") &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+            animator.GetCurrentAnimatorStateInfo(0).IsName("Subindo"))
         {
-            podeSerAcertado = true;
-           // dancaId = Random.Range(1, 3);
-        }
-/*
-        if (dancaId == 3)
-        {
-
-        }
-        timer += Time.deltaTime;
-        if (!acertou && !podeSerAcertado && timer >= 0.5f)
-        {
-            podeSerAcertado = true;
-            timer = 0;
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.75f)
+            {
+                podeSerAcertado = true;
+                dancaId = Random.Range(1, 3);
+                animator.SetInteger("DancaId", dancaId);
+                velocidade = 0;
+            }
+            else
+            {
+                transform.position += velocidade * transform.up * Time.deltaTime;
+            }
         }
 
-       if (podeSerAcertado && timer >= 
-            */
+        if (acertou)
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Descendo"))
+            {
+                velocidade = 10;
+                transform.position -= velocidade * transform.up * Time.deltaTime;
+                if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+                {
+                    encostouNoChao = true;
+                }
+            }
+        }
     }
 
     void ComportamentoNormal()
     {
 
     }
-
-    /*
-    void SubindoEDescendo()
-    {
-        if (transform.position.y >= posYMax)
-        {
-            transform.position = new Vector3(transform.position.x, posYMax, transform.position.z);
-
-            velocidade *= -1;
-        }
-        else if (transform.position.y < posYMin)
-        {
-            encostouNoChao = true;
-        }
-
-        transform.position += velocidade * transform.up * Time.deltaTime;
-    }
-    */
 
     private void OnMouseDown()
     {
@@ -94,7 +78,6 @@ public class Toupeira : MonoBehaviour
         acertou = true;
         animator.SetBool("FoiAcertado", acertou);
         animator.SetBool("PodeSerAcertado", podeSerAcertado);
-        timer = 0;
     }
 
     private void OnMouseUp()
