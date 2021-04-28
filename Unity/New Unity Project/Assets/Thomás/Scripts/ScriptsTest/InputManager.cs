@@ -1,7 +1,11 @@
+#define GABRIEL
+//#define THOMAS
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+#if THOMAS
 public class InputManager : MonoBehaviour
 {
     public GameObject fx_Punch;
@@ -21,8 +25,8 @@ public class InputManager : MonoBehaviour
                     
                     MoleBehavior mole = hit.collider.gameObject.GetComponent<MoleBehavior>();
                     mole.SwitchCollider(0);
-                    mole.anim.SetTrigger("hit");
-
+                    //mole.anim.SetTrigger("hit");
+                    mole.anim.SetBool("FoiAcertado", true);
                     //Debug.Log(hit.collider.gameObject + " got hit");    
                 }
                 
@@ -30,3 +34,11 @@ public class InputManager : MonoBehaviour
         }
     }
 }
+
+#elif GABRIEL
+public class InputManager : MonoBehaviour
+{
+
+}
+
+#endif

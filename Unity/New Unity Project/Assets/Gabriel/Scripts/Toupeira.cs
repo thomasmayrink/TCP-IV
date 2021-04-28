@@ -73,7 +73,6 @@ public class Toupeira : MonoBehaviour
 
     private void AcertarInimigo()
     {
-        animator.SetInteger("Danca3Id", 0);
         podeSerAcertado = false;
         acertou = true;
         animator.SetBool("FoiAcertado", acertou);
