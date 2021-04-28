@@ -1,5 +1,5 @@
-#define GABRIEL
-//#define THOMAS
+//#define GABRIEL
+#define THOMAS
 
 using System.Collections;
 using System.Collections.Generic;

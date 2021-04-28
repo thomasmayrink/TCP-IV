@@ -9,15 +9,18 @@ EditorBuildSettings:
     path: Assets/Gabriel/Scenes/GabrielCena.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: "Assets/Thom\xE1s/Scenes/Thom\xE1s/Interface.unity"
-    guid: 0c68849b9479e75448cc1db26afb9cec
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: "Assets/Thom\xE1s/Scenes/Thom\xE1s/Main.unity"
     guid: 15e70d8ec405a784d8fc1563992015ca
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Thom\xE1s/Scenes/Thom\xE1s/WhackAMole.unity"
     guid: 88c63b980ad6faa4bae9d7f378922461
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Thom\xE1s/Scenes/Thom\xE1s/GameOver.unity"
     guid: d3b500379cf04cb488ac917bba114db6
+  - enabled: 1
+    path: Assets/Gabriel/Scenes/GabrielAnimacoes.unity
+    guid: 1942ef74bcde08246a3192d2809f701c
   m_configObjects: {}

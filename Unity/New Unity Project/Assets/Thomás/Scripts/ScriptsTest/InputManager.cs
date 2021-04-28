@@ -1,5 +1,5 @@
-#define GABRIEL
-//#define THOMAS
+//#define GABRIEL
+#define THOMAS
 
 using System.Collections;
 using System.Collections.Generic;
@@ -25,8 +25,7 @@ public class InputManager : MonoBehaviour
                     
                     MoleBehavior mole = hit.collider.gameObject.GetComponent<MoleBehavior>();
                     mole.SwitchCollider(0);
-                    //mole.anim.SetTrigger("hit");
-                    mole.anim.SetBool("FoiAcertado", true);
+                    mole.anim.SetTrigger("hit");
                     //Debug.Log(hit.collider.gameObject + " got hit");    
                 }
                 
