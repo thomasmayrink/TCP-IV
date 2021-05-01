@@ -22,7 +22,7 @@ public class PowerUp : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime * 0.0001f;
+        timer += Time.deltaTime * 0.001f;
 
         if (cor.r < 1)
         {
