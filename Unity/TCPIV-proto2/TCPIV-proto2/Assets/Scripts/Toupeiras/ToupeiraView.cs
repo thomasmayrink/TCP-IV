@@ -6,6 +6,6 @@ public class ToupeiraView : View
 {
     private void OnMouseDown()
     {
-        app.Notificar(Notificacao.TOUPEIRA_ACERTADA, this);
+        Debug.Log(this.gameObject + " OnMouseDown()");
     }
 }

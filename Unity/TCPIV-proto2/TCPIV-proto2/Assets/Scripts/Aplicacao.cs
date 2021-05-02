@@ -39,6 +39,7 @@ public class Aplicacao : MonoBehaviour
         }
     }
 
+    /*
    public void Notificar(Notificacao notificacao, Object notificador)
     {
         foreach (Controller c in controllers)
@@ -46,4 +47,5 @@ public class Aplicacao : MonoBehaviour
             c.OnNotificacao(notificacao, notificador);
         }
     }
+    */
 }

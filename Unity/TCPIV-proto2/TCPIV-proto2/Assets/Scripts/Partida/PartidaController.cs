@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PartidaController : Controller
 {
+    /*
     public override void OnNotificacao(Notificacao notificacao, Object p_target)
     {
         switch (notificacao)
@@ -17,4 +18,5 @@ public class PartidaController : Controller
                 break;
         }
     }
+    */
 }
