@@ -1,8 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ToupeiraModel : Model
-{ 
-    public int Vida { get; set; }
+public class ToupeiraModel
+{
+    public Vector3 posicao { get; set; }
+    public float velocidade { get; set; }
+    public int vida { get; set; }
+    public bool podeSerAcertada { get; set; }
+    public bool foiAcertada { get; set; }
+    public int dancaId { get; set; }
+
 }

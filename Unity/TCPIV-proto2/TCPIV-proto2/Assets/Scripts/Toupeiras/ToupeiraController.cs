@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ToupeiraController : Controller
+public class ToupeiraController
 {
-    /*
-    public override void OnNotificacao(Notificacao notificacao, Object notificador)
+    public ToupeiraModel model { get; private set; }
+    public ToupeiraView view { get; private set; }
+
+    public ToupeiraController(ToupeiraModel model, ToupeiraView view)
     {
-        switch (notificacao)
-        {
-            case Notificacao.TOUPEIRA_ACERTADA:
-                Debug.Log("Toupeira acertada!");
-                break;
-        }
+        this.model = model;
+        this.view = view;
     }
-    */
+
+    public void Acertar()
+    {
+//        if (this.model.podeSerAcertada &&)
+    }
 }
