@@ -6,6 +6,6 @@ public class ToupeiraView : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        Debug.Log("this.gameObject: " + this.gameObject);
+        Debug.Log("OnMouseDown() this.gameObject: " + this.gameObject);
     }
 }

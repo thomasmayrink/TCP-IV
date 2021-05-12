@@ -9,6 +9,7 @@ public class Toupeira : ScriptableObject
     [SerializeField] private int vida;
     [SerializeField] private int[] dancasId;
     [SerializeField] private GameObject toupeiraPrefab;
+    [SerializeField] private COMPORTAMENTO comportamento;
     
     #endregion
 
@@ -54,7 +55,26 @@ public class Toupeira : ScriptableObject
     {
         get
         {
+            if (toupeiraPrefab == null)
+            {
+                Debug.Log("<color=red>ERRO! </color>Nenhum prefab foi colocado no campo Toupeira Prefab em Toupeira.");
+            }
             return toupeiraPrefab;
+        }
+    }
+
+    public COMPORTAMENTO Comportamento
+    {
+        get
+        {
+            return comportamento;
+        }
+    }
+
+    public ToupeiraController Controller {
+        get
+        {
+            return toupeiraPrefab.GetComponent<ToupeiraController>();
         }
     }
 
@@ -64,5 +84,15 @@ public class Toupeira : ScriptableObject
 
     public bool PodeSerAcertada { get; set; }
 
+    public bool DeveSerDestruida { get; set; }
+
     #endregion
+}
+
+public enum COMPORTAMENTO
+{
+    Lider,
+    Doido,
+    PoucosAmigos,
+    Fofo
 }
