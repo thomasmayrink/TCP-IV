@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestesAgora : Elemento
+public class FaseController : Controller
 {
     [SerializeField] private Fase model;
 
@@ -14,14 +14,12 @@ public class TestesAgora : Elemento
         app.faseController = this;
 
         timer = 0;
-        timerMax = app.faseModel.Bpm / 60;
+        timerMax = app.faseModel.Bpm / 60 / 2;
 
         app.faseModel.ToupeirasInstancias = new LinkedList<GameObject>();
         app.faseModel.ToupeiraBuraco = new List<KeyValuePair<int, GameObject>>();
 
         app.faseModel.QtdBuracosOcupados = 0;
-
-
     }
 
     private void Update()
@@ -48,13 +46,18 @@ public class TestesAgora : Elemento
             {
                 buracoId = Random.Range(0, app.faseModel.Buracos.Length);
             }
+            /*
             app.faseModel.ToupeirasInstancias.AddLast(app.faseModel.Buracos[buracoId].GetComponent<Buraco>().CriarToupeira(app.faseModel.Toupeiras[toupeiraId].ToupeiraPrefab));
-            app.faseModel.ToupeirasInstancias.Last.Value.GetComponent<ToupeiraController>().app.toupeiraModel = app.faseModel.Toupeiras[toupeiraId];
+            app.faseModel.ToupeirasInstancias.Last.Value.GetComponent<ToupeiraController>().app.toupeiraModel[toupeiraId] = app.faseModel.Toupeiras[toupeiraId];
             app.faseModel.ToupeiraBuraco.Add(new KeyValuePair<int, GameObject>(buracoId, app.faseModel.ToupeirasInstancias.Last.Value));
             app.toupeiraModel = app.faseModel.ToupeirasInstancias.Last.Value.GetComponent<ToupeiraController>().app.toupeiraModel;
-            app.toupeiraController = app.faseModel.ToupeirasInstancias.Last.Value.GetComponent<ToupeiraController>();
-            app.toupeiraView = app.faseModel.ToupeirasInstancias.Last.Value.GetComponentInChildren<ToupeiraView>();
+            app.toupeiraController[toupeiraId] = app.faseModel.ToupeirasInstancias.Last.Value.GetComponent<ToupeiraController>();
+            app.toupeiraView[toupeiraId] = app.faseModel.ToupeirasInstancias.Last.Value.GetComponentInChildren<ToupeiraView>();
+            app.toupeiraModel[toupeiraId].PodeSerAcertada = true;
+            app.toupeiraModel[toupeiraId].FoiAcertada = false;
+            app.toupeiraModel[toupeiraId].DeveSerDestruida = false;
             app.faseModel.QtdBuracosOcupados++;
+            */
         }
         else
         {
@@ -66,18 +69,25 @@ public class TestesAgora : Elemento
     {
         foreach(GameObject t in app.faseModel.ToupeirasInstancias)
         {
-            if (t.GetComponent<ToupeiraController>().app.toupeiraModel.DeveSerDestruida)
+            foreach(KeyValuePair<int, GameObject> kvp in app.faseModel.ToupeiraBuraco)
             {
-                foreach(KeyValuePair<int, GameObject> kvp in app.faseModel.ToupeiraBuraco)
+                if (kvp.Value == t)
                 {
-                    if (kvp.Value == t)
-                    {
-                        app.faseModel.ToupeiraBuraco.Remove(kvp);
-                    }
+                    app.faseModel.ToupeiraBuraco.Remove(kvp);
                 }
-                Destroy(t);
-                app.faseModel.QtdBuracosOcupados--;
             }
+            Destroy(t);
+            app.faseModel.QtdBuracosOcupados--;
+        }
+    }
+
+    public override void OnNotificacao(Notificacao evento_caminho, Object alvo)
+    {
+        switch (evento_caminho)
+        {
+            case Notificacao.DestruirToupeira:
+                Debug.Log("Destruir Toupeira em Fase Controller");
+                break;
         }
     }
 }

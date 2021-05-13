@@ -67,8 +67,6 @@ public class Toupeira : ScriptableObject
         }
     }
 
-    public Vector3 Posicao { get; set; }
-
     public bool FoiAcertada { get; set; }
 
     public bool PodeSerAcertada { get; set; }
