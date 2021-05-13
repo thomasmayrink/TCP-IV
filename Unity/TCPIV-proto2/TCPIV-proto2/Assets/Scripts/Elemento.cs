@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Elemento : MonoBehaviour
+public abstract class Elemento : MonoBehaviour
 {
-    public Aplicacao app 
+    public static Aplicacao app 
     { 
         get 
         {

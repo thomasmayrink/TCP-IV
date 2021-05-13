@@ -34,7 +34,7 @@ public class FaseController : Controller
             //DestruirToupeira();
         }
     }
-    
+
     private void InstanciarToupeira()
     {
         int buracoId = Random.Range(0, app.faseModel.Buracos.Length);

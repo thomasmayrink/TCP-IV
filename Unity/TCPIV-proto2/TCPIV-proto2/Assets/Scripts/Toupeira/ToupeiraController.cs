@@ -23,6 +23,7 @@ public class ToupeiraController : Controller
                     }
                 }
                 break;
+
             case Notificacao.ToupeiraMorreu:
                 foreach (Toupeira t in app.toupeiraModel)
                 {
