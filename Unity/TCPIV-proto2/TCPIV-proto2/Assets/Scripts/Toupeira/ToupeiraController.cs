@@ -8,7 +8,7 @@ public class ToupeiraController : Controller
     {
         switch (evento_caminho)
         {
-            case Notificacao.ToupeiraAcertada:
+            case Notificacao.ToupeiraFoiAcertada:
                 foreach (Toupeira t in app.toupeiraModel)
                 { 
                     if (t.PodeSerAcertada)
@@ -18,12 +18,12 @@ public class ToupeiraController : Controller
                         t.Vida--;
                         if (t.Vida <= 0)
                         {
-                            app.Notificar(Notificacao.DestruirToupeira, this);
+                            app.Notificar(Notificacao.ToupeiraMorreu, this);
                         }
                     }
                 }
                 break;
-            case Notificacao.DestruirToupeira:
+            case Notificacao.ToupeiraMorreu:
                 foreach (Toupeira t in app.toupeiraModel)
                 {
                     t.PodeSerAcertada = false;

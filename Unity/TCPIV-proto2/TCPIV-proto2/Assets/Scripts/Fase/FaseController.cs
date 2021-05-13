@@ -85,7 +85,7 @@ public class FaseController : Controller
     {
         switch (evento_caminho)
         {
-            case Notificacao.DestruirToupeira:
+            case Notificacao.ToupeiraMorreu:
                 Debug.Log("Destruir Toupeira em Fase Controller");
                 break;
         }
