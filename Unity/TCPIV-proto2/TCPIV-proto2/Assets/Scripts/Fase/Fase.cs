@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu]
 public class Fase : ScriptableObject
@@ -6,10 +7,9 @@ public class Fase : ScriptableObject
     #region VARIAVEIS
 
     [SerializeField] private Toupeira[] toupeiras;
-    [SerializeField] private int intervaloMinCriarToupeira;
-    [SerializeField] private int intervaloMaxCriarToupeira;
-    //[SerializeField] private ARMADILHA[] armadilhas;
-    private bool[] buracosOcupados;
+    [SerializeField] private int bpm;
+    [SerializeField] private Armadilha[] armadilhas;
+    [SerializeField] private int vidas;
 
     #endregion
 
@@ -19,34 +19,25 @@ public class Fase : ScriptableObject
     {
         get
         {
-            if (toupeiras != null)
-            {
-                foreach (Toupeira t in toupeiras)
-                {
-                    t.Controller.model = t;
-                }
-            } 
-            else
-            {
-                Debug.Log("<color=red>ERRO! </color>Nenhuma Toupeira foi colocada no campo Toupeiras em Fase.");
-            }
             return toupeiras;
         }
     }
 
-    public int IntervaloMinCriarToupeira
+    public LinkedList<GameObject> ToupeirasInstancias { get; set; }
+
+    public int Bpm
     {
         get
         {
-            return intervaloMinCriarToupeira;
+            return bpm;
         }
     }
 
-    public int IntervaloMaxCriarToupeira
+    public Armadilha[] Armadilhas
     {
         get
         {
-            return intervaloMaxCriarToupeira;
+            return armadilhas;
         }
     }
 
@@ -58,21 +49,13 @@ public class Fase : ScriptableObject
         }
     }
 
-    public bool[] BuracosOcupados
-    {
-        get
-        {
-            if (BuracosOcupados == null)
-            {
-                return buracosOcupados = new bool[Buracos.Length];
-            }
-            else return buracosOcupados;
-        }
-        set
-        {
-            buracosOcupados = value;
-        }
-    }
+    public List<KeyValuePair<int, GameObject>> ToupeiraBuraco { get; set; }
 
+    public int QtdBuracosOcupados { get; set; }
+
+    public int Pontos { get; set; }
+
+    public int Vidas { get; set; }
+    
     #endregion
 }

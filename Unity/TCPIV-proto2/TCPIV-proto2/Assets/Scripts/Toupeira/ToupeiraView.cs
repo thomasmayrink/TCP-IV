@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ToupeiraView : MonoBehaviour
+public class ToupeiraView : Elemento
 {
     private void OnMouseDown()
     {
-        Debug.Log("OnMouseDown() this.gameObject: " + this.gameObject);
+        app.toupeiraController.OnAcertou();
     }
 }

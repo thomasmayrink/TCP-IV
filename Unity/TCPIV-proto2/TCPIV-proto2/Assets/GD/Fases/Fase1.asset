@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toupeiras:
   - {fileID: 11400000, guid: f88293b0e992a6640891b46b39b7aa98, type: 2}
-  intervaloMinCriarToupeira: 2
-  intervaloMaxCriarToupeira: 5
+  bpm: 120
+  armadilhas: []
+  vidas: 0
+  QtdBuracosOcupados: 9

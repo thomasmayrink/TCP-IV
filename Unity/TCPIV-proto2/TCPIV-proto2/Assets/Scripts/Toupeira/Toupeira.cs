@@ -55,10 +55,6 @@ public class Toupeira : ScriptableObject
     {
         get
         {
-            if (toupeiraPrefab == null)
-            {
-                Debug.Log("<color=red>ERRO! </color>Nenhum prefab foi colocado no campo Toupeira Prefab em Toupeira.");
-            }
             return toupeiraPrefab;
         }
     }
@@ -68,13 +64,6 @@ public class Toupeira : ScriptableObject
         get
         {
             return comportamento;
-        }
-    }
-
-    public ToupeiraController Controller {
-        get
-        {
-            return toupeiraPrefab.GetComponent<ToupeiraController>();
         }
     }
 

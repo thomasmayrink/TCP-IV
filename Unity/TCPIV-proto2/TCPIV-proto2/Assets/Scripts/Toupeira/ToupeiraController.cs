@@ -2,18 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToupeiraController : MonoBehaviour
+public class ToupeiraController : Elemento
 {
-    public Toupeira model { get; set; }
-    public ToupeiraView view
+    public void OnAcertou()
     {
-        set
-        {
-            model.ToupeiraPrefab.GetComponentInChildren<ToupeiraView>();
-        }
-    }
-
-    private void Update()
-    {
+        app.toupeiraModel.FoiAcertada = true;
+        Debug.Log("Acertou");
     }
 }
