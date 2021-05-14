@@ -12,6 +12,8 @@ public class ToupeiraController : Controller
             case Notificacao.Toupeira.Subindo:
                 model = GetComponent<ToupeiraModel>();
                 view = GetComponentInChildren<ToupeiraView>();
+
+                model.PodeSerAcertada = true;
                 //view.Subir(model.Velocidade, model.PosicaoInicial.y + 1.5f))
 
                 //Debug.Log("Subindo model.FoiAcertada: " + model.FoiAcertada);
@@ -19,18 +21,20 @@ public class ToupeiraController : Controller
                 break;
 
             case Notificacao.Toupeira.FoiAcertada:
-                /*
                 if (model.PodeSerAcertada) 
                 {
+                    app.DebugController("toupeira model.Vida: " + model.Vida);
                     model.Vida--;
-                    model.PodeSedrAcertada = false;
+                    model.PodeSerAcertada = false;
+                    app.DebugController("toupeira foi acertada");
                 }
+                /*
                 if (model.Vida <= 0)
                 {
                     app.Notificar(Notificacao.Toupeira.Destruir, this);
                 }
                 */
-                //Debug.Log(Notificacao.Toupeira.FoiAcertada);
+                app.DebugController("toupeira não foi acertada");
                 
                 break;
 

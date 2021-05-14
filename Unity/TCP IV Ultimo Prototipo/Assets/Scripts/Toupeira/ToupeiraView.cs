@@ -49,7 +49,8 @@ public class ToupeiraView : Elemento
 
     private void OnMouseDown()
     {
-        app.Notificar(Notificacao.Toupeira.FoiAcertada, this);
+        app.DebugView("toupeira OnMouseDown()");
+        app.Notificar(Notificacao.Toupeira.FoiAcertada, this.gameObject.GetComponentInParent<ToupeiraController>());
     }
 
     public void Subir(float velocidade, float limite)
