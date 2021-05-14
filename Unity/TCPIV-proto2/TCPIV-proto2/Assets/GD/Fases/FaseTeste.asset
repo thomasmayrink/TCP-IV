@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
-  m_Name: Fase1
+  m_Name: FaseTeste
   m_EditorClassIdentifier: 
-  toupeiras: []
+  toupeiras:
+  - {fileID: 11400000, guid: f88293b0e992a6640891b46b39b7aa98, type: 2}
+  - {fileID: 11400000, guid: 87687e5e9a357b943b03c0b90f264600, type: 2}
   bpm: 120
   armadilhas: []
-  jogadorVidas: 0
+  jogadorVidas: 3
+  musica: {fileID: 0}
+  efeitos: []

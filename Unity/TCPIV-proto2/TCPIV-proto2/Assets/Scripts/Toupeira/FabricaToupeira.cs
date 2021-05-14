@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class CriarToupeira
+public static class FabricaToupeira
 {
-    public CriarToupeira(Toupeira toupeira, ToupeiraModel model, Vector3 posicao)
+    public static void Criar(ToupeiraModel model, Toupeira toupeira, Vector3 posicao)
     {
         model.Velocidade = toupeira.velocidade;
         model.Vida = toupeira.vida;

@@ -20,4 +20,17 @@ public class Aplicacao : MonoBehaviour
             return GameObject.FindObjectsOfType<Controller>();
         }
     }
+
+    public void DebugModel(string txt)
+    {
+        Debug.Log(Utilidades.DebugComCor("Model: " + txt, "green"));
+    }
+    public void DebugView(string txt)
+    {
+        Debug.Log(Utilidades.DebugComCor("View: " + txt, "yellow"));
+    }
+    public void DebugController(string txt)
+    {
+        Debug.Log(Utilidades.DebugComCor("Controller: " + txt, "red"));
+    }
 }

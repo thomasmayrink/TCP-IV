@@ -8,4 +8,6 @@ public class Fase : ScriptableObject
     [SerializeField] public int bpm;
     [SerializeField] public Armadilha[] armadilhas;
     [SerializeField] public int jogadorVidas;
+    [SerializeField] public AudioClip musica;
+    [SerializeField] public AudioClip[] efeitos;
 }

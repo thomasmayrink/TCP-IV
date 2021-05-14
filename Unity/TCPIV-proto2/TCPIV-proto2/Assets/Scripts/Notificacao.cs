@@ -3,7 +3,7 @@ public abstract class Notificacao
     public static class Fase
     {
         public const string Inicio = "Fase_Inicio";
-        public const string CriarToupeiras = "Fase_CriarToupeiras";
+        public const string CriarToupeiras = "Fase_Criar_Toupeiras";
         public const string Fim = "Fase_Fim";
     }
  

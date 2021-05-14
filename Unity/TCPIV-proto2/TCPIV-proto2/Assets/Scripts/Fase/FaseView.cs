@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class FaseView : Elemento
 {
-    public float timer { get; set; }
-    private Estado estado;
+    private float timer;
+    public float timerMax { get; set; }
+
+    public Estado estado { get; set; }
 
     private void Start()
     {
@@ -14,35 +17,56 @@ public class FaseView : Elemento
     private void Update()
     {
         timer += Time.deltaTime;
+        //Debug.Log("Timer:" + timer);
 
         switch (estado)
         {
             case Estado.Esperando:
+                app.DebugView("fase Esperando");
+
+                if (timer >= timerMax)
+                {
+                    app.DebugView("fase timerMax: " + timerMax);
+                    timer = 0;
+                    app.Notificar(Notificacao.Fase.CriarToupeiras, this);
+                    estado = Estado.CriarToupeiras;
+                }
+
+                break;
+
+            case Estado.Rodando:
+                app.DebugView("fase Rodando");
                 break;
 
             case Estado.CriarToupeiras:
-                app.Notificar(Notificacao.Fase.CriarToupeiras, this);
+                app.DebugView("fase CriarToupeiras");
+                estado = Estado.Esperando;
                 break;
 
             case Estado.CriarArmadilhas:
-                
+                app.DebugView("fase CriarArmadilhas");
                 break;
         }
     }
-    
-    public void CriarToupeira(Toupeira[] toupeiras, int buracosTotal, int qtdBuracosOcupados, ToupeiraModel toupeiraModel, Vector3 posicao)
+
+    public void CriarToupeiras(List<GameObject> buracosDisponiveis, Toupeira[] toupeiras)
     {
-        int random = Random.Range(0, buracosTotal - qtdBuracosOcupados);
-        for (int i = 0; i < random; i++)
+        int maxInstancias = Random.Range(0, buracosDisponiveis.Count + 1);
+
+        Utilidades.SortearLista(buracosDisponiveis);
+        
+        for (int i = 0; i < maxInstancias; i++)
         {
-            CriarToupeira toupeira = new CriarToupeira(toupeiras[Random.Range(0, toupeiras.Length)], toupeiraModel, posicao);
+            Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Length)];
+            buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                                                                       toupeira);
         }
-        estado = Estado.Esperando;
     }
 
-    private enum Estado
+    public enum Estado
     {
         Esperando,
+        Rodando,
         CriarToupeiras,
         CriarArmadilhas
     }

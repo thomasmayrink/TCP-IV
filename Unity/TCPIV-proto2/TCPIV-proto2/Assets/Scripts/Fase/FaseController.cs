@@ -12,14 +12,29 @@ public class FaseController : Controller
         switch(evento_caminho)
         {
             case Notificacao.Fase.Inicio:
-                //model = GetComponent<FaseModel>();
-                //view = GetComponentInChildren<FaseView>();
-                Debug.Log("Fase Inicio");
+                //Debug.Log(Notificacao.Fase.Inicio);
+
+                model = GetComponent<FaseModel>();
+                view = GetComponentInChildren<FaseView>();
+
+                model.JogadorVidas = model.JogadorVidasIniciais;
+                model.JogadorPontos = 0;
+                //Fazer função pra lidar com cálculo do intervalo entre instâncias
+                model.IntervaloEntreInstancias = model.Bpm / 60;
+                view.timerMax = model.IntervaloEntreInstancias;
+                app.DebugController("faseView.timerMax: " + view.timerMax);
                 break;
 
             case Notificacao.Fase.CriarToupeiras:
-                //view.CriarToupeira(model.Toupeiras, model.Buracos.Length, model.QtdBuracosOcupados, (ToupeiraModel)dados[0], (Vector3)dados[1]);
-                Debug.Log("Criar Toupeiras");
+                //Debug.Log(Notificacao.Fase.CriarToupeiras);
+                if (model.BuracosDisponiveis.Count > 0)
+                {
+                    view.CriarToupeiras(model.BuracosDisponiveis, model.Toupeiras);
+                }
+                else
+                {
+                    app.DebugController("faseModel.BuracosDisponiveis.Count: " + model.BuracosDisponiveis.Count);
+                }
                 break;
 
             case Notificacao.Fase.Fim:

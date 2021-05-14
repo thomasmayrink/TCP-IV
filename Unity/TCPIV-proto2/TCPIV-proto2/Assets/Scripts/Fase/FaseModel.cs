@@ -4,6 +4,7 @@ using UnityEngine;
 public class FaseModel : Elemento
 {
     [SerializeField] private Fase fase;
+    private List<GameObject> buracosDisponiveis;
 
     public Toupeira[] Toupeiras
     {
@@ -33,10 +34,6 @@ public class FaseModel : Elemento
             return fase.jogadorVidas;
         }
     }
-    public int JogadorVidas { get; set; }
-    public int QtdBuracosOcupados { get; set; }
-    public int Pontos { get; set; }
-    public float IntervaloEntreInstancias { get; set; }
     public GameObject[] Buracos
     {
         get
@@ -44,4 +41,31 @@ public class FaseModel : Elemento
             return GameObject.FindGameObjectsWithTag("Buraco");
         }
     }
+    public List<GameObject> BuracosDisponiveis
+    {
+        get
+        {
+            if (buracosDisponiveis == null)
+            {
+                buracosDisponiveis = new List<GameObject>();
+            }
+            else
+            {
+                buracosDisponiveis.Clear();
+            }
+
+            foreach(GameObject go in Buracos)
+            {
+                if (!go.GetComponent<Buraco>().EstaOcupado)
+                {
+                    buracosDisponiveis.Add(go);
+                }
+            }
+            return buracosDisponiveis;
+        }
+    }
+
+    public int JogadorVidas { get; set; }
+    public int JogadorPontos { get; set; }
+    public float IntervaloEntreInstancias { get; set; }
 }
