@@ -1,15 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-//Separar Model do ScriptableObject
-public enum Notificacao
+public abstract class Notificacao
 {
-    JogoIniciado,
-    JogadorAcertou,
-    JogadorErrou,
-    JogadorUsouPowerUp,
-    ToupeiraFoiAcertada,
-    ToupeiraMorreu,
-    ToupeiraFugiu,
-    JogoAcabou
+    public static class Fase
+    {
+        public const string Inicio = "Fase_Inicio";
+        public const string CriarToupeiras = "Fase_CriarToupeiras";
+        public const string Fim = "Fase_Fim";
+    }
+ 
+    public static class Toupeira
+    {
+        //public const string Esperando = "Toupeira_Esperando";
+        public const string Subindo = "Toupeira_Subindo";
+        public const string Idle = "Toupeira_Idle";
+        //public const string Descendo = "Toupeira_Descendo";
+        public const string FoiAcertada = "Toupeira_Foi_Acertada";
+        public const string Destruir = "Toupeira_Destruir";
+    }
 }

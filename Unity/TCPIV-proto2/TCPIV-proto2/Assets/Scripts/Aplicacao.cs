@@ -3,27 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Aplicacao : MonoBehaviour
-{ 
-    public Fase faseModel { get; set; }
-    public FaseController faseController { get; set; }
-
-    public Toupeira[] toupeiraModel { get; set; }
-    public ToupeiraView[] toupeiraView { get; set; }
-    public ToupeiraController[] toupeiraController { get; set; }
-
-    //public Buraco buraco { get; set; }
-
-    public void Notificar(Notificacao evento_caminho, Object alvo)
+{
+    public void Notificar(string evento_caminho, Object alvo, params object[] dados)
     {
-        Controller[] controllers = GetControllers();
+        Controller[] controllers = Controllers;
         foreach(Controller c in controllers)
         {
-            c.OnNotificacao(evento_caminho, alvo);
+            c.OnNotificacao(evento_caminho, alvo, dados);
         }
     }
 
-    private Controller[] GetControllers()
+    private Controller[] Controllers 
     {
-        return GameObject.FindObjectsOfType<Controller>();
+        get
+        {
+            return GameObject.FindObjectsOfType<Controller>();
+        }
     }
 }

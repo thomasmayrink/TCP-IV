@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Controller : Elemento
 {
-    public abstract void OnNotificacao(Notificacao evento_caminho, Object alvo);
+    public abstract void OnNotificacao(string evento_caminho, Object alvo, params object[] dados);
 }

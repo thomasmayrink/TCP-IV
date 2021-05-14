@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
   m_Name: Fase1
   m_EditorClassIdentifier: 
-  toupeiras:
-  - {fileID: 11400000, guid: f88293b0e992a6640891b46b39b7aa98, type: 2}
+  toupeiras: []
   bpm: 120
   armadilhas: []
-  vidas: 0
-  QtdBuracosOcupados: 9
+  jogadorVidas: 0
