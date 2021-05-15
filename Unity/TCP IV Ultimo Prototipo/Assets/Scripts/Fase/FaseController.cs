@@ -21,19 +21,18 @@ public class FaseController : Controller
                 model.JogadorPontos = 0;
                 //Fazer função pra lidar com cálculo do intervalo entre instâncias
                 model.IntervaloEntreInstancias = model.Bpm / 60;
-                view.timerMax = model.IntervaloEntreInstancias;
-                app.DebugController("faseView.timerMax: " + view.timerMax);
+                view.timerInstanciasMax = model.IntervaloEntreInstancias;
+                view.timerFaseMax = model.TamanhoDaMusica;
                 break;
 
             case Notificacao.Fase.CriarToupeiras:
-                //Debug.Log(Notificacao.Fase.CriarToupeiras);
                 if (model.BuracosDisponiveis.Count > 0)
                 {
-                    view.CriarToupeiras(model.BuracosDisponiveis, model.Toupeiras);
+                    view.CriarToupeiras(model.MaxToupeiras, model.BuracosDisponiveis, model.Toupeiras);
                 }
                 else
                 {
-                    app.DebugController("faseModel.BuracosDisponiveis.Count: " + model.BuracosDisponiveis.Count);
+                    app.DebugFase("Controller model.BuracosDisponiveis.Count: " + model.BuracosDisponiveis.Count);
                 }
                 break;
 

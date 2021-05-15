@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ToupeiraView : Elemento
 {
+    private Animator animator;
     private Estado estado;
     private Vector3 movimento;
     private int dancaId;
@@ -10,7 +11,11 @@ public class ToupeiraView : Elemento
 
     public void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         estado = Estado.Esperando;
+        animator.speed = app.faseModel.Bpm / 120.0f;
+        app.DebugToupeira("speed: " + animator.speed);
+
         app.Notificar(Notificacao.Toupeira.Subindo, this);
     }
 
@@ -49,8 +54,8 @@ public class ToupeiraView : Elemento
 
     private void OnMouseDown()
     {
-        app.DebugView("toupeira OnMouseDown()");
-        app.Notificar(Notificacao.Toupeira.FoiAcertada, this.gameObject.GetComponentInParent<ToupeiraController>());
+        app.DebugToupeira("View OnMouseDown()");
+        app.Notificar(Notificacao.Toupeira.FoiAcertada, this);
     }
 
     public void Subir(float velocidade, float limite)

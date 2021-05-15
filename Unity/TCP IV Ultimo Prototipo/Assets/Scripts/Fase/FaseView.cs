@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 public class FaseView : Elemento
 {
-    private float timer;
-    public float timerMax { get; set; }
+    private float timerInstancias;
+    private float timerFase;
+    public float timerInstanciasMax { get; set; }
+    public float timerFaseMax { get; set; }
 
-    public Estado estado { get; set; }
+    private Estado estado { get; set; }
 
     private void Start()
     {
@@ -16,57 +18,67 @@ public class FaseView : Elemento
 
     private void Update()
     {
-        timer += Time.deltaTime;
-        //Debug.Log("Timer:" + timer);
+        timerInstancias += Time.deltaTime;
+        timerFase += Time.deltaTime;
 
         switch (estado)
         {
             case Estado.Esperando:
-                app.DebugView("fase Esperando");
+                app.DebugFase("View Esperando");
 
-                if (timer >= timerMax)
+                if (timerInstancias >= timerInstanciasMax)
                 {
-                    app.DebugView("fase timerMax: " + timerMax);
-                    timer = 0;
+                    timerInstancias = 0;
                     app.Notificar(Notificacao.Fase.CriarToupeiras, this);
                     estado = Estado.CriarToupeiras;
                 }
 
-                break;
-
-            case Estado.Rodando:
-                app.DebugView("fase Rodando");
+                if (timerFase >= timerFaseMax)
+                {
+                    app.Notificar(Notificacao.Fase.Fim, this);
+                }
                 break;
 
             case Estado.CriarToupeiras:
-                app.DebugView("fase CriarToupeiras");
+                app.DebugFase("View CriarToupeiras");
                 estado = Estado.Esperando;
                 break;
 
             case Estado.CriarArmadilhas:
-                app.DebugView("fase CriarArmadilhas");
+                app.DebugFase("View CriarArmadilhas");
                 break;
         }
     }
 
-    public void CriarToupeiras(List<GameObject> buracosDisponiveis, Toupeira[] toupeiras)
+    public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, Toupeira[] toupeiras)
     {
-        int maxInstancias = Random.Range(0, buracosDisponiveis.Count + 1);
+        int maxInstancias = Random.Range(0, maxToupeiras + 1);
 
         Utilidades.SortearLista(buracosDisponiveis);
         
-        for (int i = 0; i < maxInstancias; i++)
+        if (maxInstancias < buracosDisponiveis.Count)
         {
-            Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Length)];
-            buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
-                                                                       toupeira);
+            for (int i = 0; i < maxInstancias; i++)
+            {
+                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Length)];
+                buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                                                                           toupeira);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < buracosDisponiveis.Count; i++)
+            {
+                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Length)];
+                buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                                                                           toupeira);
+            }
         }
     }
 
     public enum Estado
     {
         Esperando,
-        Rodando,
         CriarToupeiras,
         CriarArmadilhas
     }

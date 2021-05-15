@@ -13,11 +13,32 @@ public class FaseModel : Elemento
             return fase.toupeiras;
         }
     }
+    public int MaxToupeiras
+    {
+        get
+        {
+            return fase.maxToupeiras;
+        }
+    }
     public int Bpm
     {
         get
         {
             return fase.bpm;
+        }
+    }
+    public AudioClip Musica
+    {
+        get
+        {
+            return fase.musica;
+        }
+    }
+    public float TamanhoDaMusica
+    {
+        get
+        {
+            return fase.musica.length;
         }
     }
     public Armadilha[] Armadilhas 
