@@ -1,1 +1,1 @@
-TCP problema: Objeto não fica null quando é destruído.
+Acho que a notificação "Subir" está sendo passada pras toupeiras q estejam descendo nesse momento. (Lembrar de tentar com view == alvo)

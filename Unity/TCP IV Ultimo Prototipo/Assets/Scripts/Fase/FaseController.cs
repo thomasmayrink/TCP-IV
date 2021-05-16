@@ -29,8 +29,9 @@ public class FaseController : Controller
                         view.timerFaseMax = model.TamanhoDaMusica;
                         break;
 
+                    //Calculo para fase infinita
                     case CondicaoDeFimDeFase.JogadorSemVidas:
-                        view.timerFaseMax = 100000000000000;
+                        view.timerFaseMax = 10000000000000000000;
                         break;
                 }
                 break;
@@ -50,6 +51,11 @@ public class FaseController : Controller
                 //Ir para tela de game over
                 app.DebugFase("Fase Fim");
                 app.Notificar(Notificacao.Toupeira.Destruir, model);
+
+                //APAGAR
+                GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>().enabled = false;
+                Destroy(GameObject.FindGameObjectWithTag("Chao"));
+                //APAGAR
 
                 break;
         }

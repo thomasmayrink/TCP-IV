@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GabrielCena1.unity
+    guid: 43d6a37a4eb3f94448082e4c0fad567b
   m_configObjects: {}

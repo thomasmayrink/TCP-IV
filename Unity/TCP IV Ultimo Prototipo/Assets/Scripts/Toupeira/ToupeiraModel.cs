@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ToupeiraModel : Elemento
 {
-    //public float Velocidade { get; set; }
+    public float Velocidade { get; set; }
     public int Vida { get; set; }
     public int[] DancasId { get; set; }
     public Comportamento Comportamento { get; set; }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 1
   pontos: 10
+  velocidade: 15
   tempoNaTela: 0
   dancasId: 
   toupeiraPrefab: {fileID: 4402650871268588665, guid: 1afb3b379bfb07845b3c58885aab1e20, type: 3}

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4a09bdf98c4e74dad356b2d057e294, type: 3}
   m_Name: Fofo
   m_EditorClassIdentifier: 
-  velocidade: 5
   vida: 1
   pontos: 1
+  velocidade: 10
+  tempoNaTela: 0
   dancasId: 01000000
   toupeiraPrefab: {fileID: 4402650871268588665, guid: f7e83d3fadd3d6440a9348374efbb10f, type: 3}
   comportamento: 3

@@ -14,9 +14,8 @@ public class ToupeiraController : Controller
                 view = GetComponentInChildren<ToupeiraView>();
                 
                 model.PodeSerAcertada = false;
-                //              model.FoiAcertada = false;
 
-                view.Subir(10, model.Buraco.transform.position.y + 1.55f);
+                view.Subir(model.Velocidade, model.Buraco.transform.position.y + 1.55f);
                 break;
 
             case Notificacao.Toupeira.Idle:

@@ -48,7 +48,6 @@ public class ToupeiraView : Elemento
                 {
                     app.Notificar(Notificacao.Toupeira.Destruir, this);
                 }
-                //Mover até determinado ponto e Destruir
                 break;
         }
     }
