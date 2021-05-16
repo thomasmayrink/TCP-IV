@@ -112,7 +112,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05a2fd82f0f6a2d4099258d035b6b92f, type: 2}
+  - {fileID: 2100000, guid: 536dd67f0dcbd0a4886a37eb0e5f3100, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -668,7 +668,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1c120dcefd28a124883eb29cf68ed0e2, type: 2}
+  - {fileID: 2100000, guid: 29438171fbdc8fe4fbde044ed7b272b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -824,7 +824,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5f141f5b275172445a24c83e7fd79a36, type: 2}
+  - {fileID: 2100000, guid: c47020f38fa13e945b1db5101d7fa7f1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1046,7 +1046,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2af59766a7ec801409e9cb1d937ea220, type: 2}
+  - {fileID: 2100000, guid: c30dd37b2040c0f48a3f2dc2ea61c6a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1204,7 +1204,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ea7f4a7e6d832a43995da2e309da3fc, type: 2}
+  - {fileID: 2100000, guid: e414461cb9c295445a13a6cdb3d374f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1513,7 +1513,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 285e63fa844df214b949ac4e900badbf, type: 2}
+  - {fileID: 2100000, guid: a7bef9d0f2bccca4a8ef96bbbc504dbe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 1935938324524893551}
   - component: {fileID: 8565898616314775597}
   m_Layer: 0
-  m_Name: Fofo
+  m_Name: TesteLider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2185,7 +2185,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e46fc7cece27f949afa07af09ffb732, type: 2}
+  - {fileID: 2100000, guid: b8efed22a43f8a44f88c1643be717396, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

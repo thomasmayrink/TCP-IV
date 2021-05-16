@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f4a09bdf98c4e74dad356b2d057e294, type: 3}
-  m_Name: New Toupeira
+  m_Name: GabrielTesteDoido
   m_EditorClassIdentifier: 
-  velocidade: 0
-  vida: 0
-  pontos: 0
+  vida: 3
+  pontos: 4
+  tempoNaTela: 0
   dancasId: 
-  toupeiraPrefab: {fileID: 4402650871268588665, guid: f7e83d3fadd3d6440a9348374efbb10f, type: 3}
-  comportamento: 0
+  toupeiraPrefab: {fileID: 4402650871268588665, guid: cb8d67d123a62894ea74550fa902e4b0, type: 3}
+  comportamento: 1

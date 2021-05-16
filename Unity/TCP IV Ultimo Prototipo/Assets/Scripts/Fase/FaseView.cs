@@ -37,6 +37,7 @@ public class FaseView : Elemento
                 {
                     app.Notificar(Notificacao.Fase.Fim, this);
                 }
+                
                 break;
 
             case Estado.CriarToupeiras:
@@ -50,17 +51,21 @@ public class FaseView : Elemento
         }
     }
 
-    public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, Toupeira[] toupeiras)
+    public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras)
     {
         int maxInstancias = Random.Range(0, maxToupeiras + 1);
+        if (maxInstancias >= (maxToupeiras + 1) / 2) maxInstancias = Random.Range(0, maxToupeiras + 1);
+
+        //Levar raridades em consideracao (atribuir raridade à não instanciar ninguém(0))
 
         Utilidades.SortearLista(buracosDisponiveis);
+
         
         if (maxInstancias < buracosDisponiveis.Count)
         {
             for (int i = 0; i < maxInstancias; i++)
             {
-                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Length)];
+                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Count)];
                 buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
                                                                            toupeira);
             }
@@ -69,7 +74,7 @@ public class FaseView : Elemento
         {
             for (int i = 0; i < buracosDisponiveis.Count; i++)
             {
-                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Length)];
+                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Count)];
                 buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
                                                                            toupeira);
             }

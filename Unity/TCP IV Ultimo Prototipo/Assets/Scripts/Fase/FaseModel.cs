@@ -6,7 +6,7 @@ public class FaseModel : Elemento
     [SerializeField] private Fase fase;
     private List<GameObject> buracosDisponiveis;
 
-    public Toupeira[] Toupeiras
+    public List<Toupeira> Toupeiras
     {
         get
         {
@@ -39,6 +39,13 @@ public class FaseModel : Elemento
         get
         {
             return fase.musica.length;
+        }
+    }
+    public CondicaoDeFimDeFase CondicaoDeFimDeFase
+    {
+        get
+        {
+            return fase.condicaoDeFimDeFase;
         }
     }
     public Armadilha[] Armadilhas 

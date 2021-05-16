@@ -11,12 +11,12 @@ public class ToupeiraView : Elemento
 
     public void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
-        estado = Estado.Esperando;
-        animator.speed = app.faseModel.Bpm / 120.0f;
-        app.DebugToupeira("speed: " + animator.speed);
-
         app.Notificar(Notificacao.Toupeira.Subindo, this);
+
+        animator = gameObject.GetComponent<Animator>();
+
+        estado = Estado.Subindo;
+        animator.speed = app.faseModel.Bpm / 120.0f;        
     }
 
     private void Update()
@@ -24,11 +24,12 @@ public class ToupeiraView : Elemento
         switch (estado)
         {
             case Estado.Subindo:
-                //transform.position += movimento;
-                //if (transform.position.y >= limite)
-                //{
-                //  estado = Estado.Idle;
-                //}
+                if (transform.position.y >= limite)
+                {
+                    estado = Estado.Idle;
+                    app.Notificar(Notificacao.Toupeira.Idle, this);
+                }
+                gameObject.transform.position += movimento;
                 break;
 
             case Estado.Idle:
@@ -42,11 +43,11 @@ public class ToupeiraView : Elemento
                 break;
 
             case Estado.Descendo:
-                //transform.position -= movimento;
-                //if (transform.position.y <= -limite * 2)
-                //{
-                //    app.Notificar(Notificacao.Toupeira.Destruir, this);
-                //}
+                transform.position -= movimento;
+                if (transform.position.y <= -limite * 2)
+                {
+                    app.Notificar(Notificacao.Toupeira.Destruir, this);
+                }
                 //Mover até determinado ponto e Destruir
                 break;
         }
@@ -54,7 +55,6 @@ public class ToupeiraView : Elemento
 
     private void OnMouseDown()
     {
-        app.DebugToupeira("View OnMouseDown()");
         app.Notificar(Notificacao.Toupeira.FoiAcertada, this);
     }
 

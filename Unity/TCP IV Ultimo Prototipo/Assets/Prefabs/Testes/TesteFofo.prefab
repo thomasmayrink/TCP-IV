@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 1935938324524893551}
   - component: {fileID: 8565898616314775597}
   m_Layer: 0
-  m_Name: Fofo
+  m_Name: TesteFofo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

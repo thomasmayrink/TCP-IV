@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
-  m_Name: New Fase
+  m_Name: GabrielTeste
   m_EditorClassIdentifier: 
   toupeiras:
-  - {fileID: 11400000, guid: 83b08233e0d7bbf4b9ef3d2fe5806045, type: 2}
-  - {fileID: 11400000, guid: 8b57c4dd0818d5e4abd9580a3acc1938, type: 2}
-  - {fileID: 11400000, guid: f88293b0e992a6640891b46b39b7aa98, type: 2}
-  maxToupeiras: 3
+  - {fileID: 11400000, guid: 7fafafe6aa4d92b4e89307cf8cec1dcf, type: 2}
+  - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
+  - {fileID: 11400000, guid: 4869d690f342f1f43816f9f4c7881f4b, type: 2}
+  - {fileID: 11400000, guid: 0ba3f08af80dc674b8689c9c6a8824cb, type: 2}
+  maxToupeiras: 6
   bpm: 70
   armadilhas: []
-  jogadorVidas: 0
+  jogadorVidas: 3
   musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
   efeitos: []
+  condicaoDeFimDeFase: 1

@@ -12,43 +12,56 @@ public class ToupeiraController : Controller
             case Notificacao.Toupeira.Subindo:
                 model = GetComponent<ToupeiraModel>();
                 view = GetComponentInChildren<ToupeiraView>();
+                
+                model.PodeSerAcertada = false;
+                //              model.FoiAcertada = false;
 
-                model.PodeSerAcertada = true;
-                model.FoiAcertada = false;
-
-                //view.Subir(model.Velocidade, model.PosicaoInicial.y + 1.5f))
-
-                //Debug.Log("Subindo model.FoiAcertada: " + model.FoiAcertada);
+                view.Subir(10, model.Buraco.transform.position.y + 1.55f);
                 break;
 
             case Notificacao.Toupeira.Idle:
                 model.PodeSerAcertada = true;
 
+                switch(model.Comportamento)
+                {
+                    case Comportamento.Doido:
+                        break;
+
+                    case Comportamento.Fofo:
+                        break;
+
+                    case Comportamento.Lider:
+                        break;
+
+                    case Comportamento.PoucosAmigos:
+                        break;
+                }
+
                 break;
 
             case Notificacao.Toupeira.FoiAcertada:
-                app.DebugToupeira("Notificacao Foi Acertada: " + alvo);
-                if (model.PodeSerAcertada) 
+                if (view == alvo && model.PodeSerAcertada)
                 {
-                    app.DebugToupeira("Controller model.Vida: " + model.Vida);
                     model.Vida--;
-                    model.PodeSerAcertada = false;
-                    app.DebugToupeira("Controller foi acertada");
+                    if (model.Vida <= 0)
+                    {
+                        model.PodeSerAcertada = false;
+                        view.Descer();
+                    }
                 }
-                else
-                /*
-                if (model.Vida <= 0)
-                {
-                    app.Notificar(Notificacao.Toupeira.Destruir, this);
-                }
-                */
-                app.DebugToupeira("Controller não foi acertada");
-                
                 break;
 
             case Notificacao.Toupeira.Destruir:
-                //Destroy(gameObject);
-                Debug.Log(Notificacao.Toupeira.Destruir);
+                if (alvo == view)
+                {
+                    model.Buraco.GetComponent<Buraco>().Desocupar();
+                    Destroy(gameObject);
+                }
+                if (alvo == app.faseModel)
+                {
+                    app.DebugToupeira("faseModel Destruir");
+                    Destroy(gameObject);
+                }
                 break;
         }
     }

@@ -2,12 +2,13 @@ using UnityEngine;
 
 public static class FabricaToupeira
 {
-    public static void Criar(ToupeiraModel model, Toupeira toupeira, Vector3 posicao)
+    public static void Criar(ToupeiraModel model, Toupeira toupeira, GameObject buraco) // Vector3 posicao)
     {
-        model.Velocidade = toupeira.velocidade;
+        //model.Velocidade = toupeira.velocidade;
         model.Vida = toupeira.vida;
         model.DancasId = toupeira.dancasId;
         model.Comportamento = toupeira.comportamento;
-        model.PosicaoInicial = posicao;
+        model.Buraco = buraco;
+//        model.PosicaoInicial = posicao;
     }
 }
