@@ -2,6 +2,6 @@ Acho que a notificação "Subir" está sendo passada pras toupeiras q estejam de
 
 PARA COMPLETAR O FUNCIONAMENTO BÁSICO DAS TOUPEIRAS:
 	- Danças (OK)
-	- Toupeira descer se não for acertada
+	- Toupeira descer se não for acertada (OK)
 	- Usar Comportamento (Fofo Ok, Doido Ok, Poucos Amigos, Líder, nessa ordem)
-	- Animações de dano e de dano de morte
+	- Animações de dano (Não-OK) e de dano de morte (OK)
