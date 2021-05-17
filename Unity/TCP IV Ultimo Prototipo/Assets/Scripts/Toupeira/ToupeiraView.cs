@@ -4,6 +4,15 @@ public class ToupeiraView : Elemento
 {
     private Animator animator;
     private Estado estado;
+
+    public Estado EstadoAtual
+    {
+        get
+        {
+            return estado;
+        }
+    }
+
     private Vector3 movimento;
     private float limite;
     private Comportamento comportamento;
@@ -29,12 +38,17 @@ public class ToupeiraView : Elemento
         switch (estado)
         {
             case Estado.Surgindo:
-                if (transform.position.y >= limite)
+                if (transform.position.y <= limite)
                 {
-                    //estado = Estado.Idle;
-                    app.Notificar(Notificacao.Toupeira.Idle, this);
+                    gameObject.transform.position += movimento;
                 }
-                gameObject.transform.position += movimento;
+                else
+                {
+                    if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.3f)
+                    {
+                        app.Notificar(Notificacao.Toupeira.Idle, this);
+                    }
+                }
                 break;
 
             case Estado.Idle:
@@ -43,7 +57,7 @@ public class ToupeiraView : Elemento
                 if (animator.GetBool("Acertou"))
                 {
                     timerAnimacao += Time.deltaTime;
-                    if (timerAnimacao >= 0.25f)
+                    if (timerAnimacao >= 0.5f)
                     {
                         animator.SetBool("Acertou", false);
                         timerAnimacao = 0;
@@ -53,11 +67,13 @@ public class ToupeiraView : Elemento
 
                 if (animator.GetBool("Matou"))
                 {
-                    app.DebugToupeira("View: animatorGetBool " + animator.GetBool("Acertou"));
-                    if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.75f)
+                    timerAnimacao += Time.deltaTime;
+                    if (timerAnimacao >= 0.5f)
                     {
                         Descer();
-                    }
+                        //animator.SetBool("Matou", false);
+                        //app.Notificar(Notificacao.Toupeira.Idle, this);
+                    }                   
                 }
 
                 switch (comportamento)
@@ -85,7 +101,6 @@ public class ToupeiraView : Elemento
                 break;
 
             case Estado.Descendo:
-
                 transform.position -= movimento;
                 if (transform.position.y <= -limite * 2)
                 {
@@ -138,8 +153,7 @@ public class ToupeiraView : Elemento
         audioSource.clip = som;
         audioSource.Play();
     }
-
-    private enum Estado
+    public enum Estado
     {
       //  Esperando,
         Surgindo,

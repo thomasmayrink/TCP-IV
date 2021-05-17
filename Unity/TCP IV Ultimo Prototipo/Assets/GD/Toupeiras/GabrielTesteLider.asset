@@ -15,7 +15,7 @@ MonoBehaviour:
   vida: 1
   pontos: 10
   raridade: 5
-  velocidade: 15
+  velocidade: 10
   temposNaTela: 1
   dancasId: 0100000002000000
   comportamento: 1

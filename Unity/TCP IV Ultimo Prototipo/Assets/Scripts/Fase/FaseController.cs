@@ -22,13 +22,7 @@ public class FaseController : Controller
                 view.batidasPorSegundo = model.BatidasPorSegundo;
                 view.timerInstanciasMax = view.batidasPorSegundo;
 
-                view.tempos = new float[]
-                {
-                    view.batidasPorSegundo / 8,
-                    view.batidasPorSegundo / 4,
-                    view.batidasPorSegundo / 2,
-                    view.batidasPorSegundo
-                };
+                view.tempos = model.TemposCriarToupeiras;
 
                 switch (model.CondicaoDeFimDeFase)
                 {
@@ -61,10 +55,16 @@ public class FaseController : Controller
                 app.DebugFase("Fase Fim");
                 app.Notificar(Notificacao.Toupeira.Destruir, model);
 
+                #region APAGAR
                 //APAGAR
                 GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>().enabled = false;
                 Destroy(GameObject.FindGameObjectWithTag("Chao"));
+                foreach(GameObject b in model.Buracos)
+                {
+                    Destroy(b);
+                }
                 //APAGAR
+                #endregion
 
                 break;
         }

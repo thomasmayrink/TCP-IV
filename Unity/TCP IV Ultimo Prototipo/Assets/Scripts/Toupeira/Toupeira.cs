@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "WhackAMole/Toupeira")]
 public class Toupeira : ScriptableObject
 {
     [SerializeField] public int vida;

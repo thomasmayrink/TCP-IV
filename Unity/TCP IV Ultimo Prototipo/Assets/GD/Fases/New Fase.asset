@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
-  m_Name: GabrielTestesComportamentos
+  m_Name: New Fase
   m_EditorClassIdentifier: 
   toupeiras:
-  - {fileID: 11400000, guid: 7fafafe6aa4d92b4e89307cf8cec1dcf, type: 2}
-  - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
-  maxToupeiras: 2
+  - {fileID: 11400000, guid: 10b403f08abaea747bf5a2b8e3a0ae74, type: 2}
+  maxToupeiras: 0
   temposCriarToupeiras:
+  - 0.25
+  - 0.5
   - 1
   - 2
-  musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
-  bpm: 70
+  musica: {fileID: 0}
+  bpm: 120
   armadilhas: []
   jogadorVidas: 3
   efeitos: []
-  fimDeFase: 1
+  fimDeFase: 0

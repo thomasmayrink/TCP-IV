@@ -11,7 +11,7 @@ public class ToupeiraModel : Elemento
     public Comportamento Comportamento { get; set; }
     public GameObject Buraco { get; set; }
     public bool PodeSerAcertada { get; set; }
-    public bool EstaDescendo { get; set; }
+    //public bool EstaDescendo { get; set; }
     public AudioClip SomAoSurgir { get; set; }
     public AudioClip SomPancada { get; set; }
 }

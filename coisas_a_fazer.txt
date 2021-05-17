@@ -1,0 +1,11 @@
+Acho que a notificação "Subir" está sendo passada pras toupeiras q estejam descendo nesse momento. (Lembrar de tentar com view == alvo)
+
+1. PARA COMPLETAR O FUNCIONAMENTO BÁSICO DAS TOUPEIRAS:
+	- Raridade
+	- Comportamentos: poucos amigos e líder, nessa ordem
+
+2. Armadilha (pra finalizar os comportamentos das toupeiras)
+
+3. Dados Jogador (vida, pontos)
+
+4. Power-up

@@ -12,9 +12,9 @@ public class ToupeiraController : Controller
             case Notificacao.Toupeira.Surgindo:
                 model = GetComponent<ToupeiraModel>();
                 view = GetComponentInChildren<ToupeiraView>();
-                if (!model.EstaDescendo)
+                if (view.EstadoAtual == ToupeiraView.Estado.Surgindo)
                 {
-                    if (view == alvo)
+                    if (alvo == view)
                     {
                         view.SetTempoNaTela(model.TemposNaTela * app.faseModel.BatidasPorSegundo);
                         view.TocarSom(model.SomAoSurgir);
@@ -24,22 +24,23 @@ public class ToupeiraController : Controller
                 break;
 
             case Notificacao.Toupeira.Idle:
-                if (view == alvo)
+                if (alvo == view)
                 {
-                    view.Idle(model.DancasId, model.Comportamento);
                     model.PodeSerAcertada = true;
+                    view.Idle(model.DancasId, model.Comportamento);
                 }
                 break;
 
             case Notificacao.Toupeira.FoiAcertada:
-                if (view == alvo && model.PodeSerAcertada)
+                if (alvo == view && model.PodeSerAcertada)
                 {
                     view.TocarSom(model.SomPancada);
                     model.Vida--;
+
                     if (model.Vida <= 0)
                     {
                         model.PodeSerAcertada = false;
-                        model.EstaDescendo = true;
+                        //model.EstaDescendo = true;
                         view.Acertar("Matou", true);
                     }
                     else
@@ -51,9 +52,10 @@ public class ToupeiraController : Controller
                 break;
 
             case Notificacao.Toupeira.Descendo:
-                if (view == alvo)
+                if (alvo == view)
                 {
-                    model.EstaDescendo = true;
+                    model.PodeSerAcertada = false;
+                    //model.EstaDescendo = true;
                 }
                 break;
 

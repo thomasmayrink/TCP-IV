@@ -20,13 +20,6 @@ public class FaseModel : Elemento
             return fase.maxToupeiras;
         }
     }
-    public int Bpm
-    {
-        get
-        {
-            return fase.bpm;
-        }
-    }
     public AudioClip Musica
     {
         get
@@ -41,11 +34,28 @@ public class FaseModel : Elemento
             return fase.musica.length;
         }
     }
+    public int Bpm
+    {
+        get
+        {
+            return fase.bpm;
+        }
+    }
+    public float[] TemposCriarToupeiras
+    {
+        get
+        {
+            return fase.temposCriarToupeiras;
+        }
+        set
+        {
+        }
+    }
     public CondicaoDeFimDeFase CondicaoDeFimDeFase
     {
         get
         {
-            return fase.condicaoDeFimDeFase;
+            return fase.fimDeFase;
         }
     }
     public Armadilha[] Armadilhas 

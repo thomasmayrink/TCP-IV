@@ -13,7 +13,7 @@ public static class FabricaToupeira
         model.Comportamento = toupeira.comportamento;
         model.Buraco = buraco;
         model.PodeSerAcertada = false;
-        model.EstaDescendo = false;
+        //model.EstaDescendo = false;
 
         model.SomAoSurgir = toupeira.somAoSurgir;
         model.SomPancada = toupeira.somPancada;
