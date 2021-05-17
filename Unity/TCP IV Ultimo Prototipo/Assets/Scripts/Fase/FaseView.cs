@@ -5,13 +5,16 @@ public class FaseView : Elemento
 {
     private float timerInstancias;
     private float timerFase;
+    public float batidasPorSegundo { get; set; }
     public float timerInstanciasMax { get; set; }
+
+    public float[] tempos { get; set; }
     public float timerFaseMax { get; set; }
 
     private Estado estado { get; set; }
 
     private void Start()
-    {
+    {        
         estado = Estado.Esperando;
         app.Notificar(Notificacao.Fase.Inicio, this);
     }
@@ -32,16 +35,20 @@ public class FaseView : Elemento
                     app.Notificar(Notificacao.Fase.CriarToupeiras, this);
                     estado = Estado.CriarToupeiras;
                 }
-
-                if (timerFase >= timerFaseMax)
-                {
-                    app.Notificar(Notificacao.Fase.Fim, this);
-                }
                 
+                if (timerFaseMax != 0)
+                {
+                    if (timerFase >= timerFaseMax)
+                    {
+                        app.Notificar(Notificacao.Fase.Fim, this);
+                    }
+                }
                 break;
 
             case Estado.CriarToupeiras:
                 app.DebugFase("View CriarToupeiras");
+                SortearTempo();
+                app.DebugFase("View: timerInstanciasMax = " + timerInstanciasMax);
                 estado = Estado.Esperando;
                 break;
 
@@ -51,10 +58,16 @@ public class FaseView : Elemento
         }
     }
 
+    public void SortearTempo()
+    {
+        timerInstanciasMax = tempos[Random.Range(0, tempos.Length)];
+    }
+
     public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras)
     {
         int maxInstancias = Random.Range(0, maxToupeiras + 1);
-        if (maxInstancias >= (maxToupeiras + 1) / 2) maxInstancias = Random.Range(0, maxToupeiras + 1);
+        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras + 1);
+        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras + 1);
 
         //Levar raridades em consideracao (atribuir raridade à não instanciar ninguém(0))
 

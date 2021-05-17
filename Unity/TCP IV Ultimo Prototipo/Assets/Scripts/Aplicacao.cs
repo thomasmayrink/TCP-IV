@@ -5,8 +5,8 @@ using UnityEngine;
 public class Aplicacao : MonoBehaviour
 {
     public FaseModel faseModel { get; set; }
-
-    private AudioSource musicaSource;
+    public AudioSource musicaSource { get; set; }
+    
     private AudioClip musica;
 
     private void Start()

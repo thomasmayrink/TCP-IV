@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 3
   pontos: 4
+  raridade: 0
   velocidade: 15
-  tempoNaTela: 0
-  dancasId: 
-  toupeiraPrefab: {fileID: 4402650871268588665, guid: cb8d67d123a62894ea74550fa902e4b0, type: 3}
+  temposNaTela: 1
+  dancasId: 01000000
   comportamento: 1
+  toupeiraPrefab: {fileID: 4402650871268588665, guid: cb8d67d123a62894ea74550fa902e4b0, type: 3}
+  somAoSurgir: {fileID: 8300000, guid: 9cd7d29299f38f14ebcc1881ada78801, type: 3}
+  somPancada: {fileID: 8300000, guid: f1dcac154d9186e47ad483e2b668c2f5, type: 3}

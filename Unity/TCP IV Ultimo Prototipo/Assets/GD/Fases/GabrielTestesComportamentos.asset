@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
-  m_Name: GabrielTeste
+  m_Name: GabrielTestesComportamentos
   m_EditorClassIdentifier: 
   toupeiras:
   - {fileID: 11400000, guid: 7fafafe6aa4d92b4e89307cf8cec1dcf, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
-  - {fileID: 11400000, guid: 4869d690f342f1f43816f9f4c7881f4b, type: 2}
-  - {fileID: 11400000, guid: 0ba3f08af80dc674b8689c9c6a8824cb, type: 2}
-  maxToupeiras: 1
+  maxToupeiras: 2
   bpm: 70
   armadilhas: []
   jogadorVidas: 3

@@ -95,5 +95,5 @@ public class FaseModel : Elemento
 
     public int JogadorVidas { get; set; }
     public int JogadorPontos { get; set; }
-    public float IntervaloEntreInstancias { get; set; }
+    public float BatidasPorSegundo { get; set; }
 }

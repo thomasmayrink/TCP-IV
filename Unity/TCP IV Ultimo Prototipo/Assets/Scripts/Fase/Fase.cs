@@ -16,5 +16,5 @@ public class Fase : ScriptableObject
 public enum CondicaoDeFimDeFase
 {
     JogadorSemVidas,
-    FimDaMusica
+    FimDaMusica,
 }

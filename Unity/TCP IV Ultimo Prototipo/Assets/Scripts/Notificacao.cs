@@ -10,9 +10,9 @@ public abstract class Notificacao
     public static class Toupeira
     {
         //public const string Esperando = "Toupeira_Esperando";
-        public const string Subindo = "Toupeira_Subindo";
+        public const string Surgindo = "Toupeira_Surgindo";
         public const string Idle = "Toupeira_Idle";
-        //public const string Descendo = "Toupeira_Descendo";
+        public const string Descendo = "Toupeira_Descendo";
         public const string FoiAcertada = "Toupeira_Foi_Acertada";
         public const string Destruir = "Toupeira_Destruir";
     }

@@ -18,10 +18,17 @@ public class FaseController : Controller
                 model.JogadorVidas = model.JogadorVidasIniciais;
                 model.JogadorPontos = 0;
 
-                //Fazer função pra lidar com cálculo do intervalo entre instâncias
-                model.IntervaloEntreInstancias = model.Bpm / 60 * 2;
-                //
-                view.timerInstanciasMax = model.IntervaloEntreInstancias;
+                model.BatidasPorSegundo = model.Bpm / 60;
+                view.batidasPorSegundo = model.BatidasPorSegundo;
+                view.timerInstanciasMax = view.batidasPorSegundo;
+
+                view.tempos = new float[]
+                {
+                    view.batidasPorSegundo / 8,
+                    view.batidasPorSegundo / 4,
+                    view.batidasPorSegundo / 2,
+                    view.batidasPorSegundo
+                };
 
                 switch (model.CondicaoDeFimDeFase)
                 {
@@ -31,12 +38,14 @@ public class FaseController : Controller
 
                     //Calculo para fase infinita
                     case CondicaoDeFimDeFase.JogadorSemVidas:
-                        view.timerFaseMax = 10000000000000000000;
+                        view.timerFaseMax = 0;
                         break;
                 }
                 break;
 
             case Notificacao.Fase.CriarToupeiras:
+                //Ver RARIDADE
+
                 if (model.BuracosDisponiveis.Count > 0)
                 {
                     view.CriarToupeiras(model.MaxToupeiras, model.BuracosDisponiveis, model.Toupeiras);

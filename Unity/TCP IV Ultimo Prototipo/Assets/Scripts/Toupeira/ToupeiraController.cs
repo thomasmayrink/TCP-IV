@@ -9,44 +9,51 @@ public class ToupeiraController : Controller
     {
         switch (evento_caminho)
         {
-            case Notificacao.Toupeira.Subindo:
+            case Notificacao.Toupeira.Surgindo:
                 model = GetComponent<ToupeiraModel>();
                 view = GetComponentInChildren<ToupeiraView>();
-                
-                model.PodeSerAcertada = false;
-
-                view.Subir(model.Velocidade, model.Buraco.transform.position.y + 1.55f);
+                if (!model.EstaDescendo)
+                {
+                    if (view == alvo)
+                    {
+                        view.SetTempoNaTela(model.TemposNaTela * app.faseModel.BatidasPorSegundo);
+                        view.TocarSom(model.SomAoSurgir);
+                        view.Surgir(model.Velocidade, model.Buraco.transform.position.y + 1.55f);
+                    }
+                }
                 break;
 
             case Notificacao.Toupeira.Idle:
-                model.PodeSerAcertada = true;
-
-                switch(model.Comportamento)
+                if (view == alvo)
                 {
-                    case Comportamento.Doido:
-                        break;
-
-                    case Comportamento.Fofo:
-                        break;
-
-                    case Comportamento.Lider:
-                        break;
-
-                    case Comportamento.PoucosAmigos:
-                        break;
+                    view.Idle(model.DancasId, model.Comportamento);
+                    model.PodeSerAcertada = true;
                 }
-
                 break;
 
             case Notificacao.Toupeira.FoiAcertada:
                 if (view == alvo && model.PodeSerAcertada)
                 {
+                    view.TocarSom(model.SomPancada);
                     model.Vida--;
                     if (model.Vida <= 0)
                     {
                         model.PodeSerAcertada = false;
-                        view.Descer();
+                        model.EstaDescendo = true;
+                        view.Acertar("Matou", true);
                     }
+                    else
+                    {
+                        model.PodeSerAcertada = false;
+                        view.Acertar("Acertou", true);
+                    }
+                }
+                break;
+
+            case Notificacao.Toupeira.Descendo:
+                if (view == alvo)
+                {
+                    model.EstaDescendo = true;
                 }
                 break;
 
