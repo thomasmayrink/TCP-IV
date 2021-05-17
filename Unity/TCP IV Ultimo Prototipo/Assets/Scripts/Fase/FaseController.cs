@@ -18,11 +18,14 @@ public class FaseController : Controller
                 model.JogadorVidas = model.JogadorVidasIniciais;
                 model.JogadorPontos = 0;
 
-                model.BatidasPorSegundo = model.Bpm / 60;
+                model.BatidasPorSegundo = model.Bpm / 60f;
                 view.batidasPorSegundo = model.BatidasPorSegundo;
                 view.timerInstanciasMax = view.batidasPorSegundo;
 
                 view.tempos = model.TemposCriarToupeiras;
+
+                //app.DebugFase("view.batidasPorSegundo = " + view.batidasPorSegundo);
+                view.temposPrimeiraInstancia = model.TemposAtePrimeiraInstanciacao * model.BatidasPorSegundo;
 
                 switch (model.CondicaoDeFimDeFase)
                 {
@@ -30,7 +33,6 @@ public class FaseController : Controller
                         view.timerFaseMax = model.TamanhoDaMusica;
                         break;
 
-                    //Calculo para fase infinita
                     case CondicaoDeFimDeFase.JogadorSemVidas:
                         view.timerFaseMax = 0;
                         break;

@@ -6,6 +6,7 @@ public class FaseView : Elemento
     private float timerInstancias;
     private float timerFase;
     public float batidasPorSegundo { get; set; }
+    public float temposPrimeiraInstancia { get; set; }
     public float timerInstanciasMax { get; set; }
 
     public float[] tempos { get; set; }
@@ -14,9 +15,10 @@ public class FaseView : Elemento
     private Estado estado { get; set; }
 
     private void Start()
-    {        
-        estado = Estado.Esperando;
+    {
         app.Notificar(Notificacao.Fase.Inicio, this);
+
+        estado = Estado.Esperando;
     }
 
     private void Update()
@@ -27,15 +29,23 @@ public class FaseView : Elemento
         switch (estado)
         {
             case Estado.Esperando:
-                app.DebugFase("View Esperando");
+                if (timerFase >= temposPrimeiraInstancia)
+                {
+                    timerInstancias = 0;
+                    estado = Estado.Rodando;
+                }
+                break;
 
-                if (timerInstancias >= timerInstanciasMax)
+            case Estado.Rodando:
+                app.DebugFase("View Rodando");
+                app.DebugFase("batidas por segundo: " + batidasPorSegundo);
+                if (timerInstancias >= timerInstanciasMax * batidasPorSegundo)
                 {
                     timerInstancias = 0;
                     app.Notificar(Notificacao.Fase.CriarToupeiras, this);
                     estado = Estado.CriarToupeiras;
                 }
-                
+
                 if (timerFaseMax != 0)
                 {
                     if (timerFase >= timerFaseMax)
@@ -49,7 +59,7 @@ public class FaseView : Elemento
                 app.DebugFase("View CriarToupeiras");
                 SortearTempo();
                 app.DebugFase("View: timerInstanciasMax = " + timerInstanciasMax);
-                estado = Estado.Esperando;
+                estado = Estado.Rodando;
                 break;
 
             case Estado.CriarArmadilhas:
@@ -58,23 +68,23 @@ public class FaseView : Elemento
         }
     }
 
-    public void SortearTempo()
+    public float SortearTempo()
     {
-        timerInstanciasMax = tempos[Random.Range(0, tempos.Length)];
+        return timerInstanciasMax = tempos[Random.Range(0, tempos.Length)];
     }
 
     public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras)
     {
-        int maxInstancias = Random.Range(0, maxToupeiras + 1);
-        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras + 1);
-        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras + 1);
+        int maxInstancias = Random.Range(0, maxToupeiras);
+        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras);
+        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras);
 
         //Levar raridades em consideracao (atribuir raridade à não instanciar ninguém(0))
 
         Utilidades.SortearLista(buracosDisponiveis);
 
         
-        if (maxInstancias < buracosDisponiveis.Count)
+        if (maxInstancias <= buracosDisponiveis.Count)
         {
             for (int i = 0; i < maxInstancias; i++)
             {
@@ -94,9 +104,10 @@ public class FaseView : Elemento
         }
     }
 
-    public enum Estado
+    private enum Estado
     {
         Esperando,
+        Rodando,
         CriarToupeiras,
         CriarArmadilhas
     }

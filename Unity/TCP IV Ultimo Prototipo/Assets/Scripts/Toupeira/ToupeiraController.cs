@@ -16,8 +16,8 @@ public class ToupeiraController : Controller
                 {
                     if (alvo == view)
                     {
-                        view.SetTempoNaTela(model.TemposNaTela * app.faseModel.BatidasPorSegundo);
-                        view.TocarSom(model.SomAoSurgir);
+                        view.SetTempoNaTela((model.TemposNaTela * app.faseModel.BatidasPorSegundo) / 4);
+                        view.TocarSom(model.SomAoSurgir[Random.Range(0, model.SomAoSurgir.Length)]);
                         view.Surgir(model.Velocidade, model.Buraco.transform.position.y + 1.55f);
                     }
                 }
@@ -34,7 +34,7 @@ public class ToupeiraController : Controller
             case Notificacao.Toupeira.FoiAcertada:
                 if (alvo == view && model.PodeSerAcertada)
                 {
-                    view.TocarSom(model.SomPancada);
+                    view.TocarSom(model.SomPancada[Random.Range(0, model.SomPancada.Length)]);
                     model.Vida--;
 
                     if (model.Vida <= 0)

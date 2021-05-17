@@ -16,9 +16,19 @@ MonoBehaviour:
   pontos: 0
   raridade: 2
   velocidade: 10
-  temposNaTela: 0
-  dancasId: 02000000
-  comportamento: 2
+  temposNaTela: 2
+  dancasId: 0100000002000000
+  comportamento: 3
   toupeiraPrefab: {fileID: 4402650871268588665, guid: 1c2fe94afc02c8e4bb639c70709411a7, type: 3}
-  somAoSurgir: {fileID: 8300000, guid: 9cd7d29299f38f14ebcc1881ada78801, type: 3}
-  somPancada: {fileID: 8300000, guid: f1dcac154d9186e47ad483e2b668c2f5, type: 3}
+  somAoSurgir:
+  - {fileID: 8300000, guid: 5b77c9698a2de1d4e8d105169c4b7fb7, type: 3}
+  somPancada:
+  - {fileID: 8300000, guid: d50caec40d94cd644a2a16d679a5ce3c, type: 3}
+  - {fileID: 8300000, guid: 6dc266682e3aaf84bb5fb28011d204f0, type: 3}
+  - {fileID: 8300000, guid: 8e89e86e29bee7a4492ab44fe04283b3, type: 3}
+  - {fileID: 8300000, guid: 01a74e97abaade34094483c6a5243220, type: 3}
+  - {fileID: 8300000, guid: 2c5be6b79cbec8742b835e82c61eb864, type: 3}
+  - {fileID: 8300000, guid: c7ea3746a40370640a1ed81ceb7d9c8f, type: 3}
+  - {fileID: 8300000, guid: 10f03a0b23d573a43967cc034f176ae7, type: 3}
+  - {fileID: 8300000, guid: 7262ae0b0fbc8af448a9dc8b9101d1bc, type: 3}
+  - {fileID: 8300000, guid: d4797f791b451b843b292666ef574a80, type: 3}

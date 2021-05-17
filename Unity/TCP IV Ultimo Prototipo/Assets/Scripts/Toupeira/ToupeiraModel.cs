@@ -12,8 +12,8 @@ public class ToupeiraModel : Elemento
     public GameObject Buraco { get; set; }
     public bool PodeSerAcertada { get; set; }
     //public bool EstaDescendo { get; set; }
-    public AudioClip SomAoSurgir { get; set; }
-    public AudioClip SomPancada { get; set; }
+    public AudioClip[] SomAoSurgir { get; set; }
+    public AudioClip[] SomPancada { get; set; }
 }
 
 public enum Comportamento

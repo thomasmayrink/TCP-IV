@@ -47,8 +47,12 @@ public class FaseModel : Elemento
         {
             return fase.temposCriarToupeiras;
         }
-        set
+    }
+    public int TemposAtePrimeiraInstanciacao
+    {
+        get
         {
+            return fase.temposPrimeiraInstancia;
         }
     }
     public CondicaoDeFimDeFase CondicaoDeFimDeFase

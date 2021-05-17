@@ -15,13 +15,15 @@ MonoBehaviour:
   toupeiras:
   - {fileID: 11400000, guid: 7fafafe6aa4d92b4e89307cf8cec1dcf, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
-  maxToupeiras: 2
+  - {fileID: 11400000, guid: 4869d690f342f1f43816f9f4c7881f4b, type: 2}
+  - {fileID: 11400000, guid: 0ba3f08af80dc674b8689c9c6a8824cb, type: 2}
+  maxToupeiras: 0
   temposCriarToupeiras:
-  - 1
+  - 0
   - 2
+  temposPrimeiraInstancia: 12
   musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
   bpm: 70
   armadilhas: []
   jogadorVidas: 3
-  efeitos: []
   fimDeFase: 1

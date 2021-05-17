@@ -11,6 +11,6 @@ public class Toupeira : ScriptableObject
     [SerializeField] public int[] dancasId;
     [SerializeField] public Comportamento comportamento;
     [SerializeField] public GameObject toupeiraPrefab;
-    [SerializeField] public AudioClip somAoSurgir;
-    [SerializeField] public AudioClip somPancada;
+    [SerializeField] public AudioClip[] somAoSurgir;
+    [SerializeField] public AudioClip[] somPancada;
 }
