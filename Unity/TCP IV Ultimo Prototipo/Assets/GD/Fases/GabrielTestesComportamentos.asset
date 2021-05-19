@@ -20,7 +20,8 @@ MonoBehaviour:
   maxToupeiras: 2
   temposCriarToupeiras:
   - 0
-  - 2
+  - 0.5
+  - 1
   temposPrimeiraInstancia: 0
   musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
   bpm: 70
