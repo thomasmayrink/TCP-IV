@@ -157,7 +157,9 @@ public class ToupeiraView : Elemento
 
     public void Descer()
     {
-        movimento *= 2;
+        animator.SetBool("Desceu", true);
+        movimento *= 0.75f;
+        //movimento *= 2;
         estado = Estado.Descendo;
         app.Notificar(Notificacao.Toupeira.Descendo, this);
     }

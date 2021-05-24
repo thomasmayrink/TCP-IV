@@ -28,6 +28,7 @@ public class ToupeiraController : Controller
                 break;
 
             case Notificacao.Toupeira.FoiAcertada:
+                view.TocarSom(model.SomPancada);
                 break;
 
             case Notificacao.Toupeira.Descendo:

@@ -17,10 +17,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
   maxToupeiras: 3
   temposCriarToupeiras:
+  - 0.5
+  - 1
+  - 2
   - 4
   armadilhas: []
   maxArmadilhas: 0
   musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
-  bpm: 60
-  somToupeiraSurgindo: {fileID: 8300000, guid: 8f994c5359b98d34da4d777f4bfe5bb8, type: 3}
-  somToupeiraAcertou: {fileID: 8300000, guid: 688f562732197d04288bd2f07cfba675, type: 3}
+  bpm: 70
+  somToupeiraSurgindo: {fileID: 8300000, guid: 1a8111bdd7cab434cb362d74989b638d, type: 3}
+  somToupeiraAcertou: {fileID: 8300000, guid: 660799aba1767004ab5d047e6712b7d0, type: 3}
