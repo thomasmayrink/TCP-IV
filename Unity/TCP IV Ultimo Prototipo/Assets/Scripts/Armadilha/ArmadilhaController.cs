@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmadilhaController : MonoBehaviour
+public class ArmadilhaController : Controller
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void OnNotificacao(string evento_caminho, Object alvo, params object[] dados)
     {
-        
-    }
+        switch (evento_caminho)
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

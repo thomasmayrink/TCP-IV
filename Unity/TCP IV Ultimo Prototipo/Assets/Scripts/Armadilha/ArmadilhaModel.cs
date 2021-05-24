@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmadilhaModel : MonoBehaviour
+public class ArmadilhaModel : Elemento
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int DanoAoClicar { get; set; }
+    public int Raridade { get; set; }
+    public float TemposNaTela { get; set; }
+    public ArmadilhaTipo TipoDeArmadilha { get; set; }
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public enum ArmadilhaTipo
+{
+    Espinho,
+    Bomba,
+    Urso
 }

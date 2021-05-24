@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PowerUpModel : MonoBehaviour
+public class PowerUpModel : Elemento
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int Nivel { get; set; }
+    public PowerUpTipo TipoDePowerUp { get; set; }
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public enum PowerUpTipo
+{
+    AcertarAleatoriamente,
+    AcertarTudo,
+    PararTempo
 }

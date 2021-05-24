@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
   m_Name: GabrielTeste
   m_EditorClassIdentifier: 
+  jogadorVidas: 0
   toupeiras:
-  - {fileID: 11400000, guid: 7fafafe6aa4d92b4e89307cf8cec1dcf, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
-  - {fileID: 11400000, guid: 4869d690f342f1f43816f9f4c7881f4b, type: 2}
-  - {fileID: 11400000, guid: 0ba3f08af80dc674b8689c9c6a8824cb, type: 2}
-  maxToupeiras: 1
-  bpm: 70
+  maxToupeiras: 3
+  temposCriarToupeiras:
+  - 4
   armadilhas: []
-  jogadorVidas: 3
+  maxArmadilhas: 0
   musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
-  efeitos: []
-  condicaoDeFimDeFase: 1
+  bpm: 60
+  somToupeiraSurgindo: {fileID: 8300000, guid: 8f994c5359b98d34da4d777f4bfe5bb8, type: 3}
+  somToupeiraAcertou: {fileID: 8300000, guid: 688f562732197d04288bd2f07cfba675, type: 3}

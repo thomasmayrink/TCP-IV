@@ -2,21 +2,20 @@ using UnityEngine;
 
 public static class FabricaToupeira
 {
-    public static void Criar(ToupeiraModel model, Toupeira toupeira, GameObject buraco)
+    public static void Criar(ToupeiraModel model, Toupeira toupeira, int bpm, GameObject buraco, AudioClip somAoSurgir, AudioClip somPancada)
     {
         model.Vida = toupeira.vida;
         model.Pontos = toupeira.pontos;
+        model.PontosPowerUp = toupeira.pontosPowerUp;
         model.Raridade = toupeira.raridade;
         model.Velocidade = toupeira.velocidade;
-        model.TemposNaTela = toupeira.temposNaTela;
+        model.BpmFase = bpm;
+        model.TemposNaTela = toupeira.temposNaTela / (bpm / 60f);
         model.DancasId = toupeira.dancasId;
         model.Comportamento = toupeira.comportamento;
         model.Buraco = buraco;
         model.PodeSerAcertada = false;
-        //model.EstaDescendo = false;
-
-        model.SomAoSurgir = toupeira.somAoSurgir;
-        model.SomPancada = toupeira.somPancada;
-        //model.PosicaoInicial = posicao;
+        model.SomAoSurgir = somAoSurgir;
+        model.SomPancada = somPancada;
     }
 }

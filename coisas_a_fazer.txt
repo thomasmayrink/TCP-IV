@@ -1,31 +1,8 @@
-Fase:
-	Contagem de tempo começa
-	Música começa
-	Instanciar toupeiras
-	SE Condição de fim da fase:
-		Parar música
-		Destruir toupeiras
-		Destruir armadilhas
-		Cancelar power-ups
-		Criar Cena de Game Over
+Revisar e transformar em static.
+Tudo de tempo está certo nas Toupeiras.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Toupeira:
-	Sai do buraco
-	Dança específica
-	SE TempoAtual >= TempoDeterminado || Acertou:
-		Entra no buraco
+Reorganizar completamente: ToupeiraController, FaseView e FaseController;
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Armadilha:
-	Sai do buraco
-	Espera
-	Some
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Jogador:
-	Vidas
-	Pontos
-	Power-ups
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Comportamento: Poucos Amigos e Líder;
+Power-ups: Nível 1, 2 e 3;
+Armadilhas: Espinhos, Urso, Bomba;

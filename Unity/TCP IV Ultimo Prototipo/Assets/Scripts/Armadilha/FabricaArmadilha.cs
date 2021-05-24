@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FabricaArmadilha : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+public static class FabricaArmadilha
+{ 
+    public static void Criar(ArmadilhaModel model, Armadilha armadilha)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        model.DanoAoClicar = armadilha.danoAoClicar;
+        model.Raridade = armadilha.raridade;
+        model.TemposNaTela = armadilha.temposNaTela;
+        model.TipoDeArmadilha = armadilha.tipoDeAmadilha;
     }
 }

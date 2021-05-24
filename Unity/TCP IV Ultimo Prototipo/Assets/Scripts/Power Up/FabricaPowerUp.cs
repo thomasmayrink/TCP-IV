@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class FabricaPowerUp : MonoBehaviour
+public static class FabricaPowerUp
 {
-    // Start is called before the first frame update
-    void Start()
+    public static void Criar(PowerUpModel model, PowerUp powerUp)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        model.Nivel = powerUp.nivel;
+        model.TipoDePowerUp = powerUp.tipoDePowerUp;
     }
 }

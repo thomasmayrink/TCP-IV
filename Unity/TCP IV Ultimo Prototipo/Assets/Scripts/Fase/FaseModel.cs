@@ -6,6 +6,13 @@ public class FaseModel : Elemento
     [SerializeField] private Fase fase;
     private List<GameObject> buracosDisponiveis;
 
+    public int JogadorVidasIniciais
+    {
+        get
+        {
+            return fase.jogadorVidas;
+        }
+    }
     public List<Toupeira> Toupeiras
     {
         get
@@ -18,6 +25,27 @@ public class FaseModel : Elemento
         get
         {
             return fase.maxToupeiras;
+        }
+    }
+    public float[] TemposCriarToupeiras
+    {
+        get
+        {
+            return fase.temposCriarToupeiras;
+        }
+    }
+    public Armadilha[] Armadilhas
+    {
+        get
+        {
+            return fase.armadilhas;
+        }
+    }
+    public int MaxArmadilhas
+    {
+        get
+        {
+            return fase.maxArmadilhas;
         }
     }
     public AudioClip Musica
@@ -41,39 +69,26 @@ public class FaseModel : Elemento
             return fase.bpm;
         }
     }
-    public float[] TemposCriarToupeiras
-    {
-        get
-        {
-            return fase.temposCriarToupeiras;
-        }
-    }
-    public int TemposAtePrimeiraInstanciacao
-    {
-        get
-        {
-            return fase.temposPrimeiraInstancia;
-        }
-    }
-    public CondicaoDeFimDeFase CondicaoDeFimDeFase
-    {
-        get
-        {
-            return fase.fimDeFase;
-        }
-    }
-    public Armadilha[] Armadilhas 
+    public float BatidasPorSegundo
     { 
         get
         {
-            return fase.armadilhas;
+            return fase.bpm / 60f;
         }
     }
-    public int JogadorVidasIniciais
+
+    public AudioClip SomToupeiraSurgindo
     {
         get
         {
-            return fase.jogadorVidas;
+            return fase.somToupeiraSurgindo;
+        }
+    }
+    public AudioClip SomToupeiraAcertou
+    {
+        get
+        {
+            return fase.somToupeiraAcertou;
         }
     }
     public GameObject[] Buracos
@@ -109,5 +124,4 @@ public class FaseModel : Elemento
 
     public int JogadorVidas { get; set; }
     public int JogadorPontos { get; set; }
-    public float BatidasPorSegundo { get; set; }
 }

@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Armadilha : MonoBehaviour
+[CreateAssetMenu(menuName = "WhackAMole/Armadilha")]
+public class Armadilha : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] public int danoAoClicar;
+    [SerializeField] [Range(0, 5)] public int raridade;
+    [SerializeField] public float temposNaTela;
+    [SerializeField] public ArmadilhaTipo tipoDeAmadilha;
 }

@@ -3,34 +3,26 @@ using UnityEngine;
 public class ToupeiraView : Elemento
 {
     private Animator animator;
-    private Estado estado;
-
-    public Estado EstadoAtual
-    {
-        get
-        {
-            return estado;
-        }
-    }
-
-    private Vector3 movimento;
-    private float limite;
-    private Comportamento comportamento;
     private AudioSource audioSource;
 
-    private float timerAnimacao;
-    private float tempoNaTela;
-    private float temposPorBatida;
+    private Estado estado;
 
-    public void Start()
+    private float limite;
+    private Vector3 movimento;
+
+    private float tempoNaTela;
+    private float timerAnimacao;
+    private float tempoMax;
+
+    private Comportamento comportamento;
+
+    private void Start()
     {
         animator = gameObject.GetComponent<Animator>();
         audioSource = gameObject.GetComponent<AudioSource>();
 
         app.Notificar(Notificacao.Toupeira.Surgindo, this);
-
         estado = Estado.Surgindo;
-        animator.speed = app.faseModel.Bpm / 120.0f;        
     }
 
     private void Update()
@@ -44,7 +36,7 @@ public class ToupeiraView : Elemento
                 }
                 else
                 {
-                    if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.3f)
+                    if(AnimacaoAcabou(0.8f))
                     {
                         app.Notificar(Notificacao.Toupeira.Idle, this);
                     }
@@ -64,39 +56,21 @@ public class ToupeiraView : Elemento
                         app.Notificar(Notificacao.Toupeira.Idle, this);
                     }
                 }
-
                 if (animator.GetBool("Matou"))
                 {
                     timerAnimacao += Time.deltaTime;
                     if (timerAnimacao >= 0.5f)
                     {
                         Descer();
-                        //animator.SetBool("Matou", false);
-                        //app.Notificar(Notificacao.Toupeira.Idle, this);
-                    }                   
+                    }
                 }
-
-                switch (comportamento)
+                if (tempoNaTela >= tempoMax)
                 {
-                    case Comportamento.Doido:
-                        if (tempoNaTela >= temposPorBatida * 4)
-                        {
-                            Descer();
-                        }
-                        break;
-
-                    case Comportamento.Fofo:
-                        if (tempoNaTela >= temposPorBatida * 4)
-                        {
-                            Descer();
-                        }
-                        break;
-
-                    case Comportamento.PoucosAmigos:
-                        break;
-
-                    case Comportamento.Lider:
-                        break;
+                    Descer();
+                }
+                else
+                {
+                    SeComportar();
                 }
                 break;
 
@@ -110,33 +84,73 @@ public class ToupeiraView : Elemento
         }
     }
 
+    private bool AnimacaoAcabou(float exitTime)
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= exitTime)
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    private void SeComportar()
+    {
+        switch (comportamento)
+        {
+            case Comportamento.Fofo:
+                //Subir, esperar e descer
+                break;
+
+            case Comportamento.Doido:
+                //Subir, esperar e descer
+                break;
+
+            case Comportamento.PoucosAmigos:
+                //Subir, esperar tempo aleatório, pedir a posicao das outras toupeiras e trocar de lugar com 1
+                break;
+
+            case Comportamento.Lider:
+                //Subir, descer, pedir os buracos livres e repete
+                break;
+        }
+    }
+
     private void OnMouseDown()
     {
         app.Notificar(Notificacao.Toupeira.FoiAcertada, this);
+    }
+
+    private void FinalizarAnimacao()
+    {
+
+    }
+
+    public void TocarSom(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     public void Surgir(float velocidade, float limite)
     {
         movimento = velocidade * Vector3.up * Time.deltaTime;
         this.limite = limite;
-        estado = Estado.Surgindo;
     }
 
-    public void Idle(int[] dancasId, Comportamento comportamento)
+    public void Idle(int bpm, int[] dancasId, Comportamento comportamento, float tempoMax)
     {
-        this.comportamento = comportamento;
+        animator.speed = bpm / 120f;
 
         int dancaId = dancasId[Random.Range(0, dancasId.Length)];
         animator.SetInteger("DancaId", dancaId);
+
+        this.comportamento = comportamento;
+        this.tempoMax = tempoMax;
+        
         estado = Estado.Idle;
     }
 
-    public void SetTempoNaTela(float temposPorBatida)
-    {
-        this.temposPorBatida = temposPorBatida;
-    }
-
-    public void Acertar(string parametro, bool verdadeiro) 
+    public void Acertar(string parametro, bool verdadeiro)
     {
         animator.SetBool(parametro, verdadeiro);
     }
@@ -148,14 +162,8 @@ public class ToupeiraView : Elemento
         app.Notificar(Notificacao.Toupeira.Descendo, this);
     }
 
-    public void TocarSom(AudioClip som)
+    private enum Estado
     {
-        audioSource.clip = som;
-        audioSource.Play();
-    }
-    public enum Estado
-    {
-      //  Esperando,
         Surgindo,
         Idle,
         Descendo
