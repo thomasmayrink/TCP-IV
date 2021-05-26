@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4403547794550219066}
   - component: {fileID: 5306423103781890219}
+  - component: {fileID: 8226836462030538708}
   m_Layer: 0
   m_Name: Jogador
   m_TagString: Untagged
@@ -41,5 +42,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d556160dbf621fc4aa83aa68f64145a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pontosParaPowerUp1: 25
+  powerUpNivel1: {fileID: 0}
+  pontosParaPowerUp2: 50
+  powerUpNivel2: {fileID: 0}
+  pontosParaPowerUp3: 100
+  powerUpNivel3: {fileID: 0}
+--- !u!114 &8226836462030538708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531602351786656834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e2b3e374a827b40b33ae84e66f85fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -122,6 +122,13 @@ public class FaseModel : Elemento
         }
     }
 
+    public GameObject AcertouEfeito
+    {
+        get
+        {
+            return fase.acertouEfeito;
+        }
+    }
     public int JogadorVidas { get; set; }
     public int JogadorPontos { get; set; }
 }

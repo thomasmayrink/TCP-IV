@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class FabricaToupeira
 {
-    public static void Criar(ToupeiraModel model, Toupeira toupeira, int bpm, GameObject buraco, AudioClip somAoSurgir, AudioClip somPancada)
+    public static void Criar(ToupeiraModel model, Toupeira toupeira, int bpm, GameObject buraco, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
     {
         model.Vida = toupeira.vida;
         model.Pontos = toupeira.pontos;
@@ -14,8 +14,8 @@ public static class FabricaToupeira
         model.DancasId = toupeira.dancasId;
         model.Comportamento = toupeira.comportamento;
         model.Buraco = buraco;
-        model.PodeSerAcertada = false;
         model.SomAoSurgir = somAoSurgir;
         model.SomPancada = somPancada;
+        model.acertouEfeito = acertouEfeito;
     }
 }

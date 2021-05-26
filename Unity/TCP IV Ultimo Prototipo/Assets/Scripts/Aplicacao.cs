@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Aplicacao : MonoBehaviour
 {
-    private FaseModel faseModel;
-    public AudioSource musicaSource { get; set; }
-    
-    private AudioClip musica;
+  //  public JogadorController jogador { get; private set; }
 
+    private FaseModel faseModel;
+    private AudioSource musicaSource;
+    private AudioClip musica;
     private void Start()
     {
+ //       jogador = GetComponentInChildren<JogadorController>();
         faseModel = GetComponentInChildren<FaseModel>();
         musicaSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
         musica = faseModel.Musica;
@@ -42,5 +43,9 @@ public class Aplicacao : MonoBehaviour
     public void DebugToupeira(string txt)
     {
         Debug.Log(Utilidades.DebugComCor("Toupeira: " + txt, "yellow"));
+    }
+    public void DebugJogador(string txt)
+    {
+        Debug.Log(Utilidades.DebugComCor("Jogador: " + txt, "blue"));
     }
 }

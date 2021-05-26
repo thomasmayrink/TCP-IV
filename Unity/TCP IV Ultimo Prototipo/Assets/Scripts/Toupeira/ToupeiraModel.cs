@@ -12,7 +12,6 @@ public class ToupeiraModel : Elemento
     public int[] DancasId { get; set; }
     public Comportamento Comportamento { get; set; }
     public GameObject Buraco { get; set; }
-    public bool PodeSerAcertada { get; set; }
     public AudioClip SomAoSurgir { get; set; }
     public AudioClip SomPancada { get; set; }
     public Vector3 Posicao
@@ -26,12 +25,13 @@ public class ToupeiraModel : Elemento
             gameObject.transform.position = value;
         }
     }
+    public GameObject acertouEfeito { get; set; }
 }
 
 public enum Comportamento
 {
-    Lider,
-    Doido,
+    Fofo,
+    Doido,    
     PoucosAmigos,
-    Fofo
+    Lider
 }

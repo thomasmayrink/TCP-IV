@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f4a09bdf98c4e74dad356b2d057e294, type: 3}
-  m_Name: GabrielTesteFofo
+  m_Name: GabrielTesteAmigos
   m_EditorClassIdentifier: 
   vida: 1
-  pontos: 5
-  pontosPowerUp: 10
-  raridade: 5
+  pontos: 0
+  pontosPowerUp: 20
+  raridade: 2
   velocidade: 10
-  temposNaTela: 4
-  dancasId: 0100000002000000
-  comportamento: 0
-  toupeiraPrefab: {fileID: 4402650871268588665, guid: db35b85843ac7fa4ca6970d94fc4c403, type: 3}
+  temposNaTela: 6
+  dancasId: 02000000
+  comportamento: 2
+  toupeiraPrefab: {fileID: 4402650871268588665, guid: 1c2fe94afc02c8e4bb639c70709411a7, type: 3}

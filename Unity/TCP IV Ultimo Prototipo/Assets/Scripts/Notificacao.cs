@@ -12,8 +12,15 @@ public abstract class Notificacao
     {
         public const string Surgindo = "Toupeira_Surgindo";
         public const string Idle = "Toupeira_Idle";
-        public const string Descendo = "Toupeira_Descendo";
         public const string FoiAcertada = "Toupeira_Foi_Acertada";
+        public const string Desceu = "Toupeira_Desceu";
         public const string Destruir = "Toupeira_Destruir";
+    }
+
+    public static class Jogador
+    {
+        public const string Inicio = "Jogador_Inicio";
+        public const string PerdeuVida = "Jogador_Perdeu_Vida";
+        public const string GanhouPontos = "Jogador_Ganhou_Pontos";
     }
 }

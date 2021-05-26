@@ -15,7 +15,6 @@ public class ToupeiraController : Controller
                 if (alvo == view)
                 {
                     view.TocarSom(model.SomAoSurgir);
-                    model.PodeSerAcertada = true;
                     view.Surgir(model.Velocidade, model.Buraco.transform.position.y + 1.55f);
                 }
                 break;
@@ -28,16 +27,25 @@ public class ToupeiraController : Controller
                 break;
 
             case Notificacao.Toupeira.FoiAcertada:
-                view.TocarSom(model.SomPancada);
-                break;
-
-            case Notificacao.Toupeira.Descendo:
-                break;
-
-            case Notificacao.Toupeira.Destruir:
                 if (alvo == view)
                 {
-                    view.gameObject.GetComponent<Collider>().enabled = false;
+                    model.Vida--;
+                    if (model.Vida == 0)
+                    {
+                        view.Acertar("Matou", model.acertouEfeito);
+                        app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
+                    }
+                    else
+                    {
+                        view.Acertar("Acertou", model.acertouEfeito);
+                    }
+                    view.TocarSom(model.SomPancada);
+                }
+                break;
+
+            case Notificacao.Toupeira.Desceu:
+                if (alvo == view)
+                {
                     model.Buraco.GetComponent<Buraco>().EstaOcupado = false;
                     Destroy(gameObject);
                 }

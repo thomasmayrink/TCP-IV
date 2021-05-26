@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jogadorVidas: 0
   toupeiras:
+  - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
+  - {fileID: 11400000, guid: 4c1016e1b625e6a4e97d486d9a2088ef, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
+  - {fileID: 11400000, guid: db5c966b3e21091478240f786cf4911d, type: 2}
   maxToupeiras: 3
   temposCriarToupeiras:
   - 0.5
@@ -27,3 +30,4 @@ MonoBehaviour:
   bpm: 70
   somToupeiraSurgindo: {fileID: 8300000, guid: 1a8111bdd7cab434cb362d74989b638d, type: 3}
   somToupeiraAcertou: {fileID: 8300000, guid: 660799aba1767004ab5d047e6712b7d0, type: 3}
+  acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}

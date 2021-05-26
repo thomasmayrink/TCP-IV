@@ -1,49 +1,3 @@
-/*
-using UnityEngine;
-using System.Collections.Generic;
-
-public class FaseView : Elemento
-{
-    private Estado estado;
-
-    private float timerFase;
-    private float temposPrimeiraInstancia;
-    private float timerEntreInstancias;
-    private float batidasPorSegundo;
-    private float[] tempos;
-
-    private void Start()
-    {
-        this.estado = Estado.Rodando;
-        this.timerFase = 0;
-        this.timerEntreInstancias = 0;
-        app.Notificar(Notificacao.Fase.Inicio, this);
-    }
-
-    private void Update()
-    {
-        switch (estado)
-        {
-            case Estado.Rodando:
-                break;
-
-            case Estado.CriarToupeiras:
-                break;
-
-            case Estado.CriarArmadilhas:
-                break;
-        }
-    }
-
-    private enum Estado
-    {
-        Rodando,
-        CriarToupeiras,
-        CriarArmadilhas
-    }
-}
-*/
-
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -51,13 +5,13 @@ public class FaseView : Elemento
 {
     private float timerInstancias;
     private float timerFase;
-    public float batidasPorSegundo { get; set; }
-    public float timerInstanciasMax { get; set; }
+    private float batidasPorSegundo;
+    private float timerInstanciasMax;
 
-    public float[] tempos { get; set; }
-    public float timerFaseMax { get; set; }
+    private float[] tempos;
+    private float timerFaseMax;
 
-    private Estado estado { get; set; }
+    private Estado estado;
 
     private void Start()
     {
@@ -73,11 +27,7 @@ public class FaseView : Elemento
 
         switch (estado)
         {
-            case Estado.Rodando:
-                app.DebugFase("timerInstancias = " + timerInstancias);
-                app.DebugFase("timerInstanciasMax / batidasPorSegundo = " + timerInstanciasMax / batidasPorSegundo);
-                app.DebugFase("timerInstancias >= timerInstanciasMax / batidasPorSegundo = " + (timerInstancias >= timerInstanciasMax / batidasPorSegundo));
-               
+            case Estado.Rodando:               
                 if (timerInstancias >= timerInstanciasMax / batidasPorSegundo)
                 {
                     timerInstancias = 0;
@@ -101,21 +51,28 @@ public class FaseView : Elemento
         }
     }
 
+    public void SetFase(float batidasPorSegundo, float[] tempos, float tamanhoDaMusica)
+    {
+        this.batidasPorSegundo = batidasPorSegundo;
+        timerInstanciasMax = 0;
+        this.tempos = tempos;
+        timerFaseMax = tamanhoDaMusica;
+    }
+
     public float SortearTempo()
     {
         return timerInstanciasMax = tempos[Random.Range(0, tempos.Length)];
     }
 
-    public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, int bpm, AudioClip somAoSurgir, AudioClip somPancada)
+    public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, int bpm, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
     {
-        int maxInstancias = Random.Range(0, maxToupeiras);
-        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras);
-        if (maxInstancias <= 1) maxInstancias = Random.Range(0, maxToupeiras);
+        int maxInstancias = Random.Range(0, maxToupeiras + 1);
+        if (maxInstancias < 1) maxInstancias = Random.Range(0, maxToupeiras);
+        if (maxInstancias < 1) maxInstancias = Random.Range(0, maxToupeiras);
 
         //Levar raridades em consideracao (atribuir raridade à não instanciar ninguém(0))
 
         Utilidades.SortearLista(buracosDisponiveis);
-
 
         if (maxInstancias <= buracosDisponiveis.Count)
         {
@@ -126,7 +83,8 @@ public class FaseView : Elemento
                                                                            toupeira,
                                                                            bpm,
                                                                            somAoSurgir,
-                                                                           somPancada);
+                                                                           somPancada,
+                                                                           acertouEfeito);
             }
         }
         else
@@ -138,7 +96,8 @@ public class FaseView : Elemento
                                                                            toupeira,
                                                                            bpm,
                                                                            somAoSurgir, 
-                                                                           somPancada);
+                                                                           somPancada,
+                                                                           acertouEfeito);
             }
         }
     }

@@ -14,4 +14,5 @@ public class Fase : ScriptableObject
     [SerializeField] public int bpm;
     [SerializeField] public AudioClip somToupeiraSurgindo;
     [SerializeField] public AudioClip somToupeiraAcertou;
+    [SerializeField] public GameObject acertouEfeito;
 }
