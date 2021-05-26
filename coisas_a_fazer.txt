@@ -1,7 +1,6 @@
-
 Reorganizar completamente: FaseView e FaseController;
 
-Comportamento: Poucos Amigos e Líder;
+Armadilhas: Espinhos;
 Power-ups: Nível 1, 2 e 3;
-Armadilhas: Espinhos, Urso, Bomba;
-
+Comportamento: Poucos Amigos e Líder;
+Armadilhas: Urso, Bomba;

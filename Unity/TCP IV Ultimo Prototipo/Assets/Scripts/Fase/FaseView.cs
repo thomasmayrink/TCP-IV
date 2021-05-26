@@ -3,15 +3,13 @@ using System.Collections.Generic;
 
 public class FaseView : Elemento
 {
-    private float timerInstancias;
-    private float timerFase;
-    private float batidasPorSegundo;
-    private float timerInstanciasMax;
-
-    private float[] tempos;
-    private float timerFaseMax;
-
     private static List<Toupeira> toupeirasRaridade;
+
+    private float timerInstancias, timerFase;
+    private float timerInstanciasMax, timerFaseMax;
+
+    private float batidasPorSegundo;
+    private float[] tempos;
 
     private Estado estado;
 
@@ -23,7 +21,6 @@ public class FaseView : Elemento
 
         estado = Estado.Rodando;
     }
-
     private void Update()
     {
         timerInstancias += Time.deltaTime;
@@ -39,9 +36,12 @@ public class FaseView : Elemento
                     estado = Estado.CriarToupeiras;
                 }
                 
-                if (timerFase >= timerFaseMax)
+                if (timerFaseMax != 0)
                 {
-                    app.Notificar(Notificacao.Fase.Fim, this);
+                    if (timerFase >= timerFaseMax)
+                    {
+                        app.Notificar(Notificacao.Fase.Fim, this);
+                    }
                 }
                 break;
 
@@ -54,6 +54,80 @@ public class FaseView : Elemento
                 break;
         }
     }
+    private float SortearTempo()
+    {
+        return timerInstanciasMax = tempos[Random.Range(0, tempos.Length)];
+    }
+    #region REFAZER_MELHOR
+    private void SortearToupeiras(List<Toupeira> toupeiras, List<Armadilha> armadilhas)
+    {
+        toupeirasRaridade.Clear();
+
+        int sorte = Random.Range(0, 24);
+
+        switch (sorte)
+        {
+            case 0:
+                //app.DebugFase("5%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 1)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                    if (armadilhas[i].raridade == 1)
+                    {
+                        
+                    }
+                }
+                break;
+
+            case int n when n > 0 && n <= 3:
+                //app.DebugFase("15%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 2)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+
+            case int n when n > 3 && n <= 7:
+                //app.DebugFase("20%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 3)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+
+            case int n when n > 8 && n <= 12:
+                //app.DebugFase("25%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 4)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+
+            case int n when n > 12 && n <= 24:
+                //app.DebugFase("60%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 5)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+        }
+    }
+    #endregion
 
     public void SetFase(float batidasPorSegundo, float[] tempos, float tamanhoDaMusica)
     {
@@ -62,15 +136,16 @@ public class FaseView : Elemento
         this.tempos = tempos;
         timerFaseMax = tamanhoDaMusica;
     }
-
-    public float SortearTempo()
+    public void SetFase(float batidasPorSegundo, float[] tempos)
     {
-        return timerInstanciasMax = tempos[Random.Range(0, tempos.Length)];
+        this.batidasPorSegundo = batidasPorSegundo;
+        timerInstanciasMax = 0;
+        this.tempos = tempos;
+        timerFaseMax = 0;
     }
-
-    public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, int bpm, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
+    public void CriarToupeiras(int maxToupeiras, int maxArmadilhas, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, List<Armadilha> armadilhas, int bpm, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
     {
-        SortearToupeiras(toupeiras);
+        SortearToupeiras(toupeiras, armadilhas);
 
         int maxInstancias = Random.Range(1, maxToupeiras + 1);
 
@@ -119,78 +194,8 @@ public class FaseView : Elemento
         }
         catch 
         {
-            app.DebugFase("ERRO");
+          //  app.DebugFase("ERRO");
         }
-    }
-
-    private void SortearToupeiras(List<Toupeira> toupeiras)
-    {
-        toupeirasRaridade.Clear();
-
-        #region REFAZER_MELHOR
-        //REFAZER MELHOR
-        int sorte = Random.Range(0, 24);
-
-        switch (sorte)
-        {
-            case 0:
-                app.DebugFase("5%");
-                for (int i = 0; i < toupeiras.Count; i++)
-                {
-                    if (toupeiras[i].raridade == 1)
-                    {
-                        toupeirasRaridade.Add(toupeiras[i]);
-                    }
-                }
-                break;
-
-            case int n when n > 0 && n <= 3:
-                app.DebugFase("15%");
-                for (int i = 0; i < toupeiras.Count; i++)
-                {
-                    if (toupeiras[i].raridade == 2)
-                    {
-                        toupeirasRaridade.Add(toupeiras[i]);
-                    }
-                }
-                break;
-
-            case int n when n > 3 && n <= 7:
-                app.DebugFase("20%");
-                for (int i = 0; i < toupeiras.Count; i++)
-                {
-                    if (toupeiras[i].raridade == 3)
-                    {
-                        toupeirasRaridade.Add(toupeiras[i]);
-                    }
-                }
-                break;
-
-            case int n when n > 8 && n <= 12:
-                app.DebugFase("25%");
-                for (int i = 0; i < toupeiras.Count; i++)
-                {
-                    if (toupeiras[i].raridade == 4)
-                    {
-                        toupeirasRaridade.Add(toupeiras[i]);
-                    }
-                }
-                break;
-
-            case int n when n > 12 && n <= 24:
-                app.DebugFase("60%");
-                for (int i = 0; i < toupeiras.Count; i++)
-                {
-                    if (toupeiras[i].raridade == 5)
-                    {
-                        toupeirasRaridade.Add(toupeiras[i]);
-                    }
-                }
-                break;
-        }
-        #endregion
-        //adiciono as toupeiras da raridade correspondente (talvez dê pra usar pra armadilha também)
-        //retorno a lista e uso o count dela pro max do Random
     }
 
     private enum Estado

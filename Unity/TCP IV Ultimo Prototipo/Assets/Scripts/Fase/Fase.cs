@@ -8,7 +8,7 @@ public class Fase : ScriptableObject
     [SerializeField] public List<Toupeira> toupeiras;
     [SerializeField] public int maxToupeiras;
     [SerializeField] public float[] temposCriarToupeiras;
-    [SerializeField] public Armadilha[] armadilhas;
+    [SerializeField] public List<Armadilha> armadilhas;
     [SerializeField] public int maxArmadilhas;
     [SerializeField] public AudioClip musica;
     [SerializeField] public int bpm;

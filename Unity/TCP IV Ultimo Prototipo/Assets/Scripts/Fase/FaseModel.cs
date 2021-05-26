@@ -6,13 +6,6 @@ public class FaseModel : Elemento
     [SerializeField] private Fase fase;
     private List<GameObject> buracosDisponiveis;
 
-    public int JogadorVidasIniciais
-    {
-        get
-        {
-            return fase.jogadorVidas;
-        }
-    }
     public List<Toupeira> Toupeiras
     {
         get
@@ -34,7 +27,7 @@ public class FaseModel : Elemento
             return fase.temposCriarToupeiras;
         }
     }
-    public Armadilha[] Armadilhas
+    public List<Armadilha> Armadilhas
     {
         get
         {
@@ -128,6 +121,4 @@ public class FaseModel : Elemento
             return fase.acertouEfeito;
         }
     }
-    public int JogadorVidas { get; set; }
-    public int JogadorPontos { get; set; }
 }

@@ -15,35 +15,35 @@ public class FaseController : Controller
                 model = GetComponent<FaseModel>();
                 view = GetComponentInChildren<FaseView>();
 
-                model.JogadorVidas = model.JogadorVidasIniciais;
-                model.JogadorPontos = 0;
+                //view.SetFase(model.BatidasPorSegundo, model.TemposCriarToupeiras, model.TamanhoDaMusica);
 
-                view.SetFase(model.BatidasPorSegundo, model.TemposCriarToupeiras, model.TamanhoDaMusica);
+                view.SetFase(model.BatidasPorSegundo, model.TemposCriarToupeiras);
                 break;
 
             case Notificacao.Fase.CriarToupeiras:
-                //Ver RARIDADE
                 if (model.BuracosDisponiveis.Count > 0)
                 {
-                    view.CriarToupeiras(model.MaxToupeiras, model.BuracosDisponiveis, model.Toupeiras, model.Bpm, model.SomToupeiraSurgindo, model.SomToupeiraAcertou, model.AcertouEfeito);
+                    view.CriarToupeiras(model.MaxToupeiras, model.MaxArmadilhas, model.BuracosDisponiveis, model.Toupeiras, model.Armadilhas, model.Bpm, model.SomToupeiraSurgindo, model.SomToupeiraAcertou, model.AcertouEfeito);
                 }
-                else
+                break;
+
+            case Notificacao.Fase.CriarArmadilhas:
+                if (model.BuracosDisponiveis.Count > 0)
                 {
-                    app.DebugFase("Controller model.BuracosDisponiveis.Count: " + model.BuracosDisponiveis.Count);
+                    //view.CriarArmadilhas(model.MaxArmadilhas, model.BuracosDisponiveis, model.Armadilhas, model.)
                 }
                 break;
 
             case Notificacao.Fase.Fim:
                 app.Notificar(Notificacao.Toupeira.Destruir, model);
+
                 #region APAGAR
-                //APAGAR
                 GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>().enabled = false;
                 Destroy(GameObject.FindGameObjectWithTag("Chao"));
                 foreach (GameObject b in model.Buracos)
                 {
                     Destroy(b);
                 }
-                //APAGAR
                 #endregion
 
                 app.DebugFase("FIM");
