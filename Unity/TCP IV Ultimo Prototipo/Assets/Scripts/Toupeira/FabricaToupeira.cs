@@ -16,6 +16,6 @@ public static class FabricaToupeira
         model.Buraco = buraco;
         model.SomAoSurgir = somAoSurgir;
         model.SomPancada = somPancada;
-        model.acertouEfeito = acertouEfeito;
+        model.AcertouEfeito = acertouEfeito;
     }
 }

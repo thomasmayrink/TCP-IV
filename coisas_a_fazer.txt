@@ -1,6 +1,11 @@
-Reorganizar completamente: FaseView e FaseController;
+Juntar Armadilha e Toupeira completamente (filhas de tudo igual);
+
+Colocar Armadilha e Toupeira para serem sorteados juntos;
 
 Armadilhas: Espinhos;
+
+Reorganizar completamente: FaseView e FaseController;
+
 Power-ups: Nível 1, 2 e 3;
 Comportamento: Poucos Amigos e Líder;
 Armadilhas: Urso, Bomba;

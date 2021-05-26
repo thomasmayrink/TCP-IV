@@ -32,12 +32,12 @@ public class ToupeiraController : Controller
                     model.Vida--;
                     if (model.Vida == 0)
                     {
-                        view.Acertar("Matou", model.acertouEfeito);
+                        view.Acertar("Matou", model.AcertouEfeito);
                         app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
                     }
                     else
                     {
-                        view.Acertar("Acertou", model.acertouEfeito);
+                        view.Acertar("Acertou", model.AcertouEfeito);
                     }
                     view.TocarSom(model.SomPancada);
                 }

@@ -24,8 +24,9 @@ MonoBehaviour:
   - 1
   - 2
   - 4
-  armadilhas: []
-  maxArmadilhas: 0
+  armadilhas:
+  - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
+  maxArmadilhas: 1
   musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
   bpm: 70
   somToupeiraSurgindo: {fileID: 8300000, guid: 1a8111bdd7cab434cb362d74989b638d, type: 3}

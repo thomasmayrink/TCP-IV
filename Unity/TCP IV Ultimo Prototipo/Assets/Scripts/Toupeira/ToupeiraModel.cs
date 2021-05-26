@@ -25,7 +25,7 @@ public class ToupeiraModel : Elemento
             gameObject.transform.position = value;
         }
     }
-    public GameObject acertouEfeito { get; set; }
+    public GameObject AcertouEfeito { get; set; }
 }
 
 public enum Comportamento

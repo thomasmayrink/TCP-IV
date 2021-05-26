@@ -155,7 +155,7 @@ public class FaseView : Elemento
             Toupeira toupeira = toupeirasRaridade[Random.Range(0, toupeirasRaridade.Count)];
             if (toupeira.comportamento == Comportamento.Lider)
             {
-                buracosDisponiveis[Random.Range(0, buracosDisponiveis.Count)].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                buracosDisponiveis[Random.Range(0, buracosDisponiveis.Count)].GetComponent<Buraco>().CriarToupeira(toupeira.prefab,
                                                                                                                    toupeira,
                                                                                                                    bpm,
                                                                                                                    somAoSurgir,
@@ -169,7 +169,7 @@ public class FaseView : Elemento
                     for (int i = 0; i < maxInstancias; i++)
                     {
                         toupeira = toupeirasRaridade[Random.Range(0, toupeirasRaridade.Count)];
-                        buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                        buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.prefab,
                                                                                    toupeira,
                                                                                    bpm,
                                                                                    somAoSurgir,
@@ -182,7 +182,7 @@ public class FaseView : Elemento
                     for (int i = 0; i < buracosDisponiveis.Count; i++)
                     {
                         toupeira = toupeirasRaridade[Random.Range(0, toupeirasRaridade.Count)];
-                        buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                        buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.prefab,
                                                                                    toupeira,
                                                                                    bpm,
                                                                                    somAoSurgir,
