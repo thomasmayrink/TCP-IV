@@ -11,10 +11,14 @@ public class FaseView : Elemento
     private float[] tempos;
     private float timerFaseMax;
 
+    private static List<Toupeira> toupeirasRaridade;
+
     private Estado estado;
 
     private void Start()
     {
+        toupeirasRaridade = new List<Toupeira>();
+
         app.Notificar(Notificacao.Fase.Inicio, this);
 
         estado = Estado.Rodando;
@@ -66,40 +70,127 @@ public class FaseView : Elemento
 
     public void CriarToupeiras(int maxToupeiras, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, int bpm, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
     {
-        int maxInstancias = Random.Range(0, maxToupeiras + 1);
-        if (maxInstancias < 1) maxInstancias = Random.Range(0, maxToupeiras);
-        if (maxInstancias < 1) maxInstancias = Random.Range(0, maxToupeiras);
+        SortearToupeiras(toupeiras);
 
-        //Levar raridades em consideracao (atribuir raridade à não instanciar ninguém(0))
+        int maxInstancias = Random.Range(1, maxToupeiras + 1);
 
         Utilidades.SortearLista(buracosDisponiveis);
+        try
+        {
+            Toupeira toupeira = toupeirasRaridade[Random.Range(0, toupeirasRaridade.Count)];
+            if (toupeira.comportamento == Comportamento.Lider)
+            {
+                buracosDisponiveis[Random.Range(0, buracosDisponiveis.Count)].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                                                                                                                   toupeira,
+                                                                                                                   bpm,
+                                                                                                                   somAoSurgir,
+                                                                                                                   somPancada,
+                                                                                                                   acertouEfeito);
+            }
+            else
+            {
+                if (maxInstancias <= buracosDisponiveis.Count)
+                {
+                    for (int i = 0; i < maxInstancias; i++)
+                    {
+                        toupeira = toupeirasRaridade[Random.Range(0, toupeirasRaridade.Count)];
+                        buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                                                                                   toupeira,
+                                                                                   bpm,
+                                                                                   somAoSurgir,
+                                                                                   somPancada,
+                                                                                   acertouEfeito);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < buracosDisponiveis.Count; i++)
+                    {
+                        toupeira = toupeirasRaridade[Random.Range(0, toupeirasRaridade.Count)];
+                        buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
+                                                                                   toupeira,
+                                                                                   bpm,
+                                                                                   somAoSurgir,
+                                                                                   somPancada,
+                                                                                   acertouEfeito);
+                    }
+                }
+            }
+        }
+        catch 
+        {
+            app.DebugFase("ERRO");
+        }
+    }
 
-        if (maxInstancias <= buracosDisponiveis.Count)
+    private void SortearToupeiras(List<Toupeira> toupeiras)
+    {
+        toupeirasRaridade.Clear();
+
+        #region REFAZER_MELHOR
+        //REFAZER MELHOR
+        int sorte = Random.Range(0, 24);
+
+        switch (sorte)
         {
-            for (int i = 0; i < maxInstancias; i++)
-            {
-                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Count)];
-                buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
-                                                                           toupeira,
-                                                                           bpm,
-                                                                           somAoSurgir,
-                                                                           somPancada,
-                                                                           acertouEfeito);
-            }
+            case 0:
+                app.DebugFase("5%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 1)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+
+            case int n when n > 0 && n <= 3:
+                app.DebugFase("15%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 2)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+
+            case int n when n > 3 && n <= 7:
+                app.DebugFase("20%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 3)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+
+            case int n when n > 8 && n <= 12:
+                app.DebugFase("25%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 4)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
+
+            case int n when n > 12 && n <= 24:
+                app.DebugFase("60%");
+                for (int i = 0; i < toupeiras.Count; i++)
+                {
+                    if (toupeiras[i].raridade == 5)
+                    {
+                        toupeirasRaridade.Add(toupeiras[i]);
+                    }
+                }
+                break;
         }
-        else
-        {
-            for (int i = 0; i < buracosDisponiveis.Count; i++)
-            {
-                Toupeira toupeira = toupeiras[Random.Range(0, toupeiras.Count)];
-                buracosDisponiveis[i].GetComponent<Buraco>().CriarToupeira(toupeira.toupeiraPrefab,
-                                                                           toupeira,
-                                                                           bpm,
-                                                                           somAoSurgir, 
-                                                                           somPancada,
-                                                                           acertouEfeito);
-            }
-        }
+        #endregion
+        //adiciono as toupeiras da raridade correspondente (talvez dê pra usar pra armadilha também)
+        //retorno a lista e uso o count dela pro max do Random
     }
 
     private enum Estado

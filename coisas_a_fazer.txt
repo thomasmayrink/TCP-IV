@@ -1,6 +1,7 @@
-Raridade.
+
 Reorganizar completamente: FaseView e FaseController;
 
 Comportamento: Poucos Amigos e Líder;
 Power-ups: Nível 1, 2 e 3;
 Armadilhas: Espinhos, Urso, Bomba;
+

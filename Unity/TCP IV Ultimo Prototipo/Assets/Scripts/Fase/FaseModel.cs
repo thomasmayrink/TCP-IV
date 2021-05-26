@@ -121,7 +121,6 @@ public class FaseModel : Elemento
             return buracosDisponiveis;
         }
     }
-
     public GameObject AcertouEfeito
     {
         get

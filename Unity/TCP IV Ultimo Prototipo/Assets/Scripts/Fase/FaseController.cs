@@ -35,6 +35,17 @@ public class FaseController : Controller
 
             case Notificacao.Fase.Fim:
                 app.Notificar(Notificacao.Toupeira.Destruir, model);
+                #region APAGAR
+                //APAGAR
+                GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>().enabled = false;
+                Destroy(GameObject.FindGameObjectWithTag("Chao"));
+                foreach (GameObject b in model.Buracos)
+                {
+                    Destroy(b);
+                }
+                //APAGAR
+                #endregion
+
                 app.DebugFase("FIM");
                 break;
         }
