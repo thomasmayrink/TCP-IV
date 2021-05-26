@@ -55,6 +55,11 @@ public class JogadorView : Elemento
     {
         this.pontosPowerUp += pontosPowerUp;
 
+        if (this.pontosPowerUp >= 100)
+        {
+            this.pontosPowerUp = 100;
+        }
+
         if (this.pontosPowerUp >= limitePowerUp3)
         {
             nivelPowerUp = 3;

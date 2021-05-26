@@ -58,7 +58,7 @@ public class ToupeiraView : Elemento
             case Estado.Idle:
                 if (animator.GetBool("Acertou"))
                 {
-                    if (timerAnimacao >= timerAnimacaoMax * 0.5f)
+                    if (timerAnimacao >= timerAnimacaoMax * 0.3f)
                     {
                         animator.SetBool("Acertou", false);
                         app.Notificar(Notificacao.Toupeira.Idle, this);
@@ -133,7 +133,6 @@ public class ToupeiraView : Elemento
         this.comportamento = comportamento;
         this.tempoMax = tempoMax;
         timerAnimacaoMax = 120f / bpm;
-        app.DebugToupeira("View: timerAnimacaoMax " + timerAnimacaoMax);
 
         estado = Estado.Idle;
         col.enabled = true;
