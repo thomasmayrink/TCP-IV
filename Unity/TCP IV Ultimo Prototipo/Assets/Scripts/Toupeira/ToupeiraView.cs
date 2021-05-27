@@ -16,6 +16,8 @@ public class ToupeiraView : BaseObjetoView
 
     private Comportamento comportamento;
 
+    private bool desceu;
+
     private void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -24,6 +26,7 @@ public class ToupeiraView : BaseObjetoView
 
         app.Notificar(Notificacao.Toupeira.Surgindo, this);
         //estado = Estado.Surgindo;
+        desceu = false;
     }
 
     private void Update()
@@ -44,6 +47,7 @@ public class ToupeiraView : BaseObjetoView
                 }
                 else
                 {
+                    gameObject.transform.position = new Vector3(transform.position.x, limite, transform.position.z);
                     if (animator.GetCurrentAnimatorStateInfo(0).IsName("Subindo"))
                     {
                         app.Notificar(Notificacao.Toupeira.Idle, this);
@@ -83,8 +87,10 @@ public class ToupeiraView : BaseObjetoView
 
             case Estado.Descendo:
                 transform.position -= movimento;
-                if (transform.position.y <= -limite * 2)
+                if (transform.position.y <= -limite * 0.75f && !desceu)
                 {
+                    col.enabled = false;
+                    desceu = true;
                     app.Notificar(Notificacao.Toupeira.Desceu, this);
                 }
                 break;

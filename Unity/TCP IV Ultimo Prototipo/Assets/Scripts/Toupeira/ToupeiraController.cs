@@ -31,7 +31,12 @@ public class ToupeiraController : Controller
                 {
                     if (model.Dano > 0)
                     {
+                        view.TocarSom(model.SomDano);
                         app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
+                    }
+                    else
+                    {
+                        view.TocarSom(model.SomPancada);
                     }
                     model.Vida--;
                     if (model.Vida == 0)
@@ -43,18 +48,23 @@ public class ToupeiraController : Controller
                     {
                         view.Acertar("Acertou", model.AcertouEfeito);
                     }
-                    view.TocarSom(model.SomPancada);
                 }
                 break;
 
             case Notificacao.Toupeira.Desceu:
                 if (alvo == view)
                 {
+                    if (model.Vida > 0)
+                    {
+                        app.DebugToupeira("desceu");
+                        view.TocarSom(model.SomFugiu);
+                    }
                     model.Buraco.GetComponent<Buraco>().EstaOcupado = false;
-                    Destroy(gameObject);
+                    Destroy(gameObject, 1f);
                 }
                 break;
 
+                /*
             case Notificacao.Toupeira.Destruir:
                 if (alvo == app.faseModel)
                 {
@@ -62,6 +72,8 @@ public class ToupeiraController : Controller
                     Destroy(gameObject);
                 }
                 break;
+                */
+
         }
     }
 }

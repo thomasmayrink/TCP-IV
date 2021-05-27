@@ -5,7 +5,7 @@ public class FaseView : Elemento
 {
     private static List<Toupeira> toupeirasRaridade;
 
-    private float timerFase;
+    //private float timerFase;
     private float timerInstancias;
     private float timerInstanciasMax;
 
@@ -129,7 +129,7 @@ public class FaseView : Elemento
         timerInstanciasMax = 0;
         this.tempos = tempos;
     }
-    public void CriarToupeiras(int maxToupeiras, int maxArmadilhas, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, List<Armadilha> armadilhas, float bpm, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
+    public void CriarToupeiras(int maxToupeiras, int maxArmadilhas, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, List<Armadilha> armadilhas, float bpm, AudioClip somAoSurgir, AudioClip somPancada, AudioClip somDano, AudioClip somFugiu, GameObject acertouEfeito)
     {
         SortearToupeiras(toupeiras, armadilhas);
 
@@ -146,6 +146,8 @@ public class FaseView : Elemento
                                                                                                                    bpm,
                                                                                                                    somAoSurgir,
                                                                                                                    somPancada,
+                                                                                                                   somDano,
+                                                                                                                   somFugiu,
                                                                                                                    acertouEfeito);
             }
             else
@@ -160,6 +162,8 @@ public class FaseView : Elemento
                                                                                    bpm,
                                                                                    somAoSurgir,
                                                                                    somPancada,
+                                                                                   somDano,
+                                                                                   somFugiu,
                                                                                    acertouEfeito);
                     }
                 }
@@ -173,6 +177,8 @@ public class FaseView : Elemento
                                                                                    bpm,
                                                                                    somAoSurgir,
                                                                                    somPancada,
+                                                                                   somDano,
+                                                                                   somFugiu,
                                                                                    acertouEfeito);
                     }
                 }

@@ -18,7 +18,7 @@ MonoBehaviour:
   velocidade: 10
   dano: 0
   raridade: 1
-  temposNaTela: 1.5
+  temposNaTela: 1
   prefab: {fileID: 4402650871268588665, guid: 1afb3b379bfb07845b3c58885aab1e20, type: 3}
   dancasId: 01000000
   comportamento: 3

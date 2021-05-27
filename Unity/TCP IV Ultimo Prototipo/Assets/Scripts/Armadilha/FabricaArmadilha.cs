@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public static class FabricaArmadilha
 {
+    /*
     public static void Criar(ArmadilhaModel model, Armadilha armadilha, int bpm, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
     {
+        model.Vida = armadilha.vida;
+        model.Pontos = armadilha.pontos;
+        model.PontosPowerUp = armadilha.pontosPowerUp;
         model.Dano = armadilha.dano;
         model.Raridade = armadilha.raridade;
         model.TemposNaTela = armadilha.temposNaTela / (bpm / 60f);
@@ -15,4 +17,5 @@ public static class FabricaArmadilha
         model.SomPancada = somPancada;
         model.AcertouEfeito = acertouEfeito;
     }
+    */
 }

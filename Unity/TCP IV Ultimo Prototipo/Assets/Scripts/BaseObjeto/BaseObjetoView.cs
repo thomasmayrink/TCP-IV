@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class BaseObjetoView : Elemento
@@ -11,21 +9,11 @@ public abstract class BaseObjetoView : Elemento
     protected float limite;
     protected Vector3 movimento;
 
-    //protected float tempoNaTela, tempoMax;
-    //protected float timerAnimacao, timerAnimacaoMax;
-
     private void Start()
     {
         estado = Estado.Surgindo;
     }
-    void Update()
-    {
-        //tempoNaTela += Time.deltaTime;
-    }
-    private void OnMouseDown()
-    {
-        //col.enabled = false;
-    }
+
     public void TocarSom(AudioClip clip)
     {
         if (audioSource.enabled)

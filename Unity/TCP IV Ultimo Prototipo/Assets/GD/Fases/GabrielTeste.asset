@@ -46,6 +46,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a45d18ec86070cb4caf6ce71bc918a68, type: 3}
   - {fileID: 8300000, guid: a600e25e0415b10449e7a620d37c247e, type: 3}
   - {fileID: 8300000, guid: d2d653785a650964ab59e4b86a0513af, type: 3}
-  sonsDano: []
+  sonsDano:
+  - {fileID: 8300000, guid: c011bd8d3977a134f9f6c75d5d1d4019, type: 3}
+  - {fileID: 8300000, guid: 325e99e89b5638b4abaf91780b90f043, type: 3}
+  - {fileID: 8300000, guid: 85fbb52dafaa1294bb28c6cd185d43b5, type: 3}
+  - {fileID: 8300000, guid: f18576dcf0bc73e4297700317b42f522, type: 3}
+  sonsFugiu:
+  - {fileID: 8300000, guid: cad49e332416c0c4d94dbebd3a46d257, type: 3}
+  - {fileID: 8300000, guid: 7f43f1df8d803ff4c8a98d2e3a61c927, type: 3}
+  - {fileID: 8300000, guid: 4c11f1433a24b164a9be6a3fe936e41e, type: 3}
+  - {fileID: 8300000, guid: 89dc83a81939a1c48ada74956bc6cb04, type: 3}
+  minSemAtividade: 1
   acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}
-  minSemAtividade: 5

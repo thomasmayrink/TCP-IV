@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Testes/GabrielMenu1.unity
+    guid: ec9279659d4912b48a55e6a7983c8d40
+  - enabled: 1
     path: Assets/Scenes/Testes/GabrielTeste1.unity
     guid: 5c6099e75fc45a240b37a6cbda43e1db
   - enabled: 1

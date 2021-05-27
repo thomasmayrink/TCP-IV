@@ -123,6 +123,13 @@ public class FaseModel : Elemento
             return fase.sonsDano;
         }
     }
+    public AudioClip[] SonsFugiu
+    {
+        get
+        {
+            return fase.sonsFugiu;
+        }
+    }
     public GameObject[] Buracos
     {
         get

@@ -1,15 +1,14 @@
 Armadilha: Espinhos;
+Colocar Armadilha e Toupeira para serem sorteados juntos;
 
 TempoSemAtividade: contar tempo desde o último acerto do jogador.
 
-Colocar Armadilha e Toupeira para serem sorteados juntos;
-
 Reorganizar completamente: FaseView e FaseController;
 
-Comportamento: Poucos Amigos e Líder;
+Comportamento: Poucos Amigos e Líder (ver wpp);
 Power-up: Nível 1 e 2;
 Armadilha: Urso, Bomba;
-Power-up: 3
+Power-up: 3 (criar bool app.PowerUp3);
 
 ------------------------------------------------------------
 
