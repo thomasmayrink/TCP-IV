@@ -5,6 +5,7 @@ public abstract class Notificacao
         public const string Inicio = "Fase_Inicio";
         public const string CriarToupeiras = "Fase_Criar_Toupeiras";
         public const string CriarArmadilhas = "Fase_Criar_Armadilhas";
+        public const string AumentarDificuldade = "Fase_Aumentar_Dificuldade";
         public const string Fim = "Fase_Fim";
     }
  

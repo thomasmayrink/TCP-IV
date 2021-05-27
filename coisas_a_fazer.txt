@@ -1,3 +1,5 @@
+Criar Menu Básico pra poder circular por fases e dar game over
+
 TempoSemAtividade: contar tempo desde o último acerto do jogador.
 
 Armadilha: Espinhos;
@@ -10,3 +12,7 @@ Comportamento: Poucos Amigos e Líder;
 Power-up: Nível 1 e 2;
 Armadilha: Urso, Bomba;
 Power-up: 3
+
+------------------------------------------------------------
+
+Player Prefs pra ranking pessoal.

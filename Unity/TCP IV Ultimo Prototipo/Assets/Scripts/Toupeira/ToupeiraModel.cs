@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ToupeiraModel : BaseObjetoModel
 {
-    public int BpmFase { get; set; }
+    public float BpmFase { get; set; }
     public int[] DancasId { get; set; }
     public Comportamento Comportamento { get; set; }
     public GameObject Buraco { get; set; }

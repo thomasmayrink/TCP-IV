@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class FabricaToupeira
 {
-    public static void Criar(ToupeiraModel model, Toupeira toupeira, int bpm, GameObject buraco, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
+    public static void Criar(ToupeiraModel model, Toupeira toupeira, float bpm, GameObject buraco, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
     {
         model.Vida = toupeira.vida;
         model.Pontos = toupeira.pontos;

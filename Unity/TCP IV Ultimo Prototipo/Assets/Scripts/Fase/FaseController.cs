@@ -40,6 +40,11 @@ public class FaseController : Controller
                 }
                 break;
 
+            case Notificacao.Fase.AumentarDificuldade:
+                model.Bpm *= 1.25f;
+                app.DebugFase("Controller: model.Bpm" + model.Bpm);
+                break;
+
             case Notificacao.Fase.Fim:
                 app.Notificar(Notificacao.Toupeira.Destruir, model);
 

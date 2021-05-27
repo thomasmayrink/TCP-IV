@@ -125,7 +125,7 @@ public class ToupeiraView : BaseObjetoView
         this.limite = limite;
     }
         */
-    public void Idle(int bpm, int[] dancasId, Comportamento comportamento, float tempoMax)
+    public void Idle(float bpm, int[] dancasId, Comportamento comportamento, float tempoMax)
     {
         animator.speed = bpm / 120f;
 

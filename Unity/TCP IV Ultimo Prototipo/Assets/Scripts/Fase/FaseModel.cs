@@ -4,6 +4,7 @@ using UnityEngine;
 public class FaseModel : Elemento
 {
     [SerializeField] private Fase fase;
+    private float bpm;
     private List<float> tamanhoDasMusicas;
     private List<GameObject> buracosDisponiveis;
 
@@ -71,11 +72,19 @@ public class FaseModel : Elemento
             return tamanhoDasMusicas;
         }
     }
-    public int Bpm
+    public float Bpm
     {
         get
         {
-            return fase.bpm;
+            if (bpm <= 0)
+            {
+                return fase.bpm;
+            }
+            else return bpm;
+        }
+        set
+        {
+            bpm = value;
         }
     }
     public float BatidasPorSegundo

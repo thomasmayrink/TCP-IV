@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Aplicacao : MonoBehaviour
@@ -22,11 +20,13 @@ public class Aplicacao : MonoBehaviour
         jogadorModel.PtsPowerUp = 0;
 
         musicaSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+
         musica = faseModel.Musicas[Random.Range(0, faseModel.Musicas.Length)];
         musicaSource.clip = musica;
         musicaSource.Play();
 
         timerMusicaMax = musica.length;
+
 
         luz = GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>();
     }
@@ -41,6 +41,8 @@ public class Aplicacao : MonoBehaviour
             musicaSource.Play();
             timerMusicaMax = musica.length;
             timerMusica = 0;
+
+            Notificar(Notificacao.Fase.AumentarDificuldade, faseModel);
         }
     }
 
@@ -61,6 +63,10 @@ public class Aplicacao : MonoBehaviour
         }
     }
 
+    private void DebugApp(string txt)
+    {
+        Debug.Log(Utilidades.DebugComCor("App: " + txt, "white"));
+    }
     public void DebugFase(string txt)
     {
         Debug.Log(Utilidades.DebugComCor("Fase: " + txt, "green"));
