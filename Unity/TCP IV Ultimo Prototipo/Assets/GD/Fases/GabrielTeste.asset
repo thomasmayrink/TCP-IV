@@ -33,7 +33,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cf0b2aa2bf8980348ba9bd873d6cf2c0, type: 3}
   - {fileID: 8300000, guid: bd590a2a754abc346ae9ca13f79636ca, type: 3}
   - {fileID: 8300000, guid: b264de7727249904eb08f67cc1f584ac, type: 3}
-  bpm: 100
+  bpmInicial: 100
+  bpmMax: 400
   sonsToupeiraSurgindo:
   - {fileID: 8300000, guid: efd4f3e0bd4a5b44d9f137e61c453524, type: 3}
   - {fileID: 8300000, guid: 30c2685a3d4aaad4bb225a9e79773983, type: 3}

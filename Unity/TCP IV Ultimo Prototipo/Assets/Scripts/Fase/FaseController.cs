@@ -42,7 +42,10 @@ public class FaseController : Controller
 
             case Notificacao.Fase.AumentarDificuldade:
                 model.Bpm *= 1.25f;
-                app.DebugFase("Controller: model.Bpm" + model.Bpm);
+                if (model.Bpm > model.BpmMax)
+                {
+                    model.Bpm = model.BpmMax;
+                }
                 break;
 
             case Notificacao.Fase.Fim:

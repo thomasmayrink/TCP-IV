@@ -11,7 +11,8 @@ public class Fase : ScriptableObject
     [SerializeField] public List<Armadilha> armadilhas;
     [SerializeField] public int maxArmadilhas;
     [SerializeField] public AudioClip[] musicas;
-    [SerializeField] public int bpm;
+    [SerializeField] public int bpmInicial;
+    [SerializeField] public int bpmMax;
     [SerializeField] public AudioClip[] sonsToupeiraSurgindo;
     [SerializeField] public AudioClip[] sonsToupeiraAcertou;
     [SerializeField] public GameObject acertouEfeito;

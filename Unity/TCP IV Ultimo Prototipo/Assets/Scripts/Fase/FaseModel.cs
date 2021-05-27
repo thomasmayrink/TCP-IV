@@ -78,7 +78,7 @@ public class FaseModel : Elemento
         {
             if (bpm <= 0)
             {
-                return fase.bpm;
+                return fase.bpmInicial;
             }
             else return bpm;
         }
@@ -87,11 +87,18 @@ public class FaseModel : Elemento
             bpm = value;
         }
     }
+    public float BpmMax
+    {
+        get
+        {
+            return fase.bpmMax;
+        }
+    }
     public float BatidasPorSegundo
     { 
         get
         {
-            return fase.bpm / 60f;
+            return fase.bpmInicial / 60f;
         }
     }
 

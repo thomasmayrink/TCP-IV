@@ -27,7 +27,6 @@ public class Aplicacao : MonoBehaviour
 
         timerMusicaMax = musica.length;
 
-
         luz = GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>();
     }
 
