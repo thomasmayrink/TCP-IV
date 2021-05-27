@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FaseController : Controller
 {
@@ -27,8 +28,8 @@ public class FaseController : Controller
                                         model.Toupeiras,
                                         model.Armadilhas, 
                                         model.Bpm, 
-                                        model.SonsToupeiraSurgindo[Random.Range(0, model.SonsToupeiraSurgindo.Length)],
-                                        model.SonsToupeiraAcertou[Random.Range(0, model.SonsToupeiraAcertou.Length)], 
+                                        model.SonsSurgindo[Random.Range(0, model.SonsSurgindo.Length)],
+                                        model.SonsAcertou[Random.Range(0, model.SonsAcertou.Length)], 
                                         model.AcertouEfeito);
                 }
                 break;
@@ -49,7 +50,11 @@ public class FaseController : Controller
                 break;
 
             case Notificacao.Fase.Fim:
+                SceneManager.LoadScene("GabrielGameOver");
+
+                /*
                 app.Notificar(Notificacao.Toupeira.Destruir, model);
+
 
                 #region APAGAR
                 foreach (GameObject b in model.Buracos)
@@ -60,8 +65,10 @@ public class FaseController : Controller
                 Destroy(GameObject.FindGameObjectWithTag("Chao"));
                 app.luz.enabled = false;
                 app.musicaSource.enabled = false;
-                #endregion
 
+
+                #endregion
+                */
                 app.DebugFase("FIM");
                 break;
         }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GabrielTeste1.unity
+    path: Assets/Scenes/Testes/GabrielTeste1.unity
     guid: 5c6099e75fc45a240b37a6cbda43e1db
+  - enabled: 1
+    path: Assets/Scenes/Testes/GabrielGameOver.unity
+    guid: 3c726f9596a9210428cd793127301cbb
   m_configObjects: {}

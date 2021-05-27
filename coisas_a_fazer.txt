@@ -1,8 +1,6 @@
-Criar Menu Básico pra poder circular por fases e dar game over
+Armadilha: Espinhos;
 
 TempoSemAtividade: contar tempo desde o último acerto do jogador.
-
-Armadilha: Espinhos;
 
 Colocar Armadilha e Toupeira para serem sorteados juntos;
 

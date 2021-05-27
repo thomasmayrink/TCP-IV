@@ -17,6 +17,6 @@ public class Buraco : MonoBehaviour
     {
         Vector3 pos = this.gameObject.transform.position + new Vector3(0, -2.8f, 0);
         armadilha = Instantiate(armadilha, pos, Quaternion.identity);
-        FabricaArmadilha.Criar(armadilha.GetComponent<ArmadilhaModel>(), armadilhaAtr, bpm, acertouEfeito);
+        FabricaArmadilha.Criar(armadilha.GetComponent<ArmadilhaModel>(), armadilhaAtr, bpm, somAoSurgir, somPancada, acertouEfeito);
     }
 }

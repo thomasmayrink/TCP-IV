@@ -13,8 +13,9 @@ public class Fase : ScriptableObject
     [SerializeField] public AudioClip[] musicas;
     [SerializeField] public int bpmInicial;
     [SerializeField] public int bpmMax;
-    [SerializeField] public AudioClip[] sonsToupeiraSurgindo;
-    [SerializeField] public AudioClip[] sonsToupeiraAcertou;
-    [SerializeField] public GameObject acertouEfeito;
+    [SerializeField] public AudioClip[] sonsSurgindo;
+    [SerializeField] public AudioClip[] sonsAcertou;
+    [SerializeField] public AudioClip[] sonsDano;
     [SerializeField] public float minSemAtividade;
+    [SerializeField] public GameObject acertouEfeito;
 }

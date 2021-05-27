@@ -35,16 +35,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b264de7727249904eb08f67cc1f584ac, type: 3}
   bpmInicial: 100
   bpmMax: 400
-  sonsToupeiraSurgindo:
+  sonsSurgindo:
   - {fileID: 8300000, guid: efd4f3e0bd4a5b44d9f137e61c453524, type: 3}
   - {fileID: 8300000, guid: 30c2685a3d4aaad4bb225a9e79773983, type: 3}
   - {fileID: 8300000, guid: 6c6f435502189554d8c550c7b6df5f91, type: 3}
   - {fileID: 8300000, guid: 62feffd377c07414586726787c2569d8, type: 3}
-  sonsToupeiraAcertou:
+  sonsAcertou:
   - {fileID: 8300000, guid: 55e29237e269d4941b4afaaacf0ffcac, type: 3}
   - {fileID: 8300000, guid: 2871b2767445e354e8c133d152cf0af2, type: 3}
   - {fileID: 8300000, guid: a45d18ec86070cb4caf6ce71bc918a68, type: 3}
   - {fileID: 8300000, guid: a600e25e0415b10449e7a620d37c247e, type: 3}
   - {fileID: 8300000, guid: d2d653785a650964ab59e4b86a0513af, type: 3}
+  sonsDano: []
   acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}
   minSemAtividade: 5

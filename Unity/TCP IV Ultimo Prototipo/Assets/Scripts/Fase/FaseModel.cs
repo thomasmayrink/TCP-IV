@@ -102,18 +102,25 @@ public class FaseModel : Elemento
         }
     }
 
-    public AudioClip[] SonsToupeiraSurgindo
+    public AudioClip[] SonsSurgindo
     {
         get
         {
-            return fase.sonsToupeiraSurgindo;
+            return fase.sonsSurgindo;
         }
     }
-    public AudioClip[] SonsToupeiraAcertou
+    public AudioClip[] SonsAcertou
     {
         get
         {
-            return fase.sonsToupeiraAcertou;
+            return fase.sonsAcertou;
+        }
+    }
+    public AudioClip[] SonsDano
+    {
+        get
+        {
+            return fase.sonsDano;
         }
     }
     public GameObject[] Buracos
