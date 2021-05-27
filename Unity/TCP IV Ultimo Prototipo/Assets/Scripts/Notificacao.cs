@@ -15,7 +15,6 @@ public abstract class Notificacao
         public const string Idle = "Toupeira_Idle";
         public const string FoiAcertada = "Toupeira_Foi_Acertada";
         public const string Desceu = "Toupeira_Desceu";
-       // public const string Destruir = "Toupeira_Destruir";
     }
 
     public static class Armadilha

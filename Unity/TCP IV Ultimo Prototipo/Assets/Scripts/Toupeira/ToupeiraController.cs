@@ -63,17 +63,6 @@ public class ToupeiraController : Controller
                     Destroy(gameObject, 1f);
                 }
                 break;
-
-                /*
-            case Notificacao.Toupeira.Destruir:
-                if (alvo == app.faseModel)
-                {
-                    app.DebugToupeira("faseModel Destruir");
-                    Destroy(gameObject);
-                }
-                break;
-                */
-
         }
     }
 }

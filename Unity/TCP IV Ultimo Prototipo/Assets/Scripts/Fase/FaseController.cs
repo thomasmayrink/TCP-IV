@@ -14,8 +14,6 @@ public class FaseController : Controller
                 model = GetComponent<FaseModel>();
                 view = GetComponentInChildren<FaseView>();
 
-                //view.SetFase(model.BatidasPorSegundo, model.TemposCriarToupeiras, model.TamanhoDaMusica);
-
                 view.SetFase(model.BatidasPorSegundo, model.TemposCriarToupeiras);
                 break;
 
@@ -52,25 +50,10 @@ public class FaseController : Controller
                 break;
 
             case Notificacao.Fase.Fim:
+                #region MELHORAR
                 SceneManager.LoadScene("GabrielGameOver");
-
-                /*
-                app.Notificar(Notificacao.Toupeira.Destruir, model);
-
-
-                #region APAGAR
-                foreach (GameObject b in model.Buracos)
-                {
-                    Destroy(b);
-                }
-                Destroy(app.jogadorModel.gameObject);
-                Destroy(GameObject.FindGameObjectWithTag("Chao"));
-                app.luz.enabled = false;
-                app.musicaSource.enabled = false;
-
-
                 #endregion
-                */
+
                 app.DebugFase("FIM");
                 break;
         }
