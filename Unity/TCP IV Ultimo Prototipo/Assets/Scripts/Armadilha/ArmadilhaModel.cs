@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class ArmadilhaModel : Elemento
+public class ArmadilhaModel : BaseObjetoModel
 {
-    public int Dano { get; set; }
-    public int Raridade { get; set; }
-    public float TemposNaTela { get; set; }
     public ArmadilhaTipo TipoDeArmadilha { get; set; }
     public AudioClip SomAoSurgir { get; set; }
     public AudioClip SomPancada { get; set; }

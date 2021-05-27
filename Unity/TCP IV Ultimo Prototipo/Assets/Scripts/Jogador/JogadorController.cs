@@ -19,16 +19,25 @@ public class JogadorController : Controller
                 break;
 
             case Notificacao.Jogador.PerdeuVida:
-                model.Vidas--;
-                if (model.Vidas < 0)
+                model.Vidas -= (int)dados[0];
+                if (model.Vidas <= 0)
                 {
+                    model.Vidas = 0;
                     app.Notificar(Notificacao.Fase.Fim, this);
                 }
+                app.Notificar(Notificacao.Atualizar.AtualizarUI, this);
                 break;
 
             case Notificacao.Jogador.GanhouPontos:
                 model.Pontos += (int)dados[0];
-                view.GanhouPontos((int)dados[1]);
+                model.PtsPowerUp += (int)dados[1];
+                if (model.PtsPowerUp >= 100)
+                {
+                    model.PtsPowerUp = 100;
+                }
+                view.GanhouPontos(model.PtsPowerUp);
+
+                app.Notificar(Notificacao.Atualizar.AtualizarUI, this);
                 break;
         }
     }

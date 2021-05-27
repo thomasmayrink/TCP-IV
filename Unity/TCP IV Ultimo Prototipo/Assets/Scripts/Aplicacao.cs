@@ -4,19 +4,44 @@ using UnityEngine;
 
 public class Aplicacao : MonoBehaviour
 {
-  //  public JogadorController jogador { get; private set; }
+    public JogadorModel jogadorModel { get; set; }
+    public FaseModel faseModel { get; set; }
+    public AudioSource musicaSource { get; set; }
+    public AudioClip musica { get; set; }
+    public Light luz { get; set; }
 
-    private FaseModel faseModel;
-    private AudioSource musicaSource;
-    private AudioClip musica;
-    private void Start()
+    private float timerMusica, timerMusicaMax;
+
+    private void Awake()
     {
- //       jogador = GetComponentInChildren<JogadorController>();
+        jogadorModel = GetComponentInChildren<JogadorModel>();
+
         faseModel = GetComponentInChildren<FaseModel>();
+        jogadorModel.Vidas = faseModel.JogadorVidas;
+        jogadorModel.Pontos = 0;
+        jogadorModel.PtsPowerUp = 0;
+
         musicaSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
-        musica = faseModel.Musica;
+        musica = faseModel.Musicas[Random.Range(0, faseModel.Musicas.Length)];
         musicaSource.clip = musica;
         musicaSource.Play();
+
+        timerMusicaMax = musica.length;
+
+        luz = GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>();
+    }
+
+    private void Update()
+    {
+        timerMusica += Time.deltaTime;
+        if (timerMusica >= timerMusicaMax)
+        {
+            musica = faseModel.Musicas[Random.Range(0, faseModel.Musicas.Length)];
+            musicaSource.clip = musica;
+            musicaSource.Play();
+            timerMusicaMax = musica.length;
+            timerMusica = 0;
+        }
     }
 
     private Controller[] Controllers

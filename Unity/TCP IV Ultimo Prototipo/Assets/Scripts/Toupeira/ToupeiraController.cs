@@ -29,6 +29,10 @@ public class ToupeiraController : Controller
             case Notificacao.Toupeira.FoiAcertada:
                 if (alvo == view)
                 {
+                    if (model.Dano > 0)
+                    {
+                        app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
+                    }
                     model.Vida--;
                     if (model.Vida == 0)
                     {
@@ -47,6 +51,14 @@ public class ToupeiraController : Controller
                 if (alvo == view)
                 {
                     model.Buraco.GetComponent<Buraco>().EstaOcupado = false;
+                    Destroy(gameObject);
+                }
+                break;
+
+            case Notificacao.Toupeira.Destruir:
+                if (alvo == app.faseModel)
+                {
+                    app.DebugToupeira("faseModel Destruir");
                     Destroy(gameObject);
                 }
                 break;

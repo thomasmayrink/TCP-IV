@@ -4,8 +4,16 @@ using UnityEngine;
 public class FaseModel : Elemento
 {
     [SerializeField] private Fase fase;
+    private List<float> tamanhoDasMusicas;
     private List<GameObject> buracosDisponiveis;
 
+    public int JogadorVidas
+    {
+        get
+        {
+            return fase.jogadorVidas;
+        }
+    }
     public List<Toupeira> Toupeiras
     {
         get
@@ -41,18 +49,26 @@ public class FaseModel : Elemento
             return fase.maxArmadilhas;
         }
     }
-    public AudioClip Musica
+    public AudioClip[] Musicas
     {
         get
         {
-            return fase.musica;
+            return fase.musicas;
         }
     }
-    public float TamanhoDaMusica
+    public List<float> TamanhoDasMusicas
     {
         get
         {
-            return fase.musica.length;
+            if (tamanhoDasMusicas == null)
+            {
+                tamanhoDasMusicas = new List<float>();
+            }
+            foreach (AudioClip a in Musicas)
+            {
+                tamanhoDasMusicas.Add(a.length);
+            }
+            return tamanhoDasMusicas;
         }
     }
     public int Bpm
@@ -70,18 +86,18 @@ public class FaseModel : Elemento
         }
     }
 
-    public AudioClip SomToupeiraSurgindo
+    public AudioClip[] SonsToupeiraSurgindo
     {
         get
         {
-            return fase.somToupeiraSurgindo;
+            return fase.sonsToupeiraSurgindo;
         }
     }
-    public AudioClip SomToupeiraAcertou
+    public AudioClip[] SonsToupeiraAcertou
     {
         get
         {
-            return fase.somToupeiraAcertou;
+            return fase.sonsToupeiraAcertou;
         }
     }
     public GameObject[] Buracos
@@ -119,6 +135,13 @@ public class FaseModel : Elemento
         get
         {
             return fase.acertouEfeito;
+        }
+    }
+    public float MinSemAtividade
+    {
+        get
+        {
+            return fase.minSemAtividade;
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class JogadorView : Elemento
 {
     private Estados estado;
-    private int pontosPowerUp;
+    //private int pontosPowerUp;
     private int limitePowerUp1, limitePowerUp2, limitePowerUp3;
 
     private int nivelPowerUp;
@@ -53,22 +53,17 @@ public class JogadorView : Elemento
 
     public void GanhouPontos(int pontosPowerUp)
     {
-        this.pontosPowerUp += pontosPowerUp;
+     //   this.pontosPowerUp += pontosPowerUp;
 
-        if (this.pontosPowerUp >= 100)
-        {
-            this.pontosPowerUp = 100;
-        }
-
-        if (this.pontosPowerUp >= limitePowerUp3)
+        if (pontosPowerUp >= limitePowerUp3)
         {
             nivelPowerUp = 3;
         }
-        else if (this.pontosPowerUp >= limitePowerUp2)
+        else if (pontosPowerUp >= limitePowerUp2)
         {
             nivelPowerUp = 2;
         }
-        else if(this.pontosPowerUp >= limitePowerUp1)
+        else if(pontosPowerUp >= limitePowerUp1)
         {
             nivelPowerUp = 1;
         }

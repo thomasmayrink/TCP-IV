@@ -10,9 +10,10 @@ public class Fase : ScriptableObject
     [SerializeField] public float[] temposCriarToupeiras;
     [SerializeField] public List<Armadilha> armadilhas;
     [SerializeField] public int maxArmadilhas;
-    [SerializeField] public AudioClip musica;
+    [SerializeField] public AudioClip[] musicas;
     [SerializeField] public int bpm;
-    [SerializeField] public AudioClip somToupeiraSurgindo;
-    [SerializeField] public AudioClip somToupeiraAcertou;
+    [SerializeField] public AudioClip[] sonsToupeiraSurgindo;
+    [SerializeField] public AudioClip[] sonsToupeiraAcertou;
     [SerializeField] public GameObject acertouEfeito;
+    [SerializeField] public float minSemAtividade;
 }

@@ -15,9 +15,10 @@ MonoBehaviour:
   vida: 1
   pontos: 5
   pontosPowerUp: 10
-  raridade: 5
   velocidade: 10
+  dano: 0
+  raridade: 5
   temposNaTela: 4
+  prefab: {fileID: 4402650871268588665, guid: 5c7c255229001174c96fc5991b7aa8ad, type: 3}
   dancasId: 0100000002000000
   comportamento: 0
-  toupeiraPrefab: {fileID: 4402650871268588665, guid: db35b85843ac7fa4ca6970d94fc4c403, type: 3}

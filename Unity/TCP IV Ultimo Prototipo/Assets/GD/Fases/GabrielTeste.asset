@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
   m_Name: GabrielTeste
   m_EditorClassIdentifier: 
-  jogadorVidas: 0
+  jogadorVidas: 3
   toupeiras:
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
   - {fileID: 11400000, guid: 4c1016e1b625e6a4e97d486d9a2088ef, type: 2}
@@ -25,10 +25,26 @@ MonoBehaviour:
   - 2
   - 4
   armadilhas:
-  - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
-  maxArmadilhas: 1
-  musica: {fileID: 8300000, guid: 616621689ae87814586282a9b2e8bd0c, type: 3}
-  bpm: 70
-  somToupeiraSurgindo: {fileID: 8300000, guid: 1a8111bdd7cab434cb362d74989b638d, type: 3}
-  somToupeiraAcertou: {fileID: 8300000, guid: 660799aba1767004ab5d047e6712b7d0, type: 3}
+  - {fileID: 0}
+  maxArmadilhas: 0
+  musicas:
+  - {fileID: 8300000, guid: 857bae581cb32414e86b70d66b246d75, type: 3}
+  - {fileID: 8300000, guid: d54ab6b0e5d52f946a95705c8e66e034, type: 3}
+  - {fileID: 8300000, guid: a00726495fb16914395049224a54079e, type: 3}
+  - {fileID: 8300000, guid: 0e403aae20560d148b7d3a3a5eff2e5d, type: 3}
+  - {fileID: 8300000, guid: cc70f0bca11a78d42909ea3e6a8afa43, type: 3}
+  - {fileID: 8300000, guid: c792d13f2fb919441826e2caa8cc89cf, type: 3}
+  bpm: 120
+  sonsToupeiraSurgindo:
+  - {fileID: 8300000, guid: efd4f3e0bd4a5b44d9f137e61c453524, type: 3}
+  - {fileID: 8300000, guid: 30c2685a3d4aaad4bb225a9e79773983, type: 3}
+  - {fileID: 8300000, guid: 6c6f435502189554d8c550c7b6df5f91, type: 3}
+  - {fileID: 8300000, guid: 62feffd377c07414586726787c2569d8, type: 3}
+  sonsToupeiraAcertou:
+  - {fileID: 8300000, guid: ba0f4e57398e94a4987f672efa154cf7, type: 3}
+  - {fileID: 8300000, guid: b0089b5c0c3516240a5d4a4c8a5f07aa, type: 3}
+  - {fileID: 8300000, guid: 0f7d14b8c6ce5c44e8f9c16863022d04, type: 3}
+  - {fileID: 8300000, guid: f7214fce71a9b3942992ccf469dacd61, type: 3}
+  - {fileID: 8300000, guid: a2465dabdc729c244b250388ab5b8c9b, type: 3}
   acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}
+  minSemAtividade: 5

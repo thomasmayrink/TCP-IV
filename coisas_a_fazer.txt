@@ -1,11 +1,12 @@
-Juntar Armadilha e Toupeira completamente (filhas de tudo igual);
+TempoSemAtividade: contar tempo desde o último acerto do jogador.
+
+Armadilha: Espinhos;
 
 Colocar Armadilha e Toupeira para serem sorteados juntos;
 
-Armadilhas: Espinhos;
-
 Reorganizar completamente: FaseView e FaseController;
 
-Power-ups: Nível 1, 2 e 3;
 Comportamento: Poucos Amigos e Líder;
-Armadilhas: Urso, Bomba;
+Power-up: Nível 1 e 2;
+Armadilha: Urso, Bomba;
+Power-up: 3

@@ -5,8 +5,8 @@ public class FaseView : Elemento
 {
     private static List<Toupeira> toupeirasRaridade;
 
-    private float timerInstancias, timerFase;
-    private float timerInstanciasMax, timerFaseMax;
+    private float timerInstancias;
+    private float timerInstanciasMax;
 
     private float batidasPorSegundo;
     private float[] tempos;
@@ -24,7 +24,6 @@ public class FaseView : Elemento
     private void Update()
     {
         timerInstancias += Time.deltaTime;
-        timerFase += Time.deltaTime;
 
         switch (estado)
         {
@@ -34,14 +33,6 @@ public class FaseView : Elemento
                     timerInstancias = 0;
                     app.Notificar(Notificacao.Fase.CriarToupeiras, this);
                     estado = Estado.CriarToupeiras;
-                }
-                
-                if (timerFaseMax != 0)
-                {
-                    if (timerFase >= timerFaseMax)
-                    {
-                        app.Notificar(Notificacao.Fase.Fim, this);
-                    }
                 }
                 break;
 
@@ -75,10 +66,12 @@ public class FaseView : Elemento
                     {
                         toupeirasRaridade.Add(toupeiras[i]);
                     }
+                    /*
                     if (armadilhas[i].raridade == 1)
                     {
                         
                     }
+                    */
                 }
                 break;
 
@@ -129,25 +122,17 @@ public class FaseView : Elemento
     }
     #endregion
 
-    public void SetFase(float batidasPorSegundo, float[] tempos, float tamanhoDaMusica)
-    {
-        this.batidasPorSegundo = batidasPorSegundo;
-        timerInstanciasMax = 0;
-        this.tempos = tempos;
-        timerFaseMax = tamanhoDaMusica;
-    }
     public void SetFase(float batidasPorSegundo, float[] tempos)
     {
         this.batidasPorSegundo = batidasPorSegundo;
         timerInstanciasMax = 0;
         this.tempos = tempos;
-        timerFaseMax = 0;
     }
     public void CriarToupeiras(int maxToupeiras, int maxArmadilhas, List<GameObject> buracosDisponiveis, List<Toupeira> toupeiras, List<Armadilha> armadilhas, int bpm, AudioClip somAoSurgir, AudioClip somPancada, GameObject acertouEfeito)
     {
         SortearToupeiras(toupeiras, armadilhas);
 
-        int maxInstancias = Random.Range(1, maxToupeiras + 1);
+        int maxInstancias = Random.Range(1, maxToupeiras);
 
         Utilidades.SortearLista(buracosDisponiveis);
         try

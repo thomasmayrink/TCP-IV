@@ -7,10 +7,12 @@ public static class FabricaToupeira
         model.Vida = toupeira.vida;
         model.Pontos = toupeira.pontos;
         model.PontosPowerUp = toupeira.pontosPowerUp;
-        model.Raridade = toupeira.raridade;
         model.Velocidade = toupeira.velocidade;
-        model.BpmFase = bpm;
+        model.Dano = toupeira.dano;
+        model.Raridade = toupeira.raridade;
         model.TemposNaTela = toupeira.temposNaTela / (bpm / 60f);
+
+        model.BpmFase = bpm;
         model.DancasId = toupeira.dancasId;
         model.Comportamento = toupeira.comportamento;
         model.Buraco = buraco;

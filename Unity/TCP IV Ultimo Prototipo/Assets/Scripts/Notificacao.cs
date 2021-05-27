@@ -17,10 +17,20 @@ public abstract class Notificacao
         public const string Destruir = "Toupeira_Destruir";
     }
 
+    public static class Armadilha
+    {
+        public const string Surgindo = "Armadilha_Surgindo";
+    }
+
     public static class Jogador
     {
         public const string Inicio = "Jogador_Inicio";
         public const string PerdeuVida = "Jogador_Perdeu_Vida";
         public const string GanhouPontos = "Jogador_Ganhou_Pontos";
+    }
+
+    public static class Atualizar
+    {
+        public const string AtualizarUI = "Atualizar_UI";
     }
 }

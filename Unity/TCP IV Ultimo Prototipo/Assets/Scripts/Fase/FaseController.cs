@@ -21,7 +21,15 @@ public class FaseController : Controller
             case Notificacao.Fase.CriarToupeiras:
                 if (model.BuracosDisponiveis.Count > 0)
                 {
-                    view.CriarToupeiras(model.MaxToupeiras, model.MaxArmadilhas, model.BuracosDisponiveis, model.Toupeiras, model.Armadilhas, model.Bpm, model.SomToupeiraSurgindo, model.SomToupeiraAcertou, model.AcertouEfeito);
+                    view.CriarToupeiras(model.MaxToupeiras, 
+                                        model.MaxArmadilhas,
+                                        model.BuracosDisponiveis,
+                                        model.Toupeiras,
+                                        model.Armadilhas, 
+                                        model.Bpm, 
+                                        model.SonsToupeiraSurgindo[Random.Range(0, model.SonsToupeiraSurgindo.Length)],
+                                        model.SonsToupeiraAcertou[Random.Range(0, model.SonsToupeiraAcertou.Length)], 
+                                        model.AcertouEfeito);
                 }
                 break;
 
@@ -36,12 +44,14 @@ public class FaseController : Controller
                 app.Notificar(Notificacao.Toupeira.Destruir, model);
 
                 #region APAGAR
-                GameObject.FindGameObjectWithTag("Luz").GetComponent<Light>().enabled = false;
-                Destroy(GameObject.FindGameObjectWithTag("Chao"));
                 foreach (GameObject b in model.Buracos)
                 {
                     Destroy(b);
                 }
+                Destroy(app.jogadorModel.gameObject);
+                Destroy(GameObject.FindGameObjectWithTag("Chao"));
+                app.luz.enabled = false;
+                app.musicaSource.enabled = false;
                 #endregion
 
                 app.DebugFase("FIM");

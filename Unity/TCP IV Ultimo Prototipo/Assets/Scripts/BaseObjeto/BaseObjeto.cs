@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AbstratoObjeto : ScriptableObject
+public abstract class BaseObjeto : ScriptableObject
 {
     [SerializeField] public int vida;
     [SerializeField] public int pontos;

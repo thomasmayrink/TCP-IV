@@ -17,11 +17,8 @@ MonoBehaviour:
   pontosPowerUp: 20
   velocidade: 10
   dano: 1
-  raridade: 2
-  temposNaTela: 6
-  somAoSurgir: {fileID: 8300000, guid: 1a8111bdd7cab434cb362d74989b638d, type: 3}
-  somPancada: {fileID: 8300000, guid: 660799aba1767004ab5d047e6712b7d0, type: 3}
-  acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}
+  raridade: 3
+  temposNaTela: 4
   prefab: {fileID: 4402650871268588665, guid: 1c2fe94afc02c8e4bb639c70709411a7, type: 3}
   dancasId: 02000000
   comportamento: 2

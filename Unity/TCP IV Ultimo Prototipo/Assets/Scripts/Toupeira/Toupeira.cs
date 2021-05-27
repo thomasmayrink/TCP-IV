@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "WhackAMole/Toupeira")]
-public class Toupeira : AbstratoObjeto
+public class Toupeira : BaseObjeto
 {
    // [SerializeField] public int vida;
     //[SerializeField] public int pontos;

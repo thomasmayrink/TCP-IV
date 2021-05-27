@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class ToupeiraView : Elemento
+public class ToupeiraView : BaseObjetoView
 {
     private Animator animator;
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
     private CapsuleCollider col;
 
-    private Estado estado;
+    //private Estado estado;
 
-    private float limite;
-    private Vector3 movimento;
+    //private float limite;
+    //private Vector3 movimento;
 
     private float tempoNaTela, tempoMax;
     private float timerAnimacao, timerAnimacaoMax;
@@ -23,7 +23,7 @@ public class ToupeiraView : Elemento
         col = gameObject.GetComponent<CapsuleCollider>();
 
         app.Notificar(Notificacao.Toupeira.Surgindo, this);
-        estado = Estado.Surgindo;
+        //estado = Estado.Surgindo;
     }
 
     private void Update()
@@ -111,18 +111,20 @@ public class ToupeiraView : Elemento
         app.Notificar(Notificacao.Toupeira.FoiAcertada, this);
     }
 
+    /*
     public void TocarSom(AudioClip clip)
     {
         audioSource.clip = clip;
         audioSource.Play();
     }
 
+
     public void Surgir(float velocidade, float limite)
     {
         movimento = velocidade * Vector3.up * Time.deltaTime;
         this.limite = limite;
     }
-
+        */
     public void Idle(int bpm, int[] dancasId, Comportamento comportamento, float tempoMax)
     {
         animator.speed = bpm / 120f;
@@ -142,21 +144,12 @@ public class ToupeiraView : Elemento
     {
         animator.SetBool(parametro, true);
         timerAnimacao = 0;
-        
-        var efeito = Instantiate(acertouEfeito, gameObject.transform.position, Quaternion.identity);
-        efeito.transform.parent = gameObject.transform;
+        Acertar(acertouEfeito);
     }
 
     public void Descer()
     {
         animator.SetBool("Desceu", true);
         estado = Estado.Descendo;
-    }
-
-    private enum Estado
-    {
-        Surgindo,
-        Idle,
-        Descendo
     }
 }

@@ -4,6 +4,7 @@ public class JogadorModel : Elemento
 {
     public int Vidas { get; set; }
     public int Pontos { get; set; }
+    public int PtsPowerUp { get; set; }
 
     [SerializeField][Range(0,100)] public int pontosParaPowerUp1;
     [SerializeField] public PowerUp powerUpNivel1;
