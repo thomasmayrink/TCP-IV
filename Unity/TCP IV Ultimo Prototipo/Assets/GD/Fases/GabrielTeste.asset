@@ -15,18 +15,15 @@ MonoBehaviour:
   jogadorVidas: 3
   toupeiras:
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
-  - {fileID: 11400000, guid: 4c1016e1b625e6a4e97d486d9a2088ef, type: 2}
-  - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
-  - {fileID: 11400000, guid: db5c966b3e21091478240f786cf4911d, type: 2}
-  maxToupeiras: 3
-  temposCriarToupeiras:
+  maxToupeiras: 4
+  armadilhas:
+  - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
+  maxArmadilhas: 0
+  proporcao: 1
+  temposCriar:
+  - 0.25
   - 0.5
   - 1
-  - 2
-  - 4
-  armadilhas:
-  - {fileID: 0}
-  maxArmadilhas: 0
   musicas:
   - {fileID: 8300000, guid: e2b9715966dec8746bfed7af0596e2c6, type: 3}
   - {fileID: 8300000, guid: 1e66355d54d557347aa9860e110cde9e, type: 3}

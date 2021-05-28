@@ -29,11 +29,11 @@ public class FaseModel : Elemento
             return fase.maxToupeiras;
         }
     }
-    public float[] TemposCriarToupeiras
+    public float[] TemposCriar
     {
         get
         {
-            return fase.temposCriarToupeiras;
+            return fase.temposCriar;
         }
     }
     public List<Armadilha> Armadilhas
@@ -48,6 +48,13 @@ public class FaseModel : Elemento
         get
         {
             return fase.maxArmadilhas;
+        }
+    }
+    public int Proporcao
+    {
+        get
+        {
+            return fase.proporcao;
         }
     }
     public AudioClip[] Musicas

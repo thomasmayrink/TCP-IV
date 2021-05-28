@@ -14,17 +14,15 @@ public class FaseController : Controller
                 model = GetComponent<FaseModel>();
                 view = GetComponentInChildren<FaseView>();
 
-                view.SetFase(model.BatidasPorSegundo, model.TemposCriarToupeiras);
+                view.SetFase(model.BatidasPorSegundo, model.TemposCriar, model.Proporcao);
                 break;
 
             case Notificacao.Fase.CriarToupeiras:
                 if (model.BuracosDisponiveis.Count > 0)
                 {
                     view.CriarToupeiras(model.MaxToupeiras, 
-                                        model.MaxArmadilhas,
                                         model.BuracosDisponiveis,
                                         model.Toupeiras,
-                                        model.Armadilhas, 
                                         model.Bpm, 
                                         model.SonsSurgindo[Random.Range(0, model.SonsSurgindo.Length)],
                                         model.SonsAcertou[Random.Range(0, model.SonsAcertou.Length)], 
@@ -32,15 +30,30 @@ public class FaseController : Controller
                                         model.SonsFugiu[Random.Range(0, model.SonsFugiu.Length)],
                                         model.AcertouEfeito);
                 }
+                else
+                {
+                    app.DebugFase("model.BuracosDisponiveis.Count == " + model.BuracosDisponiveis.Count);
+                }
                 break;
-
+                
             case Notificacao.Fase.CriarArmadilhas:
                 if (model.BuracosDisponiveis.Count > 0)
                 {
-                    //view.CriarArmadilhas(model.MaxArmadilhas, model.BuracosDisponiveis, model.Armadilhas, model.)
+                    view.CriarArmadilhas(model.MaxArmadilhas,
+                                         model.BuracosDisponiveis,
+                                         model.Armadilhas,
+                                         model.Bpm,
+                                         model.SonsSurgindo[Random.Range(0, model.SonsSurgindo.Length)],
+                                         model.SonsAcertou[Random.Range(0, model.SonsAcertou.Length)],
+                                         model.SonsDano[Random.Range(0, model.SonsDano.Length)],
+                                         model.AcertouEfeito);
+                }
+                else
+                {
+                    app.DebugFase("model.BuracosDisponiveis.Count == " + model.BuracosDisponiveis.Count);
                 }
                 break;
-
+                
             case Notificacao.Fase.AumentarDificuldade:
                 model.Bpm *= 1.25f;
                 if (model.Bpm > model.BpmMax)

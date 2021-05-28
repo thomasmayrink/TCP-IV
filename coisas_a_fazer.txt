@@ -1,5 +1,4 @@
 Armadilha: Espinhos;
-Colocar Armadilha e Toupeira para serem sorteados juntos;
 
 TempoSemAtividade: contar tempo desde o último acerto do jogador.
 

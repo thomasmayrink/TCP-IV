@@ -6,18 +6,17 @@ public class Buraco : MonoBehaviour
 
     public void CriarToupeira(GameObject toupeira, Toupeira toupeiraAtr, float bpm, AudioClip somAoSurgir, AudioClip somPancada, AudioClip somDano, AudioClip somFugiu, GameObject acertouEfeito)
     {
-        Vector3 pos = this.gameObject.transform.position + new Vector3(0, -2.8f, 0);
+        Vector3 pos = gameObject.transform.position + new Vector3(0, -2.8f, 0);
         toupeira = Instantiate(toupeira, pos, Quaternion.identity);
         Fabrica.Toupeira(toupeira.GetComponent<ToupeiraModel>(), toupeiraAtr, bpm, gameObject, somAoSurgir, somPancada, somDano, somFugiu, acertouEfeito);
-        //        FabricaToupeira.Criar(toupeira.GetComponent<ToupeiraModel>(), toupeiraAtr, bpm, gameObject, somAoSurgir, somPancada, acertouEfeito);
-
         EstaOcupado = true;
     }
 
-    public void CriarArmadilha(GameObject armadilha, Armadilha armadilhaAtr, int bpm, AudioClip somAoSurgir, AudioClip somPancada, AudioClip somDano, GameObject acertouEfeito)
+    public void CriarArmadilha(GameObject armadilha, Armadilha armadilhaAtr, float bpm, AudioClip somAoSurgir, AudioClip somPancada, AudioClip somDano, GameObject acertouEfeito)
     {
-        Vector3 pos = this.gameObject.transform.position + new Vector3(0, -2.8f, 0);
+        Vector3 pos = gameObject.transform.position + new Vector3(0, -2.8f, 0);
         armadilha = Instantiate(armadilha, pos, Quaternion.identity);
         Fabrica.Armadilha(armadilha.GetComponent<ArmadilhaModel>(), armadilhaAtr, bpm, gameObject, somAoSurgir, somPancada, somDano, acertouEfeito);
+        EstaOcupado = true;
     }
 }

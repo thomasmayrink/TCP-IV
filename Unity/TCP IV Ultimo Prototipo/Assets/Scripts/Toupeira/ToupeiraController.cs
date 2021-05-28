@@ -41,12 +41,12 @@ public class ToupeiraController : Controller
                     model.Vida--;
                     if (model.Vida == 0)
                     {
-                        view.Acertar("Matou", model.AcertouEfeito);
+                        view.Acertou("Matou", model.AcertouEfeito);
                         app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
                     }
                     else
                     {
-                        view.Acertar("Acertou", model.AcertouEfeito);
+                        view.Acertou("Acertou", model.AcertouEfeito);
                     }
                 }
                 break;
@@ -56,7 +56,6 @@ public class ToupeiraController : Controller
                 {
                     if (model.Vida > 0)
                     {
-                        app.DebugToupeira("desceu");
                         view.TocarSom(model.SomFugiu);
                     }
                     model.Buraco.GetComponent<Buraco>().EstaOcupado = false;

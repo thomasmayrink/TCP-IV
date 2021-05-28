@@ -20,6 +20,9 @@ public abstract class Notificacao
     public static class Armadilha
     {
         public const string Surgindo = "Armadilha_Surgindo";
+        public const string Idle = "Armadilha_Idle";
+        public const string Desceu = "Armadilha_Desceu";
+        public const string FoiAcertada = "Armadilha_Foi_Acertada";
     }
 
     public static class Jogador

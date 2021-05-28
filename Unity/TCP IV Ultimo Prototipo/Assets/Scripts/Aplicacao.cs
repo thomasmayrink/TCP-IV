@@ -74,6 +74,10 @@ public class Aplicacao : MonoBehaviour
     {
         Debug.Log(Utilidades.DebugComCor("Toupeira: " + txt, "yellow"));
     }
+    public void DebugArmadilha(string txt)
+    {
+        Debug.Log(Utilidades.DebugComCor("Armadilha: " + txt, "pink"));
+    }
     public void DebugJogador(string txt)
     {
         Debug.Log(Utilidades.DebugComCor("Jogador: " + txt, "blue"));

@@ -3,16 +3,15 @@ using UnityEngine;
 public abstract class BaseObjetoView : Elemento
 {
     protected AudioSource audioSource;
-
+    protected CapsuleCollider col;
     protected Estado estado;
+
+    protected float tempoNaTela, tempoMax;
     
     protected float limite;
     protected Vector3 movimento;
 
-    private void Start()
-    {
-        estado = Estado.Surgindo;
-    }
+    protected bool desceu;
 
     public void TocarSom(AudioClip clip)
     {

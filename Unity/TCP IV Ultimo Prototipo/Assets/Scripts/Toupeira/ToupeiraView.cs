@@ -4,19 +4,18 @@ public class ToupeiraView : BaseObjetoView
 {
     private Animator animator;
     //private AudioSource audioSource;
-    private CapsuleCollider col;
-
-    //private Estado estado;
+   // private CapsuleCollider col;
+   // private Estado estado;
 
     //private float limite;
     //private Vector3 movimento;
 
-    private float tempoNaTela, tempoMax;
+    //private float tempoNaTela, tempoMax;
     private float timerAnimacao, timerAnimacaoMax;
 
     private Comportamento comportamento;
 
-    private bool desceu;
+    //private bool desceu;
 
     private void Start()
     {
@@ -25,7 +24,7 @@ public class ToupeiraView : BaseObjetoView
         col = gameObject.GetComponent<CapsuleCollider>();
 
         app.Notificar(Notificacao.Toupeira.Surgindo, this);
-        //estado = Estado.Surgindo;
+        estado = Estado.Surgindo;
         desceu = false;
     }
 
@@ -146,7 +145,7 @@ public class ToupeiraView : BaseObjetoView
         col.enabled = true;
     }
 
-    public void Acertar(string parametro, GameObject acertouEfeito)
+    public void Acertou(string parametro, GameObject acertouEfeito)
     {
         animator.SetBool(parametro, true);
         timerAnimacao = 0;

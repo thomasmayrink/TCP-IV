@@ -12,15 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ef6067fb99dd84b9a4266acbebd06b, type: 3}
   m_Name: GabrielEspinhos
   m_EditorClassIdentifier: 
-  vida: 0
+  vida: 1
   pontos: 0
   pontosPowerUp: 0
-  velocidade: 0
-  dano: 0
-  raridade: 2
+  velocidade: 15
+  dano: 1
+  raridade: 5
   temposNaTela: 4
-  somAoSurgir: {fileID: 8300000, guid: 1a8111bdd7cab434cb362d74989b638d, type: 3}
-  somPancada: {fileID: 8300000, guid: 688f562732197d04288bd2f07cfba675, type: 3}
-  acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 5169431531903529104, guid: d7ad2f1b2cb2e3e49afd6089a363303b, type: 3}
   tipoDeAmadilha: 0
