@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
-  m_Name: GabrielTeste
+  m_Name: GabrielTeste 3
   m_EditorClassIdentifier: 
   jogadorVidas: 3
   toupeiras:
@@ -18,20 +18,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4c1016e1b625e6a4e97d486d9a2088ef, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
   - {fileID: 11400000, guid: db5c966b3e21091478240f786cf4911d, type: 2}
-  maxToupeiras: 5
+  - {fileID: 11400000, guid: 4c1016e1b625e6a4e97d486d9a2088ef, type: 2}
+  maxToupeiras: 3
   armadilhas:
   - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
   maxArmadilhas: 5
-  proporcao: 1
+  proporcao: 5
   temposCriar:
   - 0.25
   - 0.5
   - 1
   musicas:
-  - {fileID: 8300000, guid: e2b9715966dec8746bfed7af0596e2c6, type: 3}
-  - {fileID: 8300000, guid: 1e66355d54d557347aa9860e110cde9e, type: 3}
-  - {fileID: 8300000, guid: cf0b2aa2bf8980348ba9bd873d6cf2c0, type: 3}
-  - {fileID: 8300000, guid: bd590a2a754abc346ae9ca13f79636ca, type: 3}
   - {fileID: 8300000, guid: b264de7727249904eb08f67cc1f584ac, type: 3}
   bpmInicial: 120
   bpmMax: 400
@@ -51,7 +48,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 325e99e89b5638b4abaf91780b90f043, type: 3}
   - {fileID: 8300000, guid: 85fbb52dafaa1294bb28c6cd185d43b5, type: 3}
   - {fileID: 8300000, guid: f18576dcf0bc73e4297700317b42f522, type: 3}
-  sonsFugiu:
-  - {fileID: 8300000, guid: 89dc83a81939a1c48ada74956bc6cb04, type: 3}
   minSemAtividade: 1
   acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}

@@ -1,7 +1,12 @@
+Criar Classe Estática "Dados de tudo" para colocar pontos e última fase escolhida.
+
 TempoSemAtividade: contar tempo desde o último acerto do jogador.
+
+Corações. Desenhar conforme a quantidade escolhida em "Fase"
 
 Reorganizar completamente: FaseView e FaseController;
 
+Power-up: slider;
 Power-up: Nível 1 e 2;
 Comportamento: Poucos Amigos e Líder (ver wpp);
 Armadilha: Urso, Bomba;
