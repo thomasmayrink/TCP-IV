@@ -4,7 +4,15 @@ using UnityEngine;
 
 public static class Fabrica
 {
-    public static void Toupeira(ToupeiraModel model, Toupeira toupeira, float bpm, GameObject buraco, AudioClip somAoSurgir, AudioClip somPancada, AudioClip somDano, AudioClip somFugiu, GameObject acertouEfeito)
+    public static void Toupeira(ToupeiraModel model,
+                                Toupeira toupeira, 
+                                float bpm, 
+                                GameObject buraco, 
+                                AudioClip somAoSurgir,
+                                AudioClip somPancada, 
+                                AudioClip somDano, 
+                               // AudioClip somFugiu, 
+                                GameObject acertouEfeito)
     {
         Criar(model, bpm, buraco, somAoSurgir, somPancada, somDano, acertouEfeito);
         model.Vida = toupeira.vida;
@@ -17,18 +25,27 @@ public static class Fabrica
 
         model.DancasId = toupeira.dancasId;
         model.Comportamento = toupeira.comportamento;
-        model.SomFugiu = somFugiu;
+        //model.SomFugiu = somFugiu;
     }
-    public static void Armadilha(ArmadilhaModel model, Armadilha armadilha, float bpm, GameObject buraco, AudioClip somAoSurgir, AudioClip somPancada, AudioClip somDano, GameObject acertouEfeito)
+    public static void Armadilha(ArmadilhaModel model,
+                                 Armadilha armadilha,
+                                 float bpm, 
+                                 GameObject buraco, 
+                                 AudioClip somAoSurgir,
+                                 AudioClip somPancada,
+                                 AudioClip somDano, 
+                                 GameObject acertouEfeito)
     {
         Criar(model, bpm, buraco, somAoSurgir, somPancada, somDano, acertouEfeito);
 
         model.Vida = armadilha.vida;
         model.Pontos = armadilha.pontos;
         model.PontosPowerUp = armadilha.pontosPowerUp;
+        model.Velocidade = armadilha.velocidade;
         model.Dano = armadilha.dano;
         model.Raridade = armadilha.raridade;
         model.TemposNaTela = armadilha.temposNaTela / (bpm / 60f);
+
         model.TipoDeArmadilha = armadilha.tipoDeAmadilha;
     }
 

@@ -1,14 +1,11 @@
-Armadilha: Espinhos;
-
 TempoSemAtividade: contar tempo desde o último acerto do jogador.
 
 Reorganizar completamente: FaseView e FaseController;
 
-Comportamento: Poucos Amigos e Líder (ver wpp);
 Power-up: Nível 1 e 2;
+Comportamento: Poucos Amigos e Líder (ver wpp);
 Armadilha: Urso, Bomba;
 Power-up: 3 (criar bool app.PowerUp3);
-
 ------------------------------------------------------------
 
 Player Prefs pra ranking pessoal.

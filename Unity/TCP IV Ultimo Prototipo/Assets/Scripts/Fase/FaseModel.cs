@@ -130,6 +130,7 @@ public class FaseModel : Elemento
             return fase.sonsDano;
         }
     }
+    /*
     public AudioClip[] SonsFugiu
     {
         get
@@ -137,6 +138,7 @@ public class FaseModel : Elemento
             return fase.sonsFugiu;
         }
     }
+    */
     public GameObject[] Buracos
     {
         get

@@ -27,7 +27,7 @@ public class FaseController : Controller
                                         model.SonsSurgindo[Random.Range(0, model.SonsSurgindo.Length)],
                                         model.SonsAcertou[Random.Range(0, model.SonsAcertou.Length)], 
                                         model.SonsDano[Random.Range(0, model.SonsDano.Length)],
-                                        model.SonsFugiu[Random.Range(0, model.SonsFugiu.Length)],
+                                        //model.SonsFugiu[Random.Range(0, model.SonsFugiu.Length)],
                                         model.AcertouEfeito);
                 }
                 else

@@ -29,9 +29,14 @@ public class ArmadilhaController : Controller
             case Notificacao.Armadilha.FoiAcertada:
                 if (alvo == view)
                 {
-                    view.TocarSom(model.SomDano);
-                    app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
-                    view.Acertou(model.AcertouEfeito);
+                    model.Vida--;
+                    if (model.Vida <= 0)
+                    {
+                        view.TocarSom(model.SomDano);
+                        app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
+                        view.Acertou(model.AcertouEfeito);
+                        view.Descer();
+                    }
                 }
                 break;
 
@@ -39,7 +44,7 @@ public class ArmadilhaController : Controller
                 if (alvo == view)
                 {
                     model.Buraco.GetComponent<Buraco>().EstaOcupado = false;
-                    Destroy(gameObject);
+                    Destroy(gameObject, 1f);
                 }
                 break;
         }

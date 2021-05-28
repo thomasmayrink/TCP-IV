@@ -54,10 +54,12 @@ public class ToupeiraController : Controller
             case Notificacao.Toupeira.Desceu:
                 if (alvo == view)
                 {
+                    /*
                     if (model.Vida > 0)
                     {
                         view.TocarSom(model.SomFugiu);
                     }
+                    */
                     model.Buraco.GetComponent<Buraco>().EstaOcupado = false;
                     Destroy(gameObject, 1f);
                 }

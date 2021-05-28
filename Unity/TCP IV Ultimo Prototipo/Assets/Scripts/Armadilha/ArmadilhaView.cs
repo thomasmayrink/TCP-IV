@@ -71,6 +71,7 @@ public class ArmadilhaView : BaseObjetoView
 
     public void Descer()
     {
+        movimento *= 2;
         estado = Estado.Descendo;
     }
 }
