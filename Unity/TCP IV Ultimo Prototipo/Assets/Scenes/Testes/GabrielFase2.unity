@@ -175,6 +175,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 117.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7752973574224969377, guid: 4202ad826ec12c74d8259872df4ecf66, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752973574224969377, guid: 4202ad826ec12c74d8259872df4ecf66, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7752973574224969407, guid: 4202ad826ec12c74d8259872df4ecf66, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -663,7 +671,7 @@ GameObject:
   - component: {fileID: 1779821590}
   m_Layer: 0
   m_Name: Directional Light (1)
-  m_TagString: Luz
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 public class FaseView : Elemento
 {
+    private bool rodando;
+    private float timerParado;
+
     private static List<Toupeira> toupeirasRaridade;
     private static List<Armadilha> armadilhasRaridade;
     private int proporcao;
-
-    private bool rodando;
 
     private float timerInstancias;
     private float timerInstanciasMax;
@@ -15,7 +16,6 @@ public class FaseView : Elemento
     private float batidasPorSegundo;
     private float[] tempos;
 
-    private float timerParado;
 
     private Estado estado;
 
@@ -37,7 +37,6 @@ public class FaseView : Elemento
         if (rodando)
         {
             timerInstancias += Time.deltaTime;
-
             switch (estado)
             {
                 case Estado.Rodando:
@@ -65,12 +64,12 @@ public class FaseView : Elemento
         }
         else
         {
-            timerParado += Time.deltaTime;
-            app.DebugFase("timerParado: " + timerParado);
+            app.DebugFase("Timer parado: " + timerParado);
 
-            if (timerParado >= TesteDados.TempoParado)
+            timerParado += Time.deltaTime;
+            if (timerParado >= 0.5f)
             {
-                //app.Notificar(Notificacao.Fase.Voltar, this);
+                app.Notificar(Notificacao.Fase.Voltar, this);
             }
         }
     }
@@ -343,9 +342,19 @@ public class FaseView : Elemento
         }
         catch { }
     }
-    public void Rodando(bool rodando)
+
+    public void Parar()
     {
-        this.rodando = rodando;
+        app.musicaSource.Pause();
+        Time.timeScale = 0.1f;
+        rodando = false;
+    }
+
+    public void Voltar()
+    {
+        app.musicaSource.Play();
+        Time.timeScale = 1f;
+        rodando = true;
     }
     private enum Estado
     {

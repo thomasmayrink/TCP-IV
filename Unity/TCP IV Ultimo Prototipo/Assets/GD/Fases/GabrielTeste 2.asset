@@ -23,10 +23,14 @@ MonoBehaviour:
   armadilhas:
   - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
   maxArmadilhas: 3
-  proporcao: 1
+  proporcao: 3
   temposCriar:
   - 0.25
+  - 0.25
+  - 0.25
   - 0.5
+  - 0.5
+  - 1
   - 1
   musicas:
   - {fileID: 8300000, guid: cf0b2aa2bf8980348ba9bd873d6cf2c0, type: 3}

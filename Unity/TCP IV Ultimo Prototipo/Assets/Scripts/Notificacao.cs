@@ -7,8 +7,8 @@ public abstract class Notificacao
         public const string CriarToupeiras = "Fase_Criar_Toupeiras";
         public const string CriarArmadilhas = "Fase_Criar_Armadilhas";
         public const string AumentarDificuldade = "Fase_Aumentar_Dificuldade";
-        //public const string Parar = "Fase_Parar";
-        //public const string Voltar = "Fase_Voltar";
+        public const string Parar = "Fase_Parar";
+        public const string Voltar = "Fase_Voltar";
         public const string Fim = "Fase_Fim";
     }
  
@@ -38,7 +38,7 @@ public abstract class Notificacao
         public const string UsouPowerUp = "Jogador_Usou_PowerUp";
         public const string MatarUmaToupeiraAleatoria = "Jogador_Matar_Uma_Toupeira_Aleatoria";
         public const string MatarTodasToupeiras = "Jogador_Matar_Todas_Toupeiras";
-        //public const string PararTempo = "Jogador_Parar_Tempo";
+        public const string PararTempo = "Jogador_Parar_Tempo";
     }
 
     public static class PowerUp

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
-public class TesteMenu : MonoBehaviour
+public class TesteMenu : Elemento
 {
     [SerializeField] private AudioClip somBotaoConfirmar, somBotaoVoltar;
     private AudioSource audioSource;
@@ -13,7 +13,9 @@ public class TesteMenu : MonoBehaviour
                                         menuPrincipal, 
                                         menuFases, 
                                         menuRanking,
-                                        menuOpcoes;
+                                        menuOpcoes,
+                                        menuPause,
+                                        btnPause;
 
     [SerializeField] private Slider barraCarregamento;
     [SerializeField] private Text txtCarregamento;
@@ -21,6 +23,8 @@ public class TesteMenu : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
+
         audioSource = GetComponent<AudioSource>();
 
         try
@@ -41,13 +45,21 @@ public class TesteMenu : MonoBehaviour
     }
     private void Load(int cenaId)
     {
-        StartCoroutine(LoadParalelo(cenaId));
+        if (cenaId >= 0)
+        {
+            StartCoroutine(LoadParalelo(cenaId));
+        }
+        else
+        {
+            StartCoroutine(LoadParalelo());
+        }
     }
     IEnumerator LoadParalelo(int cenaId)
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(cenaId);
-
+        
         load.SetActive(true);
+
         while (!op.isDone)
         {
             float progresso = Mathf.Clamp01(op.progress / .9f);
@@ -57,8 +69,16 @@ public class TesteMenu : MonoBehaviour
             yield return null;
         }
     }
+    IEnumerator LoadParalelo()
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(SceneManager.sceneCountInBuildSettings - 1);
 
-    #region MENU_PRINCIPAL
+        while (!op.isDone)
+        {
+            yield return null;
+        }
+    }
+
     public void BtnVoltar()
     {
         SomBtnVoltar();
@@ -79,9 +99,6 @@ public class TesteMenu : MonoBehaviour
         catch { }
         menuPrincipal.SetActive(true);
     }
-    #endregion
-
-    #region MENU_FASES
     public void MenuFases()
     {
         SomBtnConfirmar();
@@ -93,27 +110,40 @@ public class TesteMenu : MonoBehaviour
         TesteDados.UltimaFaseId = cenaId;
         Load(cenaId);
     }
-    #endregion
-
-    #region MENU_RANKING
     public void MenuRanking()
     {
         SomBtnConfirmar();
         menuPrincipal.SetActive(false);
         menuRanking.SetActive(true);
     }
-    #endregion
-
-    #region MENU_OPCOES
     public void MenuOpcoes()
     {
         SomBtnConfirmar();
         menuPrincipal.SetActive(false);
         menuOpcoes.SetActive(true);
     }
-    #endregion
-
-    #region MOSTRAR_PONTOS
+    public void MenuPause(bool ativar)
+    {
+        if (ativar)
+        {
+            btnPause.SetActive(false);
+            app.musicaSource.Pause();
+            SomBtnConfirmar();
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            btnPause.SetActive(true);
+            SomBtnVoltar();
+            Time.timeScale = 1f;
+        }
+        menuPause.SetActive(ativar);
+    }
+    public void GameOver()
+    {
+        Time.timeScale = 1f;
+        Load(-1);
+    }
     public void MostrarPontos()
     {
         foreach(Text t in txtGameOverPontos)
@@ -121,19 +151,15 @@ public class TesteMenu : MonoBehaviour
             t.text = "Você fez " + TesteDados.PontosUltimaFase + " pontos!";
         }
     }
-    #endregion
-
-    #region JOGAR_NOVAMENTE (LEMBRAR DE PASSAR A FASE CERTA)
     public void JogarNovamente()
     {
+        SomBtnConfirmar();
         Load(TesteDados.UltimaFaseId);
     }
-    #endregion
-
-    #region VOLTAR_MENU_PRINCIPAL
     public void VoltarAoMenu()
     {
+        Time.timeScale = 1f;
+        SomBtnConfirmar();
         Load(0);
     }
-    #endregion
 }

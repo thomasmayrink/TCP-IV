@@ -64,7 +64,9 @@ public class FaseController : Controller
 
             case Notificacao.Fase.Fim:
                 #region MELHORAR
-                SceneManager.LoadScene("GabrielGameOver");
+                app.musicaSource.Stop();
+                FindObjectOfType<TesteMenu>().GameOver();
+                //SceneManager.LoadScene("GabrielGameOver");
                 #endregion
 
                 app.DebugFase("FIM");
@@ -87,15 +89,13 @@ public class FaseController : Controller
                 }
                 break;
 
-                /*
             case Notificacao.Fase.Parar:
-                view.Rodando(false);
+                view.Parar();
                 break;
-
+                
             case Notificacao.Fase.Voltar:
-                view.Rodando(true);
+                view.Voltar();
                 break;
-                */
         }
     }
 }

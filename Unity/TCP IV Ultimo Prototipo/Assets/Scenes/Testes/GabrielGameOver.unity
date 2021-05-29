@@ -256,6 +256,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287730704}
   m_CullTransparentMesh: 1
+--- !u!114 &400805626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3935411552497091593, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
+  m_PrefabInstance: {fileID: 1099335888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1099335888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -263,6 +274,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8651362425628231563}
     m_Modifications:
+    - target: {fileID: 3935411552976438409, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935411553089144947, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6544017320226331006, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
       propertyPath: m_Name
       value: Load
@@ -353,6 +372,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
+--- !u!224 &1099335889 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3935411553089144946, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
+  m_PrefabInstance: {fileID: 1099335888}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1099335890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3935411553089144947, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
+  m_PrefabInstance: {fileID: 1099335888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1585359231
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,16 +461,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585359231}
   m_CullTransparentMesh: 1
---- !u!1 &2124531645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6544017320226331006, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
+--- !u!114 &1953228162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3935411552895313043, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
   m_PrefabInstance: {fileID: 1099335888}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &2124531646 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6544017320226331007, guid: b2f091a47e7ef384791f3692d79941fc, type: 3}
-  m_PrefabInstance: {fileID: 1099335888}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1090531053227136214
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3842,7 +3872,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1090531053227136214}
-  - {fileID: 2124531646}
+  - {fileID: 1099335889}
   m_Father: {fileID: 8651362426086195787}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3904,13 +3934,14 @@ MonoBehaviour:
   somBotaoConfirmar: {fileID: 8300000, guid: 3c510e076192f2849bdeddcb38fb3f80, type: 3}
   somBotaoVoltar: {fileID: 8300000, guid: ac37affb0b3d8024f8d00d55930239f0, type: 3}
   menu: {fileID: 3108411999126368051}
-  load: {fileID: 2124531645}
+  load: {fileID: 1099335890}
   menuPrincipal: {fileID: 2793103451660633668}
   menuFases: {fileID: 2793103451018799579}
   menuRanking: {fileID: 0}
   menuOpcoes: {fileID: 0}
-  barraCarregamento: {fileID: 0}
-  txtCarregamento: {fileID: 0}
+  menuPause: {fileID: 0}
+  barraCarregamento: {fileID: 1953228162}
+  txtCarregamento: {fileID: 400805626}
   txtGameOverPontos:
   - {fileID: 2793103451154329387}
   - {fileID: 2793103450091220309}
@@ -4040,7 +4071,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0

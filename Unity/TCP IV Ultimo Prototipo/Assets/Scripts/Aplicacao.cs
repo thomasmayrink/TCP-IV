@@ -32,7 +32,11 @@ public class Aplicacao : MonoBehaviour
 
     private void Update()
     {
-        timerMusica += Time.deltaTime;
+        if (musicaSource.isPlaying)
+        {
+            timerMusica += Time.deltaTime;
+        }
+
         if (timerMusica >= timerMusicaMax)
         {
             musica = faseModel.Musicas[Random.Range(0, faseModel.Musicas.Length)];
@@ -43,6 +47,7 @@ public class Aplicacao : MonoBehaviour
 
             Notificar(Notificacao.Fase.AumentarDificuldade, faseModel);
         }
+
     }
 
     private Controller[] Controllers
