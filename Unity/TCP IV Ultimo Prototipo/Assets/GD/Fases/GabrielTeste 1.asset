@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
   m_Name: GabrielTeste 1
   m_EditorClassIdentifier: 
-  jogadorVidas: 3
   toupeiras:
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
@@ -21,7 +20,7 @@ MonoBehaviour:
   maxToupeiras: 3
   armadilhas:
   - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
-  maxArmadilhas: 2
+  maxArmadilhas: 3
   proporcao: 3
   temposCriar:
   - 0.25
@@ -30,7 +29,7 @@ MonoBehaviour:
   musicas:
   - {fileID: 8300000, guid: e2b9715966dec8746bfed7af0596e2c6, type: 3}
   - {fileID: 8300000, guid: 1e66355d54d557347aa9860e110cde9e, type: 3}
-  bpmInicial: 60
+  bpmInicial: 80
   bpmMax: 200
   sonsSurgindo:
   - {fileID: 8300000, guid: efd4f3e0bd4a5b44d9f137e61c453524, type: 3}

@@ -8,6 +8,10 @@ TagManager:
   - Fase
   - Luz
   - Chao
+  - HighScore
+  - PowerUp
+  - Vida
+  - Toupeira
   layers:
   - Default
   - TransparentFX

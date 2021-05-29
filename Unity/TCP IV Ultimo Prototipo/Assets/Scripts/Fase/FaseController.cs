@@ -69,6 +69,33 @@ public class FaseController : Controller
 
                 app.DebugFase("FIM");
                 break;
+
+            case Notificacao.Jogador.MatarUmaToupeiraAleatoria:
+                int r = Random.Range(0, TesteDados.Toupeiras.Length);
+                while (TesteDados.Toupeiras[r].GetComponent<ToupeiraModel>().Descendo)
+                {
+                    r = Random.Range(0, TesteDados.Toupeiras.Length);
+                }
+
+                app.Notificar(Notificacao.Toupeira.MatarUma, TesteDados.Toupeiras[r].GetComponentInChildren<ToupeiraView>());
+                break;
+
+            case Notificacao.Jogador.MatarTodasToupeiras:
+                for (int i = 0; i < TesteDados.Toupeiras.Length; i++)
+                {
+                    app.Notificar(Notificacao.Toupeira.MatarTodas, TesteDados.Toupeiras[i].GetComponentInChildren<ToupeiraView>());
+                }
+                break;
+
+                /*
+            case Notificacao.Fase.Parar:
+                view.Rodando(false);
+                break;
+
+            case Notificacao.Fase.Voltar:
+                view.Rodando(true);
+                break;
+                */
         }
     }
 }

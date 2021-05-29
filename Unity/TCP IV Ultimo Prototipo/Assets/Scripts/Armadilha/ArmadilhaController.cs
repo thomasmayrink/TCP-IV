@@ -47,6 +47,17 @@ public class ArmadilhaController : Controller
                     Destroy(gameObject, 1f);
                 }
                 break;
+
+
+                /*
+            case Notificacao.Fase.Parar:
+                view.Rodando(false);
+                break;
+
+            case Notificacao.Fase.Voltar:
+                view.Rodando(true);
+                break;
+                */
         }
     }
 }

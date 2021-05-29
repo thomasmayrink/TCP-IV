@@ -11,7 +11,7 @@ public class JogadorController : Controller
     {
         switch (evento_caminho)
         {
-            case Notificacao.Jogador.Inicio:
+            case Notificacao.Fase.Inicio:
                 model = GetComponent<JogadorModel>();
                 view = GetComponent<JogadorView>();
 
@@ -19,6 +19,7 @@ public class JogadorController : Controller
                 break;
 
             case Notificacao.Jogador.PerdeuVida:
+                view.Dano(5);
                 model.Vidas -= (int)dados[0];
                 if (model.Vidas <= 0)
                 {
@@ -31,13 +32,44 @@ public class JogadorController : Controller
             case Notificacao.Jogador.GanhouPontos:
                 model.Pontos += (int)dados[0];
                 model.PtsPowerUp += (int)dados[1];
-                if (model.PtsPowerUp >= 100)
+                
+                switch(model.PtsPowerUp)
                 {
-                    model.PtsPowerUp = 100;
+                    case int n when n >= 100:
+                        model.PtsPowerUp = 100;
+                        break;
                 }
                 view.GanhouPontos(model.PtsPowerUp);
 
                 app.Notificar(Notificacao.Atualizar.AtualizarUI, this);
+                break;
+
+            case Notificacao.Jogador.UsouPowerUp:
+                switch (model.PtsPowerUp)
+                {
+                    case int n when n >= model.pontosParaPowerUp1 && n < model.pontosParaPowerUp2:
+                        app.Notificar(Notificacao.Jogador.MatarUmaToupeiraAleatoria, this);
+                        break;
+
+                    case int n when n >= model.pontosParaPowerUp2 && n < model.pontosParaPowerUp3:
+                        app.Notificar(Notificacao.Jogador.MatarTodasToupeiras, this);
+                        break;
+
+                    case int n when n >= model.pontosParaPowerUp3:
+                        AudioSource audioSource = GetComponent<AudioSource>();
+                        audioSource.clip = model.somPowerUp3;
+                        audioSource.Play();
+                        //app.Notificar(Notificacao.Fase.Parar, this);
+                        break;
+                }
+
+                model.PtsPowerUp = 0;
+
+                app.Notificar(Notificacao.Atualizar.AtualizarUI, this);
+                break;
+
+            case Notificacao.Fase.Fim:
+                TesteDados.PontosUltimaFase = model.Pontos;
                 break;
         }
     }

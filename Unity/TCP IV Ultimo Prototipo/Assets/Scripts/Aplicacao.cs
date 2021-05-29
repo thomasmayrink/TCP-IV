@@ -82,4 +82,8 @@ public class Aplicacao : MonoBehaviour
     {
         Debug.Log(Utilidades.DebugComCor("Jogador: " + txt, "blue"));
     }
+    public void DebugPowerUp(string txt)
+    {
+        Debug.Log(Utilidades.DebugComCor("PowerUp: " + txt, "orange"));
+    }
 }

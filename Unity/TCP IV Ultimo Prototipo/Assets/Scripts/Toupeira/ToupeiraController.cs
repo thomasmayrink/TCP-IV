@@ -14,6 +14,7 @@ public class ToupeiraController : Controller
                 view = GetComponentInChildren<ToupeiraView>();
                 if (alvo == view)
                 {
+                    model.Descendo = false;
                     view.TocarSom(model.SomAoSurgir);
                     view.Surgir(model.Velocidade, model.Buraco.transform.position.y + 1.55f);
                 }
@@ -39,15 +40,56 @@ public class ToupeiraController : Controller
                         view.TocarSom(model.SomPancada);
                     }
                     model.Vida--;
-                    if (model.Vida == 0)
+                    if (model.Vida <= 0)
                     {
                         view.Acertou("Matou", model.AcertouEfeito);
+                        model.Descendo = true;
                         app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
                     }
                     else
                     {
                         view.Acertou("Acertou", model.AcertouEfeito);
                     }
+                }
+                break;
+
+            case Notificacao.Toupeira.MatarUma:
+                if (alvo == view)
+                {
+                    if (model.Dano > 0)
+                    {
+                        view.TocarSom(model.SomDano);
+                        app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
+                    }
+                    else
+                    {
+                        view.TocarSom(app.jogadorModel.somPowerUp1);
+                    }
+                    model.Vida = 0;
+
+                    view.Acertou("Matou", app.jogadorModel.efeitoPowerUp1);
+                    model.Descendo = true;
+                    app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
+                }
+                break;
+
+            case Notificacao.Toupeira.MatarTodas:
+                if (alvo == view)
+                {
+                    if (model.Dano > 0)
+                    {
+                        view.TocarSom(model.SomDano);
+                        app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
+                    }
+                    else
+                    {
+                        view.TocarSom(app.jogadorModel.somPowerUp2);
+                    }
+                    model.Vida = 0;
+
+                    view.Acertou("Matou", app.jogadorModel.efeitoPowerUp1);
+                    model.Descendo = true;
+                    app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
                 }
                 break;
 
@@ -64,6 +106,16 @@ public class ToupeiraController : Controller
                     Destroy(gameObject, 1f);
                 }
                 break;
+
+                /*
+            case Notificacao.Fase.Parar:
+                view.Rodando(false);
+                break;
+
+            case Notificacao.Fase.Voltar:
+                view.Rodando(true);
+                break;
+                */
         }
     }
 }

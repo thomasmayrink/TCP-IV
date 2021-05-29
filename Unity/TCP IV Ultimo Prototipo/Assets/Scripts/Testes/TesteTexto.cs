@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class TesteTexto : Controller
 {
-    public Text txtPontos, txtVidas, txtPtsPowerUp;
+    public Text txtPontos;
+
+    public Slider sliderPowerUp;
+    public GameObject btnPowerUp;
+
+    public List<GameObject> vidas;
+    private int vidasAux;
 
     public override void OnNotificacao(string evento_caminho, Object alvo, params object[] dados)
     {
@@ -13,27 +19,61 @@ public class TesteTexto : Controller
         {
             case Notificacao.Fase.Inicio:
                 txtPontos.text = "Pontos: 0";
-                txtVidas.text = "Vidas: " + app.jogadorModel.Vidas;
-                txtPtsPowerUp.text = "Pontos Power Up: 0";
+                sliderPowerUp.value = 0;
+
                 break;
 
             case Notificacao.Atualizar.AtualizarUI:
                 txtPontos.text = "Pontos: " + app.jogadorModel.Pontos;
-                txtVidas.text = "Vidas: " + app.jogadorModel.Vidas;
-                txtPtsPowerUp.text = "Pontos Power Up: " + app.jogadorModel.PtsPowerUp;
-                break;
 
-                /*
-            case Notificacao.Jogador.GanhouPontos:
-                txtPontos.text = "Pontos: " + app.jogadorModel.Pontos;
-                txtPtsPowerUp.text = "Pontos Power Up: " + app.jogadorModel.PtsPowerUp;
-                break;
+                vidasAux = app.jogadorModel.Vidas;
+                switch (vidasAux)
+                {
+                    case 0:
+                        foreach (GameObject go in vidas)
+                        {
+                            go.SetActive(false);
+                        }
+                        break;
 
-            case Notificacao.Jogador.PerdeuVida:
-                txtVidas.text = "Vidas: " + app.jogadorModel.Vidas;
-                break;
+                    case 1:
+                        vidas[1].gameObject.SetActive(false);
+                        break;
 
-                */
+                    case 2:
+                        vidas[2].gameObject.SetActive(false);
+                        break;
+
+                    case 3:
+                        foreach(GameObject go in vidas)
+                        {
+                            go.SetActive(true);
+                        }
+                        break;
+                }
+
+                if (app.jogadorModel.PtsPowerUp <= app.jogadorModel.pontosParaPowerUp1)
+                {
+                    btnPowerUp.GetComponent<Image>().color = Color.white;
+                    btnPowerUp.GetComponent<Button>().interactable = false;
+                }
+                if (app.jogadorModel.PtsPowerUp >= app.jogadorModel.pontosParaPowerUp1 && app.jogadorModel.PtsPowerUp < app.jogadorModel.pontosParaPowerUp2)
+                {
+                    btnPowerUp.GetComponent<Image>().color = Color.green;
+                    btnPowerUp.GetComponent<Button>().interactable = true;
+                }
+                if (app.jogadorModel.PtsPowerUp >= app.jogadorModel.pontosParaPowerUp2 && app.jogadorModel.PtsPowerUp < app.jogadorModel.pontosParaPowerUp3)
+                {
+                    btnPowerUp.GetComponent<Image>().color = Color.yellow;
+                }
+                if (app.jogadorModel.PtsPowerUp >= app.jogadorModel.pontosParaPowerUp3)
+                {
+                    btnPowerUp.GetComponent<Image>().color = Color.red;
+                }
+                sliderPowerUp.value = app.jogadorModel.PtsPowerUp * 0.01f;
+                //txtPtsPowerUp.text = "Power Up: " + app.jogadorModel.PtsPowerUp;
+
+                break;
         }
     }
 }

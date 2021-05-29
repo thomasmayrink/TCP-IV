@@ -5,25 +5,42 @@ using UnityEngine;
 public class JogadorView : Elemento
 {
     private Estados estado;
-    //private int pontosPowerUp;
+
     private int limitePowerUp1, limitePowerUp2, limitePowerUp3;
 
     private int nivelPowerUp;
 
+    private bool efeitoDano;
+    private float timer;
+
     void Start()
     {
+        efeitoDano = false;
+        timer = 0;
         estado = Estados.Inicio;
     }
 
     void Update()
     {
+        if (efeitoDano)
+        {
+            timer += Time.deltaTime;
+        }
+
         switch (estado)
         {
             case Estados.Inicio:
-                app.Notificar(Notificacao.Jogador.Inicio, this);
+                app.Notificar(Notificacao.Fase.Inicio, this);
                 break;
 
             case Estados.Rodando:
+                if (timer >= 0.05f)
+                {
+                    Dano(1);
+                    efeitoDano = false;
+                    timer = 0;
+                }
+
                 switch (nivelPowerUp)
                 {
                     case 1:
@@ -41,7 +58,6 @@ public class JogadorView : Elemento
                 break;
         }
     }
-
     public void Comecar(int powerUp1, int powerUp2, int powerUp3)
     {
         limitePowerUp1 = powerUp1;
@@ -49,6 +65,10 @@ public class JogadorView : Elemento
         limitePowerUp3 = powerUp3;
 
         estado = Estados.Rodando;
+    }
+    public void UsouPowerUp()
+    {
+        app.Notificar(Notificacao.Jogador.UsouPowerUp, this);
     }
 
     public void GanhouPontos(int pontosPowerUp)
@@ -67,6 +87,12 @@ public class JogadorView : Elemento
         {
             nivelPowerUp = 1;
         }
+    }
+
+    public void Dano(int intensity)
+    {
+        efeitoDano = true;
+        app.luz.intensity = intensity;
     }
 
     private enum Estados

@@ -1,7 +1,7 @@
-Criar Classe Estática "Dados de tudo" para colocar pontos e última fase escolhida.
-
 TempoSemAtividade: contar tempo desde o último acerto do jogador.
 
+PowerUp muda de cor dependendo do nível
+Vida, Pontos e Pts Power Up são dados do jogador q ele deve mandar pra DadosEstaticos. O PowerUp (o botão e o slider) em si controla as notificações e a atualização da imagem.
 Corações. Desenhar conforme a quantidade escolhida em "Fase"
 
 Reorganizar completamente: FaseView e FaseController;

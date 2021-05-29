@@ -7,12 +7,15 @@ public class FaseView : Elemento
     private static List<Armadilha> armadilhasRaridade;
     private int proporcao;
 
-    //private float timerFase;
+    private bool rodando;
+
     private float timerInstancias;
     private float timerInstanciasMax;
 
     private float batidasPorSegundo;
     private float[] tempos;
+
+    private float timerParado;
 
     private Estado estado;
 
@@ -21,37 +24,54 @@ public class FaseView : Elemento
         toupeirasRaridade = new List<Toupeira>();
         armadilhasRaridade = new List<Armadilha>();
 
+        rodando = true;
+
         app.Notificar(Notificacao.Fase.Inicio, this);
+
+        timerParado = 0;
 
         estado = Estado.Rodando;
     }
     private void Update()
     {
-        timerInstancias += Time.deltaTime;
-
-        switch (estado)
+        if (rodando)
         {
-            case Estado.Rodando:               
-                if (timerInstancias >= timerInstanciasMax / batidasPorSegundo)
-                {
-                    timerInstancias = 0;
-                    int i = Random.Range(0, proporcao + 1);
-                    if (i < proporcao) 
-                    {
-                        app.Notificar(Notificacao.Fase.CriarToupeiras, this);
-                    }
-                    else
-                    {
-                        app.Notificar(Notificacao.Fase.CriarArmadilhas, this);
-                    }
-                    estado = Estado.Criando;
-                }
-                break;
+            timerInstancias += Time.deltaTime;
 
-            case Estado.Criando:
-                SortearTempo();
-                estado = Estado.Rodando;
-                break;
+            switch (estado)
+            {
+                case Estado.Rodando:
+                    if (timerInstancias >= timerInstanciasMax / batidasPorSegundo)
+                    {
+                        timerInstancias = 0;
+                        int i = Random.Range(0, proporcao + 1);
+                        if (i < proporcao)
+                        {
+                            app.Notificar(Notificacao.Fase.CriarToupeiras, this);
+                        }
+                        else
+                        {
+                            app.Notificar(Notificacao.Fase.CriarArmadilhas, this);
+                        }
+                        estado = Estado.Criando;
+                    }
+                    break;
+
+                case Estado.Criando:
+                    SortearTempo();
+                    estado = Estado.Rodando;
+                    break;
+            }
+        }
+        else
+        {
+            timerParado += Time.deltaTime;
+            app.DebugFase("timerParado: " + timerParado);
+
+            if (timerParado >= TesteDados.TempoParado)
+            {
+                //app.Notificar(Notificacao.Fase.Voltar, this);
+            }
         }
     }
     private float SortearTempo()
@@ -323,7 +343,10 @@ public class FaseView : Elemento
         }
         catch { }
     }
-
+    public void Rodando(bool rodando)
+    {
+        this.rodando = rodando;
+    }
     private enum Estado
     {
         Rodando,

@@ -6,13 +6,14 @@ public class FaseModel : Elemento
     [SerializeField] private Fase fase;
     private float bpm;
     private List<float> tamanhoDasMusicas;
+    private List<GameObject> buracosOcupados;
     private List<GameObject> buracosDisponiveis;
 
     public int JogadorVidas
     {
         get
         {
-            return fase.jogadorVidas;
+            return 3;// fase.jogadorVidas;
         }
     }
     public List<Toupeira> Toupeiras
@@ -144,6 +145,29 @@ public class FaseModel : Elemento
         get
         {
             return GameObject.FindGameObjectsWithTag("Buraco");
+        }
+    }
+    public List<GameObject> BuracosOcupados
+    {
+        get
+        {
+            if (buracosOcupados == null)
+            {
+                buracosOcupados = new List<GameObject>();
+            }
+            else
+            {
+                buracosOcupados.Clear();
+            }
+
+            foreach (GameObject go in Buracos)
+            {
+                if (go.GetComponent<Buraco>().EstaOcupado)
+                {
+                    buracosOcupados.Add(go);
+                }
+            }
+            return buracosOcupados;
         }
     }
     public List<GameObject> BuracosDisponiveis

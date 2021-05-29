@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class ArmadilhaView : BaseObjetoView
 {
+    private bool rodando;
+
     private void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         col = gameObject.GetComponent<CapsuleCollider>();
+
+        rodando = true;
 
         app.Notificar(Notificacao.Armadilha.Surgindo, this);
         estado = Estado.Surgindo;
@@ -14,40 +18,43 @@ public class ArmadilhaView : BaseObjetoView
 
     private void Update()
     {
-        tempoNaTela += Time.deltaTime;
-
-        switch (estado)
+        if (rodando)
         {
-            case Estado.Surgindo:
-                if (transform.position.y <= limite)
-                {
-                    gameObject.transform.position += movimento;
-                }
-                else
-                {
-                    gameObject.transform.position = new Vector3(transform.position.x, limite, transform.position.z);
-                    app.Notificar(Notificacao.Armadilha.Idle, this);
-                }
-                break;
+            tempoNaTela += Time.deltaTime;
 
-            case Estado.Idle:
-                if (tempoNaTela >= tempoMax)
-                {
-                    Descer();
-                }
-                break;
+            switch (estado)
+            {
+                case Estado.Surgindo:
+                    if (transform.position.y <= limite)
+                    {
+                        gameObject.transform.position += movimento;
+                    }
+                    else
+                    {
+                        gameObject.transform.position = new Vector3(transform.position.x, limite, transform.position.z);
+                        app.Notificar(Notificacao.Armadilha.Idle, this);
+                    }
+                    break;
+
+                case Estado.Idle:
+                    if (tempoNaTela >= tempoMax)
+                    {
+                        Descer();
+                    }
+                    break;
 
                 //COLOCAR POR AQUI A QUESTÃO DAS VARIAÇÕES. CADA TIPO DE ARMADILHA PODE MANDAR UMA NOTIFICAÇÃO DIFERENTE. O MESMO COM AS TOUPEIRAS, TALVEZ OUTRA CLASSE NAS NOTIFICAÇÕES
 
-            case Estado.Descendo:
-                transform.position -= movimento;
-                if (transform.position.y <= -limite && !desceu)
-                {
-                    col.enabled = false;
-                    desceu = true;
-                    app.Notificar(Notificacao.Armadilha.Desceu, this);
-                }
-                break;
+                case Estado.Descendo:
+                    transform.position -= movimento;
+                    if (transform.position.y <= -limite && !desceu)
+                    {
+                        col.enabled = false;
+                        desceu = true;
+                        app.Notificar(Notificacao.Armadilha.Desceu, this);
+                    }
+                    break;
+            }
         }
     }
 
@@ -68,7 +75,10 @@ public class ArmadilhaView : BaseObjetoView
     {
         Acertar(acertouEfeito);
     }
-
+    public void Rodando(bool rodando)
+    {
+        this.rodando = rodando;
+    }
     public void Descer()
     {
         movimento *= 2;

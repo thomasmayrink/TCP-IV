@@ -12,6 +12,7 @@ public class TesteMenu : MonoBehaviour
                                         load,
                                         menuPrincipal, 
                                         menuFases, 
+                                        menuRanking,
                                         menuOpcoes;
 
     [SerializeField] private Slider barraCarregamento;
@@ -68,6 +69,11 @@ public class TesteMenu : MonoBehaviour
         catch { }
         try
         {
+            menuRanking.SetActive(false);
+        }
+        catch { }
+        try
+        {
             menuOpcoes.SetActive(false);
         }
         catch { }
@@ -84,7 +90,17 @@ public class TesteMenu : MonoBehaviour
     }
     public void CarregarFase(int cenaId)
     {
+        TesteDados.UltimaFaseId = cenaId;
         Load(cenaId);
+    }
+    #endregion
+
+    #region MENU_RANKING
+    public void MenuRanking()
+    {
+        SomBtnConfirmar();
+        menuPrincipal.SetActive(false);
+        menuRanking.SetActive(true);
     }
     #endregion
 
@@ -102,7 +118,7 @@ public class TesteMenu : MonoBehaviour
     {
         foreach(Text t in txtGameOverPontos)
         {
-            t.text = "Você fez " + "x" + " pontos!";
+            t.text = "Você fez " + TesteDados.PontosUltimaFase + " pontos!";
         }
     }
     #endregion
@@ -110,7 +126,7 @@ public class TesteMenu : MonoBehaviour
     #region JOGAR_NOVAMENTE (LEMBRAR DE PASSAR A FASE CERTA)
     public void JogarNovamente()
     {
-        Load(1);
+        Load(TesteDados.UltimaFaseId);
     }
     #endregion
 

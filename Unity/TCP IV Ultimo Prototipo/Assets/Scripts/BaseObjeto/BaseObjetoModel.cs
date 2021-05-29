@@ -9,7 +9,7 @@ public abstract class BaseObjetoModel : Elemento
     public int Dano { get; set; }
     public int Raridade { get; set; }
     public float TemposNaTela { get; set; }
-    public GameObject Prefab { get; set; }
+    //public GameObject Prefab { get; set; }
     public float BpmFase { get; set; }
     public GameObject Buraco { get; set; }
     public AudioClip SomAoSurgir { get; set; }
@@ -26,5 +26,6 @@ public abstract class BaseObjetoModel : Elemento
             gameObject.transform.position = value;
         }
     }
+    public bool Descendo { get; set; }
     public GameObject AcertouEfeito { get; set; }
 }
