@@ -466,7 +466,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: BtnVoltar
         m_Mode: 1
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -1916,7 +1916,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -2049,7 +2049,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
@@ -2740,7 +2740,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8651362425628231567}
         m_TargetAssemblyTypeName: TesteMenu, Assembly-CSharp
         m_MethodName: CarregarFase
         m_Mode: 3
