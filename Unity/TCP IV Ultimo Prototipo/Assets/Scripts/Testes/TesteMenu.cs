@@ -133,7 +133,11 @@ public class TesteMenu : Elemento
         else
         {
             TesteDados.JogoPausado = false;
-            if (!TesteDados.PowerUp3)
+            if (TesteDados.PowerUp3)
+            {
+                Time.timeScale = 0.1f;
+            }
+            else
             {
                 Time.timeScale = 1f;
             }
@@ -145,6 +149,9 @@ public class TesteMenu : Elemento
     }
     public void GameOver()
     {
+        TesteDados.JogoPausado = false;
+        TesteDados.PowerUp3 = false;
+
         Time.timeScale = 1f;
         Load(-1);
     }
@@ -157,6 +164,9 @@ public class TesteMenu : Elemento
     }
     public void JogarNovamente()
     {
+        TesteDados.JogoPausado = false;
+        TesteDados.PowerUp3 = false;
+
         SomBtnConfirmar();
         Load(TesteDados.UltimaFaseId);
     }

@@ -70,6 +70,8 @@ public class JogadorController : Controller
                 break;
 
             case Notificacao.Fase.Fim:
+                TesteDados.PowerUp3 = false;
+                TesteDados.JogoPausado = false;
                 TesteDados.PontosUltimaFase = model.Pontos;
                 break;
         }

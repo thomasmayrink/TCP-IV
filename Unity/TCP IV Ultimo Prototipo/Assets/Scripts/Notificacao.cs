@@ -32,13 +32,12 @@ public abstract class Notificacao
 
     public static class Jogador
     {
-       // public const string Inicio = "Jogador_Inicio";
         public const string PerdeuVida = "Jogador_Perdeu_Vida";
         public const string GanhouPontos = "Jogador_Ganhou_Pontos";
         public const string UsouPowerUp = "Jogador_Usou_PowerUp";
         public const string MatarUmaToupeiraAleatoria = "Jogador_Matar_Uma_Toupeira_Aleatoria";
         public const string MatarTodasToupeiras = "Jogador_Matar_Todas_Toupeiras";
-        public const string PararTempo = "Jogador_Parar_Tempo";
+       // public const string PararTempo = "Jogador_Parar_Tempo";
     }
 
     public static class PowerUp

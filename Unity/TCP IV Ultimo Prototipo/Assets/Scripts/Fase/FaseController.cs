@@ -64,12 +64,12 @@ public class FaseController : Controller
 
             case Notificacao.Fase.Fim:
                 #region MELHORAR
+                TesteDados.PowerUp3 = false;
+                TesteDados.JogoPausado = false;
                 app.musicaSource.Stop();
                 FindObjectOfType<TesteMenu>().GameOver();
-                //SceneManager.LoadScene("GabrielGameOver");
                 #endregion
 
-                app.DebugFase("FIM");
                 break;
 
             case Notificacao.Jogador.MatarUmaToupeiraAleatoria:

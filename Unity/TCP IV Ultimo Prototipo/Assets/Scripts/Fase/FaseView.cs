@@ -346,6 +346,7 @@ public class FaseView : Elemento
 
     public void Parar()
     {
+        TesteDados.PowerUp3 = true;
         app.musicaSource.pitch = 0.1f;
         Time.timeScale = 0.1f;
     }

@@ -71,7 +71,6 @@ public class TesteTexto : Controller
                     btnPowerUp.GetComponent<Image>().color = Color.red;
                 }
                 sliderPowerUp.value = app.jogadorModel.PtsPowerUp * 0.01f;
-                //txtPtsPowerUp.text = "Power Up: " + app.jogadorModel.PtsPowerUp;
 
                 break;
         }
