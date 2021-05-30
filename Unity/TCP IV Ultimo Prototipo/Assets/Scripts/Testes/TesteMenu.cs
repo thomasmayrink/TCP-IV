@@ -23,8 +23,6 @@ public class TesteMenu : Elemento
 
     private void Start()
     {
-        Time.timeScale = 1f;
-
         audioSource = GetComponent<AudioSource>();
 
         try
@@ -126,6 +124,7 @@ public class TesteMenu : Elemento
     {
         if (ativar)
         {
+            TesteDados.JogoPausado = true;
             btnPause.SetActive(false);
             app.musicaSource.Pause();
             SomBtnConfirmar();
@@ -133,9 +132,14 @@ public class TesteMenu : Elemento
         }
         else
         {
-            btnPause.SetActive(true);
+            TesteDados.JogoPausado = false;
+            if (!TesteDados.PowerUp3)
+            {
+                Time.timeScale = 1f;
+            }
             SomBtnVoltar();
-            Time.timeScale = 1f;
+            app.musicaSource.Play();
+            btnPause.SetActive(true);
         }
         menuPause.SetActive(ativar);
     }
@@ -158,6 +162,8 @@ public class TesteMenu : Elemento
     }
     public void VoltarAoMenu()
     {
+        TesteDados.JogoPausado = false;
+        TesteDados.PowerUp3 = false;
         Time.timeScale = 1f;
         SomBtnConfirmar();
         Load(0);

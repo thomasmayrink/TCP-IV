@@ -2386,7 +2386,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -350, y: 0}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791401707
 MonoBehaviour:
@@ -5866,7 +5866,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 350, y: 0}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850911481
 MonoBehaviour:
@@ -6922,6 +6922,8 @@ MonoBehaviour:
   menuFases: {fileID: 9165093266122591588}
   menuRanking: {fileID: 901235139}
   menuOpcoes: {fileID: 1824382606}
+  menuPause: {fileID: 0}
+  btnPause: {fileID: 0}
   barraCarregamento: {fileID: 7504224343689080663}
   txtCarregamento: {fileID: 7504224344364077005}
   txtGameOverPontos: []
@@ -7766,7 +7768,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 250, y: 50}
+  m_SizeDelta: {x: 220, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9165093265129216216
 CanvasRenderer:

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class FaseView : Elemento
 {
-    private bool rodando;
     private float timerParado;
 
     private static List<Toupeira> toupeirasRaridade;
@@ -24,8 +23,6 @@ public class FaseView : Elemento
         toupeirasRaridade = new List<Toupeira>();
         armadilhasRaridade = new List<Armadilha>();
 
-        rodando = true;
-
         app.Notificar(Notificacao.Fase.Inicio, this);
 
         timerParado = 0;
@@ -34,7 +31,21 @@ public class FaseView : Elemento
     }
     private void Update()
     {
-        if (rodando)
+        if (TesteDados.PowerUp3)
+        {
+            app.DebugFase("Timer parado: " + timerParado);
+
+            if (!TesteDados.JogoPausado)
+            {
+                timerParado += Time.deltaTime;
+            }
+
+            if (timerParado >= 0.5f)
+            {
+                app.Notificar(Notificacao.Fase.Voltar, this);
+            }
+        }
+        else if (!TesteDados.JogoPausado)
         {
             timerInstancias += Time.deltaTime;
             switch (estado)
@@ -60,16 +71,6 @@ public class FaseView : Elemento
                     SortearTempo();
                     estado = Estado.Rodando;
                     break;
-            }
-        }
-        else
-        {
-            app.DebugFase("Timer parado: " + timerParado);
-
-            timerParado += Time.deltaTime;
-            if (timerParado >= 0.5f)
-            {
-                app.Notificar(Notificacao.Fase.Voltar, this);
             }
         }
     }
@@ -345,16 +346,15 @@ public class FaseView : Elemento
 
     public void Parar()
     {
-        app.musicaSource.Pause();
+        app.musicaSource.pitch = 0.1f;
         Time.timeScale = 0.1f;
-        rodando = false;
     }
 
     public void Voltar()
     {
-        app.musicaSource.Play();
+        app.musicaSource.pitch = 1f;
         Time.timeScale = 1f;
-        rodando = true;
+        TesteDados.PowerUp3 = false;
     }
     private enum Estado
     {

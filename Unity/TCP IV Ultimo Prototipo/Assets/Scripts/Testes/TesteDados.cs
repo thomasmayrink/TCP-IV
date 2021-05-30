@@ -13,12 +13,6 @@ public static class TesteDados
             return GameObject.FindGameObjectsWithTag("Toupeira");
         }
     }
-  //  public static bool Rodando { get; set; }
-    public static float TempoParado
-    {
-        get
-        {
-            return 2f;
-        }
-    }
+    public static bool JogoPausado { get; set; }
+    public static bool PowerUp3 { get; set; }
 }

@@ -59,6 +59,7 @@ public class JogadorController : Controller
                         AudioSource audioSource = GetComponent<AudioSource>();
                         audioSource.clip = model.somPowerUp3;
                         audioSource.Play();
+                        TesteDados.PowerUp3 = true;
                         app.Notificar(Notificacao.Fase.Parar, this);
                         break;
                 }

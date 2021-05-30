@@ -1,16 +1,13 @@
-TempoSemAtividade: contar tempo desde o último acerto do jogador.
+ANIMAÇÃO:
+Corrigir weight Amigos
 
-PowerUp muda de cor dependendo do nível
-Vida, Pontos e Pts Power Up são dados do jogador q ele deve mandar pra DadosEstaticos. O PowerUp (o botão e o slider) em si controla as notificações e a atualização da imagem.
-Corações. Desenhar conforme a quantidade escolhida em "Fase"
+
 
 Reorganizar completamente: FaseView e FaseController;
 
-Power-up: slider;
-Power-up: Nível 1 e 2;
 Comportamento: Poucos Amigos e Líder (ver wpp);
 Armadilha: Urso, Bomba;
-Power-up: 3 (criar bool app.PowerUp3);
+
 ------------------------------------------------------------
 
 Player Prefs pra ranking pessoal.

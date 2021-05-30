@@ -32,7 +32,7 @@ public class Aplicacao : MonoBehaviour
 
     private void Update()
     {
-        if (musicaSource.isPlaying)
+        if (!TesteDados.PowerUp3 && !TesteDados.JogoPausado)
         {
             timerMusica += Time.deltaTime;
         }
@@ -47,7 +47,6 @@ public class Aplicacao : MonoBehaviour
 
             Notificar(Notificacao.Fase.AumentarDificuldade, faseModel);
         }
-
     }
 
     private Controller[] Controllers
