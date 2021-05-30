@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
   m_Name: GabrielTeste 2
   m_EditorClassIdentifier: 
+  timerFaseMax: 30
   toupeiras:
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
   - {fileID: 11400000, guid: 4c1016e1b625e6a4e97d486d9a2088ef, type: 2}

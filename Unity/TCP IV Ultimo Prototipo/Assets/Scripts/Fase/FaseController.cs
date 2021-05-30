@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class FaseController : Controller
 {
     private FaseModel model;
@@ -97,6 +96,7 @@ public class FaseController : Controller
             case Notificacao.Fase.Fim:
                 app.DebugFase("Fim");
                 #region MELHORAR
+                /*
                 app.musicaSource.Stop();
                 foreach(GameObject go in model.BuracosOcupados)
                 {
@@ -113,8 +113,15 @@ public class FaseController : Controller
                 {
                     Destroy(go);
                 }
+                */
                 Destroy(GameObject.Find("Luzes"));
-                Destroy(GameObject.Find("Canvas"));
+              
+                /*
+                foreach(Text t in TesteContarTempo.TxtTimer)
+                {
+                    t.text = "00:00";
+                }
+                */
                 FindObjectOfType<TesteMenu>().GameOver();
                 #endregion
 

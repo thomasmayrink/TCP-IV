@@ -5,6 +5,7 @@ public abstract class BaseObjetoModel : Elemento
     public int Vida { get; set; }
     public int Pontos { get; set; }
     public int PontosPowerUp { get; set; }
+    public float PontosTimer { get; set; }
     public float Velocidade { get; set; }
     public int Dano { get; set; }
     public int Raridade { get; set; }

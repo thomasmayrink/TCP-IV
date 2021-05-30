@@ -15,7 +15,8 @@ public class TesteMenu : Elemento
                                         menuRanking,
                                         menuOpcoes,
                                         menuPause,
-                                        btnPause;
+                                        btnPause,
+                                        timer;
 
     [SerializeField] private Slider barraCarregamento;
     [SerializeField] private Text txtCarregamento;
@@ -43,14 +44,15 @@ public class TesteMenu : Elemento
     }
     private void Load(int cenaId)
     {
-        if (cenaId >= 0)
-        {
+       // if (cenaId >= 0)
+        //{
             StartCoroutine(LoadParalelo(cenaId));
-        }
+        /*}
         else
         {
             StartCoroutine(LoadParalelo());
         }
+        */
     }
     IEnumerator LoadParalelo(int cenaId)
     {
@@ -67,7 +69,7 @@ public class TesteMenu : Elemento
             yield return null;
         }
     }
-    IEnumerator LoadParalelo()
+   /* IEnumerator LoadParalelo()
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(SceneManager.sceneCountInBuildSettings - 1);
 
@@ -76,7 +78,7 @@ public class TesteMenu : Elemento
             yield return null;
         }
     }
-
+   */
     public void BtnVoltar()
     {
         SomBtnVoltar();
@@ -150,8 +152,9 @@ public class TesteMenu : Elemento
     }
     public void GameOver()
     {
-        Time.timeScale = 0f;
-        Load(-1);
+        timer.SetActive(false);
+
+        Load(SceneManager.sceneCountInBuildSettings - 1);
     }
     public void MostrarPontos()
     {

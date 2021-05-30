@@ -44,7 +44,7 @@ public class ToupeiraController : Controller
                     {
                         view.Acertou("Matou", model.AcertouEfeito);
                         model.Descendo = true;
-                        app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
+                        app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp, model.PontosTimer);
                     }
                     else
                     {

@@ -27,6 +27,31 @@ public class ArmadilhaController : Controller
                 break;
 
             case Notificacao.Armadilha.FoiAcertada:
+
+                if (alvo == view)
+                {
+                    if (model.Dano > 0)
+                    {
+                        view.TocarSom(model.SomDano);
+                        app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
+                    }
+                    else
+                    {
+                        view.TocarSom(model.SomPancada);
+                    }
+                    model.Vida--;
+                    if (model.Vida <= 0)
+                    {
+                        view.Acertou(model.AcertouEfeito);
+                        model.Descendo = true;
+                        app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp, model.PontosTimer);
+                    }
+                    else
+                    {
+                        view.Acertou(model.AcertouEfeito);
+                    }
+                }
+                /*
                 if (alvo == view)
                 {
                     model.Vida--;
@@ -38,6 +63,7 @@ public class ArmadilhaController : Controller
                         view.Descer();
                     }
                 }
+                */
                 break;
 
             case Notificacao.Armadilha.Desceu:

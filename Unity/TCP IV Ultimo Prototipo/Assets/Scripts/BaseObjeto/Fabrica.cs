@@ -18,6 +18,7 @@ public static class Fabrica
         model.Vida = toupeira.vida;
         model.Pontos = toupeira.pontos;
         model.PontosPowerUp = toupeira.pontosPowerUp;
+        model.PontosTimer = toupeira.pontosTimer;
         model.Velocidade = toupeira.velocidade;
         model.Dano = toupeira.dano;
         model.Raridade = toupeira.raridade;
@@ -41,6 +42,7 @@ public static class Fabrica
         model.Vida = armadilha.vida;
         model.Pontos = armadilha.pontos;
         model.PontosPowerUp = armadilha.pontosPowerUp;
+        model.PontosTimer = armadilha.pontosTimer;
         model.Velocidade = armadilha.velocidade;
         model.Dano = armadilha.dano;
         model.Raridade = armadilha.raridade;

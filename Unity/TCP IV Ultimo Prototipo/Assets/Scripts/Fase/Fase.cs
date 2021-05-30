@@ -4,6 +4,7 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName = "WhackAMole/Fase")]
 public class Fase : ScriptableObject
 {
+    [SerializeField] public int timerFaseMax;
     //[SerializeField][Range(1,5)] public int jogadorVidas;
     [SerializeField] public List<Toupeira> toupeiras;
     [SerializeField] public int maxToupeiras;

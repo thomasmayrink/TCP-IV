@@ -9,6 +9,13 @@ public class FaseModel : Elemento
     private List<GameObject> buracosOcupados;
     private List<GameObject> buracosDisponiveis;
 
+    public int TimerFaseMax
+    {
+        get
+        {
+            return fase.timerFaseMax;
+        }
+    }
     public int JogadorVidas
     {
         get

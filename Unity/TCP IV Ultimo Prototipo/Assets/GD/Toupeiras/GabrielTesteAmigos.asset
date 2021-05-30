@@ -15,6 +15,7 @@ MonoBehaviour:
   vida: 1
   pontos: 0
   pontosPowerUp: 20
+  pontosTimer: 20
   velocidade: 10
   dano: 1
   raridade: 3
