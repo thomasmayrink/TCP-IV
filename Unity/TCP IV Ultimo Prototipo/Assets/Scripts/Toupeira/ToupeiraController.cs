@@ -106,7 +106,6 @@ public class ToupeiraController : Controller
                     Destroy(gameObject, 1f);
                 }
                 break;
-
                 /*
             case Notificacao.Fase.Parar:
                 view.Rodando(false);

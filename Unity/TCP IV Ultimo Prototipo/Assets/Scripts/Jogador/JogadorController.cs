@@ -63,13 +63,13 @@ public class JogadorController : Controller
                         app.Notificar(Notificacao.Fase.Parar, this);
                         break;
                 }
-
                 model.PtsPowerUp = 0;
 
                 app.Notificar(Notificacao.Atualizar.AtualizarUI, this);
                 break;
 
             case Notificacao.Fase.Fim:
+                app.DebugJogador("FaseFim");
                 TesteDados.PowerUp3 = false;
                 TesteDados.JogoPausado = false;
                 TesteDados.PontosUltimaFase = model.Pontos;

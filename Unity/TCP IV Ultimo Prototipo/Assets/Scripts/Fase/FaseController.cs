@@ -62,31 +62,28 @@ public class FaseController : Controller
                 }
                 break;
 
-            case Notificacao.Fase.Fim:
-                #region MELHORAR
-                TesteDados.PowerUp3 = false;
-                TesteDados.JogoPausado = false;
-                app.musicaSource.Stop();
-                FindObjectOfType<TesteMenu>().GameOver();
-                #endregion
-
-                break;
-
             case Notificacao.Jogador.MatarUmaToupeiraAleatoria:
-                int r = Random.Range(0, TesteDados.Toupeiras.Length);
-                while (TesteDados.Toupeiras[r].GetComponent<ToupeiraModel>().Descendo)
+                try
                 {
-                    r = Random.Range(0, TesteDados.Toupeiras.Length);
-                }
+                    int r = Random.Range(0, TesteDados.Toupeiras.Length);
+                    while (TesteDados.Toupeiras[r].GetComponent<ToupeiraModel>().Descendo)
+                    {
+                        r = Random.Range(0, TesteDados.Toupeiras.Length);
+                    }
+                    app.Notificar(Notificacao.Toupeira.MatarUma, TesteDados.Toupeiras[r].GetComponentInChildren<ToupeiraView>());
+                } catch { }
 
-                app.Notificar(Notificacao.Toupeira.MatarUma, TesteDados.Toupeiras[r].GetComponentInChildren<ToupeiraView>());
                 break;
 
             case Notificacao.Jogador.MatarTodasToupeiras:
-                for (int i = 0; i < TesteDados.Toupeiras.Length; i++)
+                try
                 {
-                    app.Notificar(Notificacao.Toupeira.MatarTodas, TesteDados.Toupeiras[i].GetComponentInChildren<ToupeiraView>());
-                }
+                    for (int i = 0; i < TesteDados.Toupeiras.Length; i++)
+                    {
+                        app.Notificar(Notificacao.Toupeira.MatarTodas, TesteDados.Toupeiras[i].GetComponentInChildren<ToupeiraView>());
+                    }
+                } catch { }
+
                 break;
 
             case Notificacao.Fase.Parar:
@@ -95,6 +92,32 @@ public class FaseController : Controller
                 
             case Notificacao.Fase.Voltar:
                 view.Voltar();
+                break;
+
+            case Notificacao.Fase.Fim:
+                app.DebugFase("Fim");
+                #region MELHORAR
+                app.musicaSource.Stop();
+                foreach(GameObject go in model.BuracosOcupados)
+                {
+                    try
+                    {
+                        Destroy(go.GetComponent<Buraco>().Toupeira);
+                    }
+                    catch
+                    {
+                        Destroy(go.GetComponent<Buraco>().Armadilha);
+                    }
+                }
+                foreach(GameObject go in model.Buracos)
+                {
+                    Destroy(go);
+                }
+                Destroy(GameObject.Find("Luzes"));
+                Destroy(GameObject.Find("Canvas"));
+                FindObjectOfType<TesteMenu>().GameOver();
+                #endregion
+
                 break;
         }
     }

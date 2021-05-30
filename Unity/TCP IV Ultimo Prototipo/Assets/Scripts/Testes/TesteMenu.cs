@@ -105,6 +105,7 @@ public class TesteMenu : Elemento
     }
     public void CarregarFase(int cenaId)
     {
+        Time.timeScale = 1f;
         TesteDados.UltimaFaseId = cenaId;
         Load(cenaId);
     }
@@ -149,10 +150,7 @@ public class TesteMenu : Elemento
     }
     public void GameOver()
     {
-        TesteDados.JogoPausado = false;
-        TesteDados.PowerUp3 = false;
-
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         Load(-1);
     }
     public void MostrarPontos()
@@ -166,6 +164,8 @@ public class TesteMenu : Elemento
     {
         TesteDados.JogoPausado = false;
         TesteDados.PowerUp3 = false;
+
+        Time.timeScale = 1;
 
         SomBtnConfirmar();
         Load(TesteDados.UltimaFaseId);
