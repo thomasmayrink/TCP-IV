@@ -77,7 +77,7 @@ public class TesteContarTempo : Controller
         switch (evento_caminho)
         {
             case Notificacao.Jogador.GanhouPontos:
-                timer += (int)dados[2];
+                timer += (float)dados[2];
                 break;
         }
     }

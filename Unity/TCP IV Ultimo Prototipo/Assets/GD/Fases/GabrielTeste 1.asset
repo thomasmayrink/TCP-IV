@@ -12,18 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
   m_Name: GabrielTeste 1
   m_EditorClassIdentifier: 
-  timerFaseMax: 5
+  timerFaseMax: 30
   toupeiras:
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
   - {fileID: 11400000, guid: db5c966b3e21091478240f786cf4911d, type: 2}
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
+  - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
+  - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
   maxToupeiras: 3
   armadilhas:
   - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
   maxArmadilhas: 3
-  proporcao: 1
+  proporcao: 2
   temposCriar:
+  - 0
+  - 0.25
+  - 0.25
   - 0.25
   - 0.5
   - 1

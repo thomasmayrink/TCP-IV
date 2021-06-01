@@ -75,21 +75,35 @@ public class FaseController : Controller
                 break;
 
             case Notificacao.Jogador.MatarTodasToupeiras:
+                for (int i = 0; i < TesteDados.Toupeiras.Length; i++)
+                {
+                    app.Notificar(Notificacao.Toupeira.MatarTodas, TesteDados.Toupeiras[i].GetComponentInChildren<ToupeiraView>());
+                }
+                break;
+
+/*            case Notificacao.Jogador.MatarTodasToupeiras:
                 try
                 {
+                    app.DebugFase("MatarTodas");
                     for (int i = 0; i < TesteDados.Toupeiras.Length; i++)
                     {
                         app.Notificar(Notificacao.Toupeira.MatarTodas, TesteDados.Toupeiras[i].GetComponentInChildren<ToupeiraView>());
                     }
-                } catch { }
+                } catch
+                {
+                    app.DebugFase("MatarTodas catch");
+                }
 
                 break;
+*/
 
             case Notificacao.Fase.Parar:
+                app.DebugFase("Controller Parar");
                 view.Parar();
                 break;
                 
             case Notificacao.Fase.Voltar:
+                app.DebugFase("Controller Voltar");
                 view.Voltar();
                 break;
 

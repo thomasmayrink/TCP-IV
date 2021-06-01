@@ -65,14 +65,7 @@ public class Buraco : MonoBehaviour
 
     public void MatarToupeira(GameObject acertouEfeito)
     {
-        try
-        {
-            toupeira.GetComponent<ToupeiraView>().Matou(acertouEfeito);
-        }
-        catch
-        {
-            AcertarArmadilha(acertouEfeito);
-        }
+        toupeira.GetComponent<ToupeiraView>().Matou(acertouEfeito);
     }
 
     public void AcertarArmadilha(GameObject acertouEfeito)

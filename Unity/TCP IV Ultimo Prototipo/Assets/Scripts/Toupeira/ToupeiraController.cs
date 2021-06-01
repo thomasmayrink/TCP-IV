@@ -30,6 +30,11 @@ public class ToupeiraController : Controller
             case Notificacao.Toupeira.FoiAcertada:
                 if (alvo == view)
                 {
+                    if (TesteDados.PowerUp3)
+                    {
+                        model.Vida = 1;
+                    }
+
                     if (model.Dano > 0)
                     {
                         view.TocarSom(model.SomDano);
@@ -75,24 +80,24 @@ public class ToupeiraController : Controller
 
             case Notificacao.Toupeira.MatarTodas:
                 if (alvo == view)
-                {
+                {                    
+                    view.TocarSom(app.jogadorModel.somPowerUp2);
+                    model.Vida = 0;
+                    view.Acertou("Matou", app.jogadorModel.efeitoPowerUp2);
+                    model.Descendo = true;
+
                     if (model.Dano > 0)
                     {
                         view.TocarSom(model.SomDano);
                         app.Notificar(Notificacao.Jogador.PerdeuVida, this, model.Dano);
                     }
-                    else
-                    {
-                        view.TocarSom(app.jogadorModel.somPowerUp2);
-                    }
-                    model.Vida = 0;
 
-                    view.Acertou("Matou", app.jogadorModel.efeitoPowerUp1);
-                    model.Descendo = true;
-                    app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp);
+                    app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp, model.PontosTimer);
+
+                    app.DebugToupeira("Matar todas");
                 }
                 break;
-
+                
             case Notificacao.Toupeira.Desceu:
                 if (alvo == view)
                 {

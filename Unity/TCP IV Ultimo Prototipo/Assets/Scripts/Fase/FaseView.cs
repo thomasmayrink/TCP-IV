@@ -33,8 +33,6 @@ public class FaseView : Elemento
     {
         if (TesteDados.PowerUp3)
         {
-            app.DebugFase("Timer parado: " + timerParado);
-
             if (!TesteDados.JogoPausado)
             {
                 timerParado += Time.deltaTime;
@@ -42,6 +40,7 @@ public class FaseView : Elemento
 
             if (timerParado >= 0.5f)
             {
+                timerParado = 0;
                 app.Notificar(Notificacao.Fase.Voltar, this);
             }
         }
@@ -346,6 +345,7 @@ public class FaseView : Elemento
 
     public void Parar()
     {
+        app.DebugFase("View Parar");
         TesteDados.PowerUp3 = true;
         app.musicaSource.pitch = 0.1f;
         Time.timeScale = 0.1f;
@@ -353,9 +353,11 @@ public class FaseView : Elemento
 
     public void Voltar()
     {
+        app.DebugFase("View Voltar");
         app.musicaSource.pitch = 1f;
         Time.timeScale = 1f;
         TesteDados.PowerUp3 = false;
+        app.Notificar(Notificacao.Jogador.AcabouPowerUp3, this);
     }
     private enum Estado
     {

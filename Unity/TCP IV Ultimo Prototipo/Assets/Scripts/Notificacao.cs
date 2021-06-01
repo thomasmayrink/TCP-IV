@@ -37,6 +37,7 @@ public abstract class Notificacao
         public const string UsouPowerUp = "Jogador_Usou_PowerUp";
         public const string MatarUmaToupeiraAleatoria = "Jogador_Matar_Uma_Toupeira_Aleatoria";
         public const string MatarTodasToupeiras = "Jogador_Matar_Todas_Toupeiras";
+        public const string AcabouPowerUp3 = "Jogador_Acabou_Power_Up_3";
        // public const string PararTempo = "Jogador_Parar_Tempo";
     }
 

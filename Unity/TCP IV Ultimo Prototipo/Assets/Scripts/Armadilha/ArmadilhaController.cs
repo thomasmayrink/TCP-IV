@@ -27,9 +27,9 @@ public class ArmadilhaController : Controller
                 break;
 
             case Notificacao.Armadilha.FoiAcertada:
-
                 if (alvo == view)
                 {
+                    app.DebugArmadilha("FoiAcertada");
                     if (model.Dano > 0)
                     {
                         view.TocarSom(model.SomDano);
@@ -45,6 +45,7 @@ public class ArmadilhaController : Controller
                         view.Acertou(model.AcertouEfeito);
                         model.Descendo = true;
                         app.Notificar(Notificacao.Jogador.GanhouPontos, this, model.Pontos, model.PontosPowerUp, model.PontosTimer);
+                        view.Descer();
                     }
                     else
                     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JogadorView : Elemento
 {
@@ -92,7 +93,14 @@ public class JogadorView : Elemento
     public void Dano(int intensity)
     {
         efeitoDano = true;
-        app.luz.intensity = intensity;
+        try
+        {
+            app.luz.intensity = intensity;
+        }
+        catch
+        {
+
+        }
     }
 
     private enum Estados

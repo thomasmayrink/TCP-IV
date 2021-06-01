@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JogadorController : Controller
@@ -52,10 +50,12 @@ public class JogadorController : Controller
                         break;
 
                     case int n when n >= model.pontosParaPowerUp2 && n < model.pontosParaPowerUp3:
+                        app.DebugJogador("Matar todas");
                         app.Notificar(Notificacao.Jogador.MatarTodasToupeiras, this);
                         break;
 
                     case int n when n >= model.pontosParaPowerUp3:
+                        app.DebugJogador("PowerUp 3: " + n);
                         AudioSource audioSource = GetComponent<AudioSource>();
                         audioSource.clip = model.somPowerUp3;
                         audioSource.Play();
