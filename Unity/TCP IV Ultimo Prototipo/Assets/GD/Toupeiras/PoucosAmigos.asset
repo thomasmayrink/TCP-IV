@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f4a09bdf98c4e74dad356b2d057e294, type: 3}
-  m_Name: GabrielTesteDoido
+  m_Name: PoucosAmigos
   m_EditorClassIdentifier: 
-  vida: 3
-  pontos: 7
-  pontosPowerUp: 15
-  pontosTimer: 1
+  vida: 1
+  pontos: 0
+  pontosPowerUp: 20
+  pontosTimer: 10
   velocidade: 10
-  dano: 0
-  raridade: 4
-  temposNaTela: 6
-  prefab: {fileID: 4402650871268588665, guid: 98cdf47d927cf67408c7c91cdb6b534b, type: 3}
-  dancasId: 0100000002000000
-  comportamento: 1
+  dano: 1
+  raridade: 3
+  temposNaTela: 2
+  prefab: {fileID: 4402650871268588665, guid: 997a271f18aeff147bda677f59c26380, type: 3}
+  dancasId: 02000000
+  comportamento: 2
