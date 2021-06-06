@@ -37,7 +37,7 @@ public class JogadorView : Elemento
             case Estados.Rodando:
                 if (timer >= 0.05f)
                 {
-                    Dano(1);
+                    Dano(0);
                     efeitoDano = false;
                     timer = 0;
                 }

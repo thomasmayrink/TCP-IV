@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4412985, g: 0.49010128, b: 0.5701519, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,12 +136,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 120518614}
     m_Modifications:
     - target: {fileID: 7752973574224969377, guid: 4202ad826ec12c74d8259872df4ecf66, type: 3}
+      propertyPath: m_Name
+      value: NAO MEXER
+      objectReference: {fileID: 0}
+    - target: {fileID: 7752973574224969377, guid: 4202ad826ec12c74d8259872df4ecf66, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7752973574224969407, guid: 4202ad826ec12c74d8259872df4ecf66, type: 3}
       propertyPath: m_Intensity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7752973574487301880, guid: 4202ad826ec12c74d8259872df4ecf66, type: 3}
       propertyPath: m_Enabled
@@ -789,7 +793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &724752574
 Transform:
   m_ObjectHideFlags: 0
