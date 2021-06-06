@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: d35112d345b29c6488cda3b926758167
+guid: ac5f1c43445c6da46b7b747fccecfd05
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
+  - first:
+      74: -2411959211299107606
+    second: Armature|da
   - first:
       74: 3359830799516771238
     second: Armature|danca 1
@@ -26,43 +29,49 @@ ModelImporter:
     second: Armature|danca 7
   - first:
       74: 1966454567806037033
-    second: Armature|dano
+    second: Fofo Dano
   - first:
       74: 2802086287785874296
     second: Armature|descendo
   - first:
       74: -1978303741906493279
-    second: idle
+    second: Fofo Idle
   - first:
       74: -2248876213252482604
-    second: subindo
+    second: Fofo Subindo
   - first:
-      74: 5827499166704050713
-    second: danca 1
+      74: -9137944059627583051
+    second: Fofo T
   - first:
-      74: 8029010351925048914
-    second: danca 2
+      74: -126210440812934267
+    second: Armature|tpose
   - first:
-      74: 8671236111393255769
-    second: danca 3
+      74: -3439906808384588319
+    second: Armature|tudo
   - first:
-      74: -4753264271614373692
-    second: danca 4
+      74: 5322872234887375082
+    second: Fofo Danca 1
   - first:
-      74: -8805392240507899826
-    second: danca 5
+      74: -792627003868939426
+    second: Fofo Danca 2
   - first:
-      74: -934494384309617105
-    second: danca 6
+      74: -7775047889731512406
+    second: Fofo Danca 3
   - first:
-      74: -4424707646325265768
-    second: danca 7
+      74: -5198736052339848736
+    second: Fofo Danca 4
   - first:
-      74: -7803186056622796760
-    second: dano
+      74: 6669891525229685244
+    second: Fofo Danca 5
   - first:
-      74: -4346140028487004111
-    second: descendo
+      74: -5234624021991671139
+    second: Fofo Danca 6
+  - first:
+      74: -4877281222732536603
+    second: Fofo Danca 7
+  - first:
+      74: 7657594625278239757
+    second: Fofo Descendo
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -84,15 +93,15 @@ ModelImporter:
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 1
-    animationRotationError: 0.5
-    animationPositionError: 0.5
-    animationScaleError: 0.5
+    animationRotationError: 0
+    animationPositionError: 0
+    animationScaleError: 0
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: danca 1
+      name: Fofo Danca 1
       takeName: Armature|danca 1
       internalID: 0
       firstFrame: 0
@@ -121,7 +130,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: danca 2
+      name: Fofo Danca 2
       takeName: Armature|danca 2
       internalID: 0
       firstFrame: 0
@@ -150,7 +159,152 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: dano
+      name: Fofo Danca 3
+      takeName: Armature|danca 3
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fofo Danca 4
+      takeName: Armature|danca 4
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fofo Danca 5
+      takeName: Armature|danca 5
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fofo Danca 6
+      takeName: Armature|danca 6
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fofo Danca 7
+      takeName: Armature|danca 7
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fofo Dano
       takeName: Armature|dano
       internalID: 0
       firstFrame: 0
@@ -179,11 +333,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: descendo
+      name: Fofo Descendo
       takeName: Armature|descendo
       internalID: 0
       firstFrame: 0
       lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fofo Idle
+      takeName: Armature|idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -208,11 +391,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: subindo
+      name: Fofo Subindo
       takeName: Armature|subindo
       internalID: 0
       firstFrame: 0
       lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fofo T
+      takeName: Armature|t
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
