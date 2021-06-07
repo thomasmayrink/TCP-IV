@@ -17,7 +17,7 @@ public class JogadorController : Controller
                 break;
 
             case Notificacao.Jogador.PerdeuVida:
-                view.Dano(5);
+                view.Dano(20);
                 model.Vidas -= (int)dados[0];
                 if (model.Vidas <= 0)
                 {

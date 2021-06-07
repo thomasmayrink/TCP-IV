@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
-  maxToupeiras: 3
+  maxToupeiras: 1
   armadilhas:
   - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
   maxArmadilhas: 3
@@ -28,12 +28,15 @@ MonoBehaviour:
   temposCriar:
   - 0
   - 0.25
-  - 0.5
+  - 0.25
+  - 0.25
   - 0.5
   - 0.5
   - 1
   musicas:
   - {fileID: 8300000, guid: e185836caf5cb9b4fa59f1a196fd52bb, type: 3}
+  - {fileID: 8300000, guid: bd590a2a754abc346ae9ca13f79636ca, type: 3}
+  - {fileID: 8300000, guid: b264de7727249904eb08f67cc1f584ac, type: 3}
   bpmInicial: 80
   bpmMax: 200
   sonsSurgindo:

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d2abf275e98024bbc2b0adee430196, type: 3}
-  m_Name: GabrielTeste 2
+  m_Name: Fase 2
   m_EditorClassIdentifier: 
   timerFaseMax: 30
   toupeiras:
@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: db5c966b3e21091478240f786cf4911d, type: 2}
   - {fileID: 11400000, guid: 496f82bcebec4834fba659ac404466ff, type: 2}
   - {fileID: 11400000, guid: fdbfd250df190784fbcd67239a1e31bb, type: 2}
-  maxToupeiras: 4
+  maxToupeiras: 2
   armadilhas:
   - {fileID: 11400000, guid: cd039ec11b11a5e478bc9d7f92b93f99, type: 2}
   maxArmadilhas: 3
@@ -29,11 +29,14 @@ MonoBehaviour:
   - 0.25
   - 0.5
   - 0.5
+  - 0.5
+  - 1
   - 1
   - 1
   musicas:
+  - {fileID: 8300000, guid: e2b9715966dec8746bfed7af0596e2c6, type: 3}
+  - {fileID: 8300000, guid: 1e66355d54d557347aa9860e110cde9e, type: 3}
   - {fileID: 8300000, guid: cf0b2aa2bf8980348ba9bd873d6cf2c0, type: 3}
-  - {fileID: 8300000, guid: bd590a2a754abc346ae9ca13f79636ca, type: 3}
   bpmInicial: 90
   bpmMax: 300
   sonsSurgindo:
