@@ -34,26 +34,26 @@ MonoBehaviour:
   - 0.5
   - 1
   musicas:
-  - {fileID: 8300000, guid: e185836caf5cb9b4fa59f1a196fd52bb, type: 3}
-  - {fileID: 8300000, guid: bd590a2a754abc346ae9ca13f79636ca, type: 3}
-  - {fileID: 8300000, guid: b264de7727249904eb08f67cc1f584ac, type: 3}
+  - {fileID: 8300000, guid: 314fef82e38904d478d6633983a48c6b, type: 3}
+  - {fileID: 8300000, guid: dbb145e605b05a445a5336666efbbaef, type: 3}
+  - {fileID: 8300000, guid: 776ac628fe82f6f4b8b36164ce247e69, type: 3}
   bpmInicial: 80
   bpmMax: 200
   sonsSurgindo:
-  - {fileID: 8300000, guid: efd4f3e0bd4a5b44d9f137e61c453524, type: 3}
-  - {fileID: 8300000, guid: 30c2685a3d4aaad4bb225a9e79773983, type: 3}
-  - {fileID: 8300000, guid: 6c6f435502189554d8c550c7b6df5f91, type: 3}
-  - {fileID: 8300000, guid: 62feffd377c07414586726787c2569d8, type: 3}
+  - {fileID: 8300000, guid: 41fb18e9f34508643996dca5cc60961e, type: 3}
+  - {fileID: 8300000, guid: a932d1fc1caec0441abd3f83df4277ad, type: 3}
+  - {fileID: 8300000, guid: 2322a0e0a6a42844c954ff0d7516cc7f, type: 3}
+  - {fileID: 8300000, guid: 4d196484a284d6a49882eb836cbea6ac, type: 3}
   sonsAcertou:
-  - {fileID: 8300000, guid: 55e29237e269d4941b4afaaacf0ffcac, type: 3}
-  - {fileID: 8300000, guid: 2871b2767445e354e8c133d152cf0af2, type: 3}
-  - {fileID: 8300000, guid: a45d18ec86070cb4caf6ce71bc918a68, type: 3}
-  - {fileID: 8300000, guid: a600e25e0415b10449e7a620d37c247e, type: 3}
-  - {fileID: 8300000, guid: d2d653785a650964ab59e4b86a0513af, type: 3}
+  - {fileID: 8300000, guid: e6c865f5f66050945b78bc7042473b9d, type: 3}
+  - {fileID: 8300000, guid: 6583464d4ae9e5a43b3428b74ca81ec2, type: 3}
+  - {fileID: 8300000, guid: 31b84de56c9727345a17b09e8f311e4a, type: 3}
+  - {fileID: 8300000, guid: 1677faf77f054764faa5d3a0526fd525, type: 3}
+  - {fileID: 8300000, guid: 5d4c7b60ee602b942b7d469ff574291d, type: 3}
   sonsDano:
-  - {fileID: 8300000, guid: c011bd8d3977a134f9f6c75d5d1d4019, type: 3}
-  - {fileID: 8300000, guid: 325e99e89b5638b4abaf91780b90f043, type: 3}
-  - {fileID: 8300000, guid: 85fbb52dafaa1294bb28c6cd185d43b5, type: 3}
-  - {fileID: 8300000, guid: f18576dcf0bc73e4297700317b42f522, type: 3}
+  - {fileID: 8300000, guid: 4c6232bf22bacb64d96f26404816cf2b, type: 3}
+  - {fileID: 8300000, guid: acd8828b9a70b3d47ab6718fa047dd87, type: 3}
+  - {fileID: 8300000, guid: 1e2c33ff55f7e0145afac20c2d503a58, type: 3}
+  - {fileID: 8300000, guid: 66cb41eb82d27c14cb4dcfb8b83870a7, type: 3}
   minSemAtividade: 1
   acertouEfeito: {fileID: 6383032984284307529, guid: 2be172da95d0ce143922c392e0056ea2, type: 3}

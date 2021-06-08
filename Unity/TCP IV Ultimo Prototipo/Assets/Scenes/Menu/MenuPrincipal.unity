@@ -6914,8 +6914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650d7495a70a68b47b5306ad2c16be0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  somBotaoConfirmar: {fileID: 8300000, guid: 3c510e076192f2849bdeddcb38fb3f80, type: 3}
-  somBotaoVoltar: {fileID: 8300000, guid: ac37affb0b3d8024f8d00d55930239f0, type: 3}
+  somBotaoConfirmar: {fileID: 8300000, guid: 84a9b95653c4b614c8111691e29ba428, type: 3}
+  somBotaoVoltar: {fileID: 8300000, guid: 97313d359642e844081b28a0cf8b7f2f, type: 3}
   menu: {fileID: 8273296342111374220}
   load: {fileID: 7504224343514071991}
   menuPrincipal: {fileID: 9165093266839642875}
@@ -7323,7 +7323,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7420,8 +7420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicas:
-  - {fileID: 8300000, guid: 213611b9be3892c40820f0af36195661, type: 3}
-  - {fileID: 8300000, guid: ea40b0ff78fc202409d359a50e16024e, type: 3}
+  - {fileID: 8300000, guid: 4d69181eae893fa43b96798a3eca2b27, type: 3}
+  - {fileID: 8300000, guid: 34f3039521e1da24084ca19ca77d7e34, type: 3}
 --- !u!224 &6255978414961438825
 RectTransform:
   m_ObjectHideFlags: 0

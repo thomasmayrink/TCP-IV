@@ -1157,12 +1157,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pontosParaPowerUp1: 25
   efeitoPowerUp1: {fileID: 6383032984284307529, guid: f3b1c6957283d0a4787e503958f31fed, type: 3}
-  somPowerUp1: {fileID: 8300000, guid: 8e3ea8f734f670e4fad72b940c5c976b, type: 3}
+  somPowerUp1: {fileID: 8300000, guid: 49ffab38a2cd49442953b4b711e13a43, type: 3}
   pontosParaPowerUp2: 50
   efeitoPowerUp2: {fileID: 6383032984284307529, guid: 661b5cfa23094cd46a228c16a628189e, type: 3}
-  somPowerUp2: {fileID: 8300000, guid: c3860578b8dd2c94d8d30b6df0ccc722, type: 3}
+  somPowerUp2: {fileID: 8300000, guid: d7b26f1f7383ab24b9979714fd5680fd, type: 3}
   pontosParaPowerUp3: 100
-  somPowerUp3: {fileID: 8300000, guid: e74d7b1183fb48242b7072f33243594e, type: 3}
+  somPowerUp3: {fileID: 8300000, guid: 4b82413ef08f10f40aca9a6a03c4cb9c, type: 3}
 --- !u!114 &2069834768479367096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,7 +1218,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1314,8 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650d7495a70a68b47b5306ad2c16be0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  somBotaoConfirmar: {fileID: 8300000, guid: 3c510e076192f2849bdeddcb38fb3f80, type: 3}
-  somBotaoVoltar: {fileID: 8300000, guid: ac37affb0b3d8024f8d00d55930239f0, type: 3}
+  somBotaoConfirmar: {fileID: 8300000, guid: ca4919d4444236b408f672e6b27fb944, type: 3}
+  somBotaoVoltar: {fileID: 8300000, guid: a59edee28d2dfc3419474e3c0387f3dc, type: 3}
   menu: {fileID: 0}
   load: {fileID: 8160121716780783545}
   menuPrincipal: {fileID: 0}

@@ -2735,7 +2735,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2012562283}
   m_OnClick:
     m_PersistentCalls:
@@ -3931,8 +3931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650d7495a70a68b47b5306ad2c16be0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  somBotaoConfirmar: {fileID: 8300000, guid: 3c510e076192f2849bdeddcb38fb3f80, type: 3}
-  somBotaoVoltar: {fileID: 8300000, guid: ac37affb0b3d8024f8d00d55930239f0, type: 3}
+  somBotaoConfirmar: {fileID: 8300000, guid: 84a9b95653c4b614c8111691e29ba428, type: 3}
+  somBotaoVoltar: {fileID: 8300000, guid: 97313d359642e844081b28a0cf8b7f2f, type: 3}
   menu: {fileID: 3108411999126368051}
   load: {fileID: 1099335890}
   menuPrincipal: {fileID: 2793103451660633668}
@@ -3941,6 +3941,7 @@ MonoBehaviour:
   menuOpcoes: {fileID: 0}
   menuPause: {fileID: 0}
   btnPause: {fileID: 0}
+  timer: {fileID: 0}
   barraCarregamento: {fileID: 1953228162}
   txtCarregamento: {fileID: 400805626}
   txtGameOverPontos:
@@ -4058,8 +4059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicas:
-  - {fileID: 8300000, guid: 213611b9be3892c40820f0af36195661, type: 3}
-  - {fileID: 8300000, guid: ea40b0ff78fc202409d359a50e16024e, type: 3}
+  - {fileID: 8300000, guid: 9ef55441a834c3b4ba6afb214dab5c68, type: 3}
+  - {fileID: 8300000, guid: 28ea584d8a91b5e49b88636e6182c678, type: 3}
 --- !u!82 &8651362426195927717
 AudioSource:
   m_ObjectHideFlags: 0
