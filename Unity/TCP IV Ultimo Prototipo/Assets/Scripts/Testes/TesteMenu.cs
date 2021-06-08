@@ -11,6 +11,7 @@ public class TesteMenu : Elemento
     [SerializeField] private GameObject menu, 
                                         load,
                                         menuPrincipal, 
+                                        menuMundos,
                                         menuFases, 
                                         menuRanking,
                                         menuOpcoes,
@@ -97,12 +98,33 @@ public class TesteMenu : Elemento
             menuOpcoes.SetActive(false);
         }
         catch { }
+        try
+        {
+            menuMundos.SetActive(false);
+        }
+        catch { }
+        
         menuPrincipal.SetActive(true);
+    }
+    public void MenuMundos()
+    {
+        if (menuFases.activeInHierarchy)
+        {
+            SomBtnVoltar();
+            menuFases.SetActive(false);
+        }
+        else
+        {
+            SomBtnConfirmar();
+            menuPrincipal.SetActive(false);
+        }
+
+        menuMundos.SetActive(true);
     }
     public void MenuFases()
     {
         SomBtnConfirmar();
-        menuPrincipal.SetActive(false);
+        menuMundos.SetActive(false);
         menuFases.SetActive(true);
     }
     public void CarregarFase(int cenaId)
