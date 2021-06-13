@@ -70,7 +70,10 @@ public class FaseController : Controller
                         r = Random.Range(0, TesteDados.Toupeiras.Length);
                     }
                     app.Notificar(Notificacao.Toupeira.MatarUma, TesteDados.Toupeiras[r].GetComponentInChildren<ToupeiraView>());
-                } catch { }
+                } catch 
+                {
+                    app.Notificar(Notificacao.Toupeira.MatarUma, null);
+                }
 
                 break;
 

@@ -5,6 +5,7 @@ public class JogadorController : Controller
     JogadorModel model;
     JogadorView view;
 
+    bool aux;
     public override void OnNotificacao(string evento_caminho, Object alvo, params object[] dados)
     {
         switch (evento_caminho)
@@ -12,6 +13,8 @@ public class JogadorController : Controller
             case Notificacao.Fase.Inicio:
                 model = GetComponent<JogadorModel>();
                 view = GetComponent<JogadorView>();
+
+                aux = false;
 
                 view.Comecar(model.pontosParaPowerUp1, model.pontosParaPowerUp2, model.pontosParaPowerUp3);
                 break;
@@ -46,16 +49,42 @@ public class JogadorController : Controller
                 switch (model.PtsPowerUp)
                 {
                     case int n when n >= model.pontosParaPowerUp1 && n < model.pontosParaPowerUp2:
-                        app.Notificar(Notificacao.Jogador.MatarUmaToupeiraAleatoria, this);
+                        for (int i = 0; i < TesteDados.Toupeiras.Length; i++)
+                        {
+                            if (TesteDados.Toupeiras[i].GetComponent<ToupeiraModel>().Vida > 0)
+                            {
+                                aux = true;
+                            }
+                        }
+                        if (aux)
+                        {
+                            app.Notificar(Notificacao.Jogador.MatarUmaToupeiraAleatoria, this);
+                        }
+                        else
+                        {
+                            aux = false;
+                        }
                         break;
 
                     case int n when n >= model.pontosParaPowerUp2 && n < model.pontosParaPowerUp3:
-                        app.DebugJogador("Matar todas");
-                        app.Notificar(Notificacao.Jogador.MatarTodasToupeiras, this);
+                        for (int i = 0; i < TesteDados.Toupeiras.Length; i++)
+                        {
+                            if (TesteDados.Toupeiras[i].GetComponent<ToupeiraModel>().Vida > 0)
+                            {
+                                aux = true;
+                            }
+                        }
+                        if (aux)
+                        {
+                            app.Notificar(Notificacao.Jogador.MatarTodasToupeiras, this);
+                        }
+                        else
+                        {
+                            aux = false;
+                        }
                         break;
 
                     case int n when n >= model.pontosParaPowerUp3:
-                        app.DebugJogador("PowerUp 3: " + n);
                         AudioSource audioSource = GetComponent<AudioSource>();
                         audioSource.clip = model.somPowerUp3;
                         audioSource.Play();

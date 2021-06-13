@@ -108,7 +108,7 @@ public class ToupeiraController : Controller
                     }
                     */
                     model.Buraco.GetComponent<Buraco>().EstaOcupado = false;
-                    Destroy(gameObject, 1f);
+                    Destroy(gameObject, 0.2f);
                 }
                 break;
                 /*
